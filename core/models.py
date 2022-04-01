@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from django.db import models
 # from django.utils import timezone
 from django.contrib.auth.models import (
@@ -69,6 +68,7 @@ class Seller_Details(models.Model):
     county = models.CharField(max_length=100, null=True)
     town = models.CharField(max_length=150, null=True)
     phone_number = models.IntegerField(null=True)
+    active = models.BooleanField(default=True, null=True)
     
     class Meta:
         verbose_name = 'Seller Details'
@@ -76,3 +76,30 @@ class Seller_Details(models.Model):
 
     def __str__(self):
         return '{} | {}'.format(str(self.user.email), str(self.phone_number))
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=400)
+    code = models.FloatField()
+    describtion = models.TextField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Category"
+
+
+
+class Products(models.Model):
+    owner = models.ForeignKey(Seller_Details, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    name = models.CharField(max_length=250)
+    describtion = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='products', null=True)
+    price = models.FloatField()
+    stock = models.BooleanField(default=True)
+    premium = models.BooleanField(default=False)
+    date_entered = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Products"
+        verbose_name_plural = "Products"

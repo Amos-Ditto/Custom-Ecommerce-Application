@@ -5,7 +5,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 
-from core.models import CustomUser, Seller_Details
+from core.models import CustomUser, Seller_Details, Category,Products
 
 """register this custom user model with Django’s admin"""
 
@@ -68,6 +68,7 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(CustomUser, UserAdmin)
 admin.site.unregister(Group)
-Seller_Details
 
 admin.site.register(Seller_Details)
+admin.site.register(Category)
+admin.site.register(Products)
