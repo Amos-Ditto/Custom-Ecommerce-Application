@@ -69,6 +69,7 @@ class Seller_Details(models.Model):
     town = models.CharField(max_length=150, null=True)
     phone_number = models.IntegerField(null=True)
     active = models.BooleanField(default=True, null=True)
+    delivering = models.BooleanField(default=False)
     
     class Meta:
         verbose_name = 'Seller Details'
