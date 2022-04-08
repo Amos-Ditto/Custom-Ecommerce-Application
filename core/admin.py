@@ -11,7 +11,7 @@ from core.models import CustomUser, Seller_Details, Category,Products
 
 class UserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password1 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
 
     class Meta:
         model = CustomUser

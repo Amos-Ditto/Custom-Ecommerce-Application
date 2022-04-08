@@ -20,6 +20,19 @@ from core.serializers import (
 class Reg_seller(APIView):
     def post(self, request, format=None):
         data = request.data
+        data['user'] = request.user.id
+        serializer = SellerDetailSerializer(data=data)
+        print(serializer)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'seller': 'created'}, status=status.HTTP_201_CREATED)
 
-        print(data)
-        return Response({'received': 'welcome'}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def get(self, request):
+        user = request.user
+        print(user)
+        try:
+            seller = Seller_Details.objects.get(user=user)
+            return Response({'seller': True})
+        except Seller_Details.DoesNotExist:
+            return Response({'seller': False})
