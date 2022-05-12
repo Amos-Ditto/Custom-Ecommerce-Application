@@ -1,5 +1,4 @@
 from django.db import models
-# from django.utils import timezone
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
@@ -87,8 +86,12 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Category"
+    
+    def __str__(self):
+        return self.name
 
 
+# -------------- products model design --------------------  #
 
 class Products(models.Model):
     owner = models.ForeignKey(Seller_Details, on_delete=models.CASCADE)
@@ -97,10 +100,12 @@ class Products(models.Model):
     describtion = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='products', null=True)
     price = models.FloatField()
-    stock = models.BooleanField(default=True)
     premium = models.BooleanField(default=False)
     date_entered = models.DateField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Products"
         verbose_name_plural = "Products"
+    
+    def __str__(self):
+        return self.name

@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
     'djoser',
-    'core'
+    'corsheaders',
+    'core',
+    'places',
 ]
 
 MIDDLEWARE = [
@@ -64,13 +65,26 @@ REST_FRAMEWORK = {
     )
 }
 
-DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
-    'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': '#/activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
-    'SERIALIZERS': {},
-}
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dittoamos@gmail.com'
+EMAIL_HOST_PASSWORD = 'amos2001'
+EMAIL_PORT = 587
+
+
+# DOMAIN = ('localhost:8080') 
+# SITE_NAME = ('market') 
+
+# DJOSER = {
+#     "USER_ID_FIELD": "email",
+#     'PASSWORD_RESET_CONFIRM_URL': 'api/v1/password/reset/confirm/{uid}/{token}',
+#     'USERNAME_RESET_CONFIRM_URL': 'api/v1/username/reset/confirm/{uid}/{token}',
+#     'ACTIVATION_URL': 'api/v1/activate/{uid}/{token}',
+#     'SEND_ACTIVATION_EMAIL': True,
+#     'SERIALIZERS': {},
+# }
+
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080','http://127.0.0.1:8000'
