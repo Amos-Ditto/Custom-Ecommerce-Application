@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework import status
 import requests
 
@@ -41,7 +41,6 @@ class Reg_seller(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     def get(self, request):
         user = request.user
-        print(user)
         try:
             seller = Seller_Details.objects.get(user=user)
             return Response({'seller': True})
@@ -75,7 +74,6 @@ class ProductViews(APIView):
         serializer = ProductSerializer(data=uploaded)
         if serializer.is_valid():
             serializer.save()
-            print(serializer)
             return Response({'product': 'created'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -93,7 +91,7 @@ def get_products(request):
 # --> update product 
 
 class ProductUpdate(APIView):
-    # parser_classes = (MultiPartParser, FormParser)
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
 
     def get_object(self, pk):
         try:
@@ -107,14 +105,15 @@ class ProductUpdate(APIView):
         return Response(serializer.data)
 
     def put(self, request, pk):
-        obj = self.get_object(pk=pk)
-        print(obj)
-        print('-------------------------------- \n')
-        print(request.data)
         data = request.data
-        print(data['image'])
-        # uploaded = {}
-        # uploaded['price'] = int(data['price'])
-        # uploaded['name'] = data['name']
-        serializer = ProductSerializer(obj, context={"request": request})
-        return Response(serializer.data)
+        obj = self.get_object(pk=pk)
+        obj.price = float(data['price'])
+        obj.name = data['name']
+        try:
+            obj.image = data['image']
+        except:
+            pass
+        obj.save()
+        serializer = ProductSerializer(obj)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)

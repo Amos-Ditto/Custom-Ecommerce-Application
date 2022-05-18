@@ -65,7 +65,7 @@ class CustomUser(AbstractBaseUser):
 class Seller_Details(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     county = models.CharField(max_length=100, null=True)
-    town = models.CharField(max_length=150, null=True)
+    town = models.CharField(max_length=150,blank=True, null=True)
     phone_number = models.IntegerField(null=True)
     active = models.BooleanField(default=True, null=True)
     delivering = models.BooleanField(default=False)
