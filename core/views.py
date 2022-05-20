@@ -110,7 +110,10 @@ class ProductUpdate(APIView):
         obj.price = float(data['price'])
         obj.name = data['name']
         try:
-            obj.image = data['image']
+            if data['image'] == 'undefined':
+                pass
+            else:
+                obj.image = data['image']
         except:
             pass
         obj.save()
