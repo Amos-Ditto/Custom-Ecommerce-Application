@@ -10,6 +10,9 @@ from core.models import (
 from core.serializers import (
     CategorySerializer
 )
+from ..serializers import (
+    ProductSerializer
+)
 
 
 class CategoryView(APIView):
@@ -19,5 +22,16 @@ class CategoryView(APIView):
         categories = Category.objects.all()
 
         serializer = CategorySerializer(categories, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class DashBoardProductsView(APIView):
+
+    def get(self, request):
+
+        products = Products.objects.all()[:5]
+
+        serializer = ProductSerializer(products, many=True, context={"request": request})
 
         return Response(serializer.data, status=status.HTTP_200_OK)
