@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full grid grid-cols-10 px-12 py-3 border-b border-neutral-300">
+    <div class="w-full grid grid-cols-10 px-12 py-4 border-b border-neutral-300">
         <div class="left col-span-6 grid grid-cols-6 gap-x-3 items-center">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-1">
                 <img src="@/assets/images/Logo.webp" alt="" class="w-14 h-12 p-1" />
