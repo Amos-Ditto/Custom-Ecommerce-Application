@@ -19,6 +19,18 @@ body {
     @apply bg-[#f5f5f5];
 }
 
+.page-enter-active,
+.page-leave-active {
+    transition: all 0.4s;
+}
+.page-enter-from {
+    opacity: 0;
+    @apply -translate-y-0.5;
+}
+.page-leave-to {
+    opacity: 0;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;

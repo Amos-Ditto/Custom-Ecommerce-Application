@@ -1,12 +1,12 @@
 <template>
-    <div class="w-full flex flex-col py-2 gap-y-2">
-        <div class="title w-full flex flex-row items-center gap-x-2 px-3">
-            <div class="icon w-5 text-dark flex items-center pt-0.5">
+    <div class="w-full flex flex-col gap-y-2">
+        <div class="title w-full flex flex-row items-center gap-x-2 px-3 py-2 bg-amber-500 rounded-t">
+            <div class="icon w-5 text-gray-100 flex items-center pt-0.5">
                 <IconsListIcon />
             </div>
-            <h3 class="text-dark tracking-wide text-base font-semibold">Categories</h3>
+            <h3 class="text-gray-100 tracking-wide text-sm 2xl:text-base font-semibold">Categories</h3>
         </div>
-        <ul class="w-full flex flex-col gap-y-1 pt-2">
+        <ul class="w-full flex flex-col gap-y-1 pt-2 pb-2">
             <li>
                 <div class="icon w-5 text-neutral-600 flex items-center">
                     <IconsCategoriesConputersIcon />
@@ -26,6 +26,13 @@
                     <IconsCategoriesTvsIcon />
                 </div>
                 <small>TV, Audio & Video</small>
+                <div class="i-carbon-chevron-right absolute right-1 text-neutral-600 text-base"></div>
+            </li>
+            <li>
+                <div class="icon w-5 text-neutral-600 flex items-center">
+                    <IconsCategoriesHomeIcon />
+                </div>
+                <small>Home & Living</small>
                 <div class="i-carbon-chevron-right absolute right-1 text-neutral-600 text-base"></div>
             </li>
             <li>
@@ -51,7 +58,7 @@ ul li {
     @apply flex flex-row py-2 px-3 items-center gap-x-2 relative cursor-pointer;
 }
 ul li small {
-    @apply text-sm tracking-wide font-light text-neutral-600;
+    @apply truncate text-xs 2xl:text-sm tracking-wide font-light text-neutral-600;
 }
 ul li:hover::before {
     content: '';
