@@ -2,7 +2,23 @@
     <header class="w-full flex flex-col gap-y-2">
         <div class="search-content-bar w-full grid grid-cols-2 items-center">
             <div class="search-text flex flex-row gap-x-3 items-center">
-                <h5 class="text-dark tracking-wide text-base font-semibold">No search yet ...</h5>
+                <h5 class="text-dark tracking-wide text-base font-semibold hidden md:block">No search yet ...</h5>
+                <button class="md:hidden flex flex-row items-center gap-x-2 ring-1 ring-neutral-300 rounded px-2 py-1">
+                    <div class="flex items-center justify-center w-4 h-4 text-neutral-600">
+                        <IconsFilterIcon />
+                    </div>
+                    <span class="text-sm tracking-wide text-neutral-700">Filters</span>
+                    <div class="i-carbon-chevron-right ml-1"></div>
+                </button>
+            </div>
+            <div class="other-menu flex flex-row items-center justify-end">
+                <div class="sort-by flex flex-row items-center gap-x-2">
+                    <small class="text-sm tracking-wide text-neutral-600">Sort by:</small>
+                    <button class="px-3 py-1 ring-1 ring-neutral-200 rounded-sm flex flex-row gap-x-2 items-center">
+                        <span class="text-base tracking-wide text-neutral-700 capitalize">Best Match</span>
+                        <div class="i-carbon-chevron-down"></div>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="filter-content overflow-x-auto w-[94vw] md:w-full flex flex-row gap-x-4 items-center justify-start py-1 pl-1 pr-3">

@@ -3,7 +3,7 @@
         <div
             class="menu-drop-down relative flex flex-row gap-x-3 items-center pr-6 cursor-pointer hover:opacity-75 transition duration-200"
         >
-            <div class="icon w-6 h-2 text-neutral-500 flex items-center">
+            <div class="icon pt-0.5 w-6 h-2 text-neutral-500 flex items-center">
                 <IconsListIcon />
             </div>
             <div class="menu-text flex flex-row items-center gap-x-2">

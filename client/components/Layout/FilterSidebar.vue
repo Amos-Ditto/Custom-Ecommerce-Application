@@ -105,6 +105,6 @@
 }
 
 .price-groups button {
-    @apply border border-neutral-200 rounded text-neutral-500 tracking-wide w-full px-3 py-1.5 xl:py-1 flex flex-row justify-start text-xs xl:text-sm hover:bg-gray-100 hover:border-neutral-300 transition duration-200;
+    @apply border border-neutral-200 rounded text-neutral-500 tracking-wide w-full px-3 py-1.5 flex flex-row justify-start text-xs xl:text-sm hover:bg-gray-100 hover:border-neutral-300 transition duration-200;
 }
 </style>
