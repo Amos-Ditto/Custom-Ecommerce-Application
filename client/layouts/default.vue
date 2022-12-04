@@ -3,6 +3,8 @@
         <nav>
             <LayoutTopNavbar />
         </nav>
-        <slot />
+        <main class="w-full flex flex-col">
+            <slot />
+        </main>
     </section>
 </template>

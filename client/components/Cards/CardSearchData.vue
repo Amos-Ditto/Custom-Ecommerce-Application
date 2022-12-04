@@ -33,11 +33,16 @@ defineProps<{
                     </div>
                 </button>
             </div>
-            <div class="seller-label w-full flex flex-row items-center justify-start pt-1 gap-x-2">
-                <div class="flex items-center justify-center w-4 h-4 text-[dodgerblue]">
-                    <IconsVerifiedIcon />
+            <div class="seller-label w-full grid grid-cols-2 items-center pt-1">
+                <div class="seller-name flex flex-row items-center justify-start">
+                    <small class="text-xs text-neutral-500 tracking-wide truncate">Ditto Co. Ditto Co. Ditto Co. Ditto Co.</small>
                 </div>
-                <small class="text-xs text-neutral-500 tracking-wide">Verified</small>
+                <div class="label flex flex-row justify-end items-center gap-x-1">
+                    <div class="flex items-center justify-center w-4 h-4 text-[dodgerblue]">
+                        <IconsVerifiedIcon />
+                    </div>
+                    <small class="text-xs text-neutral-500 tracking-wide">Verified</small>
+                </div>
             </div>
         </div>
     </div>
