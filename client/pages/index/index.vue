@@ -4,9 +4,11 @@
             <aside class="flex flex-col col-span-2">
                 <LayoutFilterSidebar />
             </aside>
-            <div class="container col-span-8 flex flex-col gap-y-3">
-                <ContentsSearchContent />
-            </div>
+            <section class="container col-span-8 flex flex-col gap-y-3 w-full">
+                <ContentsFilterHeader />
+                <!-- <LazyContentsSearchContent></LazyContentsSearchContent> -->
+                <ContentsSearchData />
+            </section>
         </div>
     </section>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex flex-col gap-y-2">
+    <header class="w-full flex flex-col gap-y-2">
         <div class="search-content-bar w-full grid grid-cols-2 items-center">
             <div class="search-text flex flex-row gap-x-3 items-center">
                 <h5 class="text-dark tracking-wide text-base font-semibold">No search yet ...</h5>
@@ -20,11 +20,11 @@
                     </div>
                 </button>
             </div>
-            <clear class="filters flex flex-row items-center">
+            <div class="filters flex flex-row items-center">
                 <span class="font-semibold tracking-wide capitalize text-amber-500 text-base cursor-pointer">clear all filters</span>
-            </clear>
+            </div>
         </div>
-    </div>
+    </header>
 </template>
 
 <style scoped>
