@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="right col-span-3 2xl:col-span-4 flex flex-row gap-x-2 items-center justify-end">
-            <div class="nav-actions flex flex-row gap-x-4 lg:gap-x-8 px-3 mr-2 items-center">
-                <div
+            <div class="nav-actions flex flex-row gap-x-4 lg:gap-x-8 px-3 sm:mr-2 items-center">
+                <!-- <div
                     class="search-toggle flex md:hidden flex-row items-center justify-center relative cursor-pointer p-1.5 shadow-md rounded-lg bg-amber-500 hover:bg-amber-400 transition duration-200"
                 >
                     <div class="icon w-4 h-4 text-gray-50">
@@ -53,7 +53,7 @@
                     <div class="icon w-6 h-6 text-neutral-700">
                         <IconsBellIcon />
                     </div>
-                </div>
+                </div> -->
                 <div
                     class="cart flex flex-row items-center justify-center relative cursor-pointer rounded-full p-1 hover:bg-gray-200 transition duration-200"
                 >
@@ -69,10 +69,10 @@
             </div>
             <div class="account flex flex-row items-center gap-x-2 relative pl-4 lg:pl-8">
                 <div
-                    class="name px-2 lg:px-3 py-0.5 rounded-2xl ring-1 ring-gray-500 shadow flex flex-row justify-center items-center gap-x-2 lg:gap-x-3 cursor-pointer hover:opacity-70 duration-200 transition"
+                    class="name px-2 lg:px-3 py-0.5 rounded-2xl ring-1 ring-gray-500 shadow flex flex-row items-center gap-x-1 sm:gap-x-2 lg:gap-x-3 cursor-pointer hover:opacity-70 duration-200 transition"
                 >
                     <small class="text-sm tracking-wide text-dark">Amos</small>
-                    <div class="i-carbon-chevron-down text-sm"></div>
+                    <div class="i-carbon-chevron-down text-xs xs:text-sm"></div>
                 </div>
             </div>
         </div>
