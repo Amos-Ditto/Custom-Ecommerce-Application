@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-12 py-4 border-b border-neutral-300">
-        <div class="left col-span-7 2xl:col-span-6 grid grid-cols-8 lg:grid-cols-6 gap-x-3 items-center">
+    <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-12 py-2.5 sm:py-4 border-b border-neutral-300">
+        <div class="left col-span-3 sm:col-span-7 2xl:col-span-6 grid grid-cols-8 lg:grid-cols-6 gap-x-3 items-center">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-8 md:col-span-1">
                 <img src="@/assets/images/Logo.webp" alt="" class="w-12 lg:w-14 h-10 lg:h-12 p-1" />
                 <span class="text-dark text-lg lg:text-xl font-semibold tracking-wide">Odaplace</span>
@@ -38,22 +38,8 @@
                 </div>
             </div>
         </div>
-        <div class="right col-span-3 2xl:col-span-4 flex flex-row gap-x-2 items-center justify-end">
+        <div class="right col-span-7 sm:col-span-3 2xl:col-span-4 flex flex-row gap-x-2 items-center justify-end">
             <div class="nav-actions flex flex-row gap-x-4 lg:gap-x-8 px-3 sm:mr-2 items-center">
-                <!-- <div
-                    class="search-toggle flex md:hidden flex-row items-center justify-center relative cursor-pointer p-1.5 shadow-md rounded-lg bg-amber-500 hover:bg-amber-400 transition duration-200"
-                >
-                    <div class="icon w-4 h-4 text-gray-50">
-                        <IconsSearchIcon />
-                    </div>
-                </div>
-                <div
-                    class="notification flex flex-row items-center justify-center relative cursor-pointer p-1 hover:bg-gray-200 rounded-full transition duration-200"
-                >
-                    <div class="icon w-6 h-6 text-neutral-700">
-                        <IconsBellIcon />
-                    </div>
-                </div> -->
                 <div
                     class="cart flex flex-row items-center justify-center relative cursor-pointer rounded-full p-1 hover:bg-gray-200 transition duration-200"
                 >
@@ -67,12 +53,19 @@
                     </div>
                 </div>
             </div>
-            <div class="account flex flex-row items-center gap-x-2 relative pl-4 lg:pl-8">
-                <div
-                    class="name px-2 lg:px-3 py-0.5 rounded-2xl ring-1 ring-gray-500 shadow flex flex-row items-center gap-x-1 sm:gap-x-2 lg:gap-x-3 cursor-pointer hover:opacity-70 duration-200 transition"
-                >
-                    <small class="text-sm tracking-wide text-dark">Amos</small>
-                    <div class="i-carbon-chevron-down text-xs xs:text-sm"></div>
+            <div class="account flex flex-row items-center gap-x-1 relative pl-2 lg:pl-3 cursor-pointer">
+                <div class="icon">
+                    <div class="icon w-10 text-neutral-700">
+                        <IconsAccountIcon />
+                    </div>
+                </div>
+                <div class="flex flex-col gap-y-0">
+                    <small
+                        class="text-xs font-light text-neutral-500 tracking-wide flex flex-row gap-x-0.5 items-center transition-colors duration-200"
+                        >Sign in
+                        <div class="i-carbon-chevron-down"></div
+                    ></small>
+                    <small class="text-base font-bold text-dark tracking-wide">Account</small>
                 </div>
             </div>
         </div>
@@ -80,6 +73,9 @@
 </template>
 
 <style scoped>
+.account:hover small {
+    @apply first:text-amber-600;
+}
 .account::before {
     content: '';
     @apply absolute left-0 h-3/4 w-[1px] bg-gray-400;

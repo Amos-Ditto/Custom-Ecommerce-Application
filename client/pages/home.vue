@@ -7,9 +7,15 @@
                         <LayoutCategoriesSideBar />
                     </div>
                 </aside>
-                <div
-                    class="hero-body w-full min-h-[14rem] md:min-h-[24rem] bg-[url('assets/images/Banner.webp')] bg-no-repeat bg-top object-cover rounded-md col-span-1 md:col-span-8"
-                ></div>
+                <div class="hero w-full flex flex-col gap-x-1 col-span-1 md:col-span-8">
+                    <div class="hero-links w-full">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ab consequuntur, nostrum eum quia vel quaerat aut
+                        voluptate mollitia corporis, dignissimos aperiam perferendis. Vel possimus sapiente velit rerum commodi sequi!
+                    </div>
+                    <div
+                        class="hero-body w-full min-h-[14rem] md:min-h-[24rem] bg-[url('assets/images/Banner.webp')] bg-no-repeat bg-top object-cover rounded-md"
+                    ></div>
+                </div>
             </section>
             <section class="w-full flex flex-col gap-y-2 pt-2 pb-4 px-2 sm:px-4 xl:px-12 2xl:px-32">
                 <ContentsPromosContent />
