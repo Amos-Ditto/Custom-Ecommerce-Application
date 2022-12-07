@@ -1,14 +1,14 @@
 <template>
-    <div class="w-full py-3.5 px-4 xl:px-8 2xl:px-12 border-b border-neutral-300 flex flex-row items-center justify-start">
+    <div class="w-full py-3.5 px-2 sm:px-4 xl:px-8 2xl:px-12 border-b border-neutral-300 flex flex-row items-center justify-start">
         <div
-            class="menu-drop-down relative flex flex-row gap-x-3 items-center pr-6 cursor-pointer hover:opacity-75 transition duration-200"
+            class="menu-drop-down relative flex flex-row gap-x-3 items-center pr-4 xs:pr-6 cursor-pointer hover:opacity-75 transition duration-200"
         >
-            <div class="icon pt-0.5 w-6 h-2 text-neutral-500 flex items-center">
+            <div class="icon pt-0.5 w-5 sm:w-6 h-2 text-neutral-500 flex items-center">
                 <IconsListIcon />
             </div>
-            <div class="menu-text flex flex-row items-center gap-x-2">
+            <div class="menu-text flex flex-row items-center gap-x-1 xs:gap-x-2">
                 <span class="text-dark font-light tracking-wide text-sm xl:text-base">Categories</span>
-                <div class="i-carbon-chevron-down text-dark text-base"></div>
+                <div class="i-carbon-chevron-down text-dark text-sm sm:text-base"></div>
             </div>
         </div>
         <div class="other-links hidden sm:flex flex-row gap-x-8 items-center px-3 ml-4">
