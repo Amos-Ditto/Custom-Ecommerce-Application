@@ -12,32 +12,34 @@
                 <button
                     class="category relative hidden lg:flex flex-row gap-x-1 lg:gap-x-2 items-center justify-between col-span-1 px-1 lg:px-2 xl:px-3 hover:opacity-75 transition duration-200 border-y border-neutral-300"
                 >
-                    <span class="text-base text-neutral-600 truncate capitalize">All Categories</span>
+                    <span class="text-sm text-neutral-600 truncate tracking-wide capitalize">All Categories</span>
                     <div class="i-carbon-chevron-down text-base text-neutral-500"></div>
                 </button>
-                <button class="px-4 bg-amber-500 ring-1 ring-amber-500 hover:bg-orange-500 transition-colors duration-200">
+                <button class="px-4 bg-amber-500 ring-1 ring-amber-500 hover:bg-orange-500 transition-colors duration-200 rounded-r-sm">
                     <div class="i-carbon-search text-base text-gray-50"></div>
                 </button>
             </fieldset>
             <div class="col-span-4 flex flex-row items-center justify-end gap-x-8">
                 <div class="account flex flex-row items-center gap-x-1 relative pl-2 lg:pl-3 cursor-pointer">
                     <div class="icon">
-                        <div class="icon w-10 text-neutral-700">
+                        <div class="icon w-8 text-neutral-700">
                             <IconsAccountIcon />
                         </div>
                     </div>
                     <div class="flex flex-col gap-y-0">
                         <small
-                            class="text-xs font-light text-neutral-500 tracking-wide flex flex-row items-center transition-colors duration-200"
+                            class="text-xs font-light text-neutral-500 tracking-wide flex flex-row gap-x-0.5 items-center transition-colors duration-200"
                             >Sign in
                             <div class="i-carbon-chevron-down"></div
                         ></small>
-                        <small class="text-base font-bold text-dark tracking-wide">Account</small>
+                        <small class="text-sm font-bold text-dark tracking-wide">Account</small>
                     </div>
                 </div>
-                <div class="cart flex flex-row items-center gap-x-1 relative pl-2 lg:pl-3 cursor-pointer">
+                <div
+                    class="cart flex flex-row items-center gap-x-1 relative pl-2 lg:pl-3 cursor-pointer hover:opacity-80 transition duration-200"
+                >
                     <div class="icon">
-                        <div class="icon w-10 text-neutral-700 relative">
+                        <div class="icon w-8 text-neutral-700 relative transition-colors duration-200">
                             <IconsCartIcon />
                             <div
                                 class="count -top-2 -right-0.5 absolute px-2 py-1 bg-orange-400 rounded-full flex items-center justify-center"
@@ -51,7 +53,7 @@
                             class="text-xs font-light text-neutral-500 tracking-wide flex flex-row items-center transition-colors duration-200"
                             >Total</small
                         >
-                        <small class="text-base font-bold text-dark tracking-wide">$ 0.0</small>
+                        <small class="text-sm font-bold text-dark tracking-wide">$ 0.0</small>
                     </div>
                 </div>
             </div>
@@ -61,7 +63,7 @@
 
 <style scoped>
 .nav-links input[type='search'] {
-    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit;
+    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm;
 }
 .nav-links input[type='search'],
 .nav-links button {
@@ -69,6 +71,9 @@
 }
 
 .account:hover small {
-    @apply first:text-amber-600;
+    @apply first:text-amber-500;
+}
+.cart:hover .icon {
+    @apply text-amber-500;
 }
 </style>

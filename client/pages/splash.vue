@@ -13,9 +13,15 @@
                         <NuxtLink to="/splash">Trending Products</NuxtLink>
                         <NuxtLink to="/splash">Merchants</NuxtLink>
                     </div>
-                    <div
-                        class="hero-body w-full min-h-[14rem] md:min-h-[24rem] bg-[url('assets/images/Banner.webp')] bg-no-repeat bg-top object-cover"
-                    ></div>
+                    <div class="grid grid-cols-10 gap-x-3 w-full">
+                        <div
+                            class="carousel col-span-7 min-h-[14rem] md:min-h-[24rem] bg-[url('assets/images/Banner.webp')] bg-no-repeat bg-top object-cover"
+                        ></div>
+                        <div class="other-descriptions col-span-3 grid grid-rows-2 grid-cols-1 gap-y-3">
+                            <div class="shop bg-teal-100"></div>
+                            <div class="shop bg-indigo-100"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <main></main>
@@ -25,7 +31,7 @@
 
 <style scoped>
 .hero-links a {
-    @apply text-base tracking-wide text-dark last:text-amber-600 font-light pt-3 pb-1 px-2;
+    @apply text-base tracking-wide text-dark first:text-amber-600 font-light pt-3 pb-1 px-2;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 50% 100%;
     background-repeat: no-repeat;

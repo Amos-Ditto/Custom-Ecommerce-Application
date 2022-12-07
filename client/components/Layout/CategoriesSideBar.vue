@@ -56,12 +56,17 @@
 <style scoped>
 ul li {
     @apply flex flex-row py-2 px-3 items-center gap-x-2 relative cursor-pointer;
+    background-image: linear-gradient(rgb(245 158 11 /1), rgb(245 158 11 /1));
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    background-size: 2px 0%;
+    transition: background-size 0.15s;
 }
 ul li small {
     @apply truncate text-xs 2xl:text-sm tracking-wide font-light text-neutral-600;
 }
-ul li:hover::before {
-    content: '';
-    @apply h-full absolute w-[2px] left-0 bg-amber-500;
+ul li:hover,
+ul li:focus {
+    background-size: 2px 100%;
 }
 </style>
