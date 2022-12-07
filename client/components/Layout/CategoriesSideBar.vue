@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex flex-col gap-y-2">
-        <div class="title w-full flex flex-row items-center gap-x-2 px-3 py-2 bg-amber-500 rounded-t">
+        <div class="title w-full flex flex-row items-center gap-x-2 px-3 py-2 bg-amber-500">
             <div class="icon w-5 text-gray-100 flex items-center pt-0.5">
                 <IconsListIcon />
             </div>
