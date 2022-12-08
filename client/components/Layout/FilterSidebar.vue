@@ -1,8 +1,11 @@
 <template>
-    <div class="side-container px-2 lg:px-3 xl:px-4 py-4 ring-1 ring-neutral-300 rounded-md flex flex-col gap-y-3">
-        <h3 class="text-dark tracking-wide font-bold text-base xl:text-lg">Filter</h3>
+    <div class="side-container pb-4 ring-1 ring-neutral-300 rounded flex flex-col gap-y-3">
+        <div class="side-header w-full px-2 py-1.5 bg-amber-500 ring-1 ring-amber-500 rounded-t-sm flex items-center flex-row gap-x-2">
+            <div class="i-carbon-filter text-gray-50 text-base xl:text-lg"></div>
+            <h3 class="text-gray-50 tracking-wide font-bold text-base xl:text-xl">Filter</h3>
+        </div>
 
-        <div class="supplier-types w-full flex flex-col gap-y-2 pt-2">
+        <div class="supplier-types w-full flex flex-col gap-y-2 pt-2 px-2 lg:px-2 2xl:px-4">
             <h4 class="text-sm xl:text-base font-semibold tracking-wide text-dark">Supplier Types</h4>
             <div class="seller-category w-full">
                 <label for="assured" class="flex flex-row gap-x-2 xl:gap-x-3 items-center py-2">
@@ -36,7 +39,7 @@
             </div>
         </div>
 
-        <div class="condition-types w-full flex flex-col gap-y-2 pt-2">
+        <div class="condition-types w-full flex flex-col gap-y-2 pt-2 px-2 lg:px-2 2xl:px-4">
             <h4 class="text-sm xl:text-base font-semibold tracking-wide text-dark">Condition</h4>
             <div class="condition-category w-full">
                 <label for="new-stuff" class="flex flex-row gap-x-3 items-center py-2">
@@ -64,7 +67,7 @@
             </div>
         </div>
 
-        <div class="prices w-full flex flex-col gap-y-3 pt-2">
+        <div class="prices w-full flex flex-col gap-y-3 pt-2 px-2 lg:px-2 2xl:px-4">
             <h4 class="text-sm xl:text-base font-semibold tracking-wide text-dark">Price</h4>
             <div class="price-inputs flex flex-col gap-y-3 w-full">
                 <div class="input flex flex-row w-full">

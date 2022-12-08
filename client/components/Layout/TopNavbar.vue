@@ -1,19 +1,21 @@
 <template>
     <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-12 py-2.5 sm:py-4 border-b border-neutral-300">
-        <div class="left col-span-3 md:col-span-7 2xl:col-span-6 grid grid-cols-8 lg:grid-cols-6 gap-x-4 items-center">
+        <div class="left col-span-3 md:col-span-7 2xl:col-span-6 grid grid-cols-8 lg:grid-cols-6 gap-x-32 items-center pr-1">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-8 md:col-span-1">
                 <img src="@/assets/images/Logo.webp" alt="" class="w-12 lg:w-14 h-10 lg:h-12 p-1" />
                 <span class="text-dark text-lg lg:text-xl font-semibold tracking-wide">Odaplace</span>
             </NuxtLink>
-            <fieldset class="col-span-5 search-bar hidden md:flex flex-row w-full items-center h-8 ml-8">
+            <fieldset class="col-span-5 search-bar hidden md:flex flex-row w-full items-center h-8">
                 <input type="search" name="search" id="search" placeholder="Search for products..." />
                 <button
-                    class="category relative hidden lg:flex flex-row gap-x-1 lg:gap-x-2 items-center justify-between col-span-1 px-1 lg:px-2 xl:px-3 hover:opacity-75 transition duration-200 border-y border-neutral-300"
+                    class="category relative hidden lg:flex flex-row gap-x-1 lg:gap-x-2 items-center justify-between col-span-1 px-1 lg:px-2 xl:px-3 transition duration-200 border-y border-neutral-300 hover:border-amber-500 focus:border-amber-500"
                 >
                     <span class="text-sm text-neutral-600 truncate tracking-wide capitalize">All Categories</span>
                     <div class="i-carbon-chevron-down text-base text-neutral-500"></div>
                 </button>
-                <button class="px-4 bg-amber-500 ring-1 ring-amber-500 hover:bg-orange-500 transition-colors duration-200 rounded-r-sm">
+                <button
+                    class="px-4 bg-amber-500 ring-1 ring-amber-500 hover:bg-orange-500 transition-colors duration-200 rounded-r-sm block"
+                >
                     <div class="i-carbon-search text-base text-gray-50"></div>
                 </button>
             </fieldset>
@@ -61,7 +63,7 @@
 
 <style scoped>
 fieldset input[type='search'] {
-    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm;
+    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm hover:ring-amber-500 focus:ring-amber-500 transition duration-200;
 }
 fieldset input[type='search'],
 fieldset button {

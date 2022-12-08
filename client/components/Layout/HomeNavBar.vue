@@ -10,7 +10,7 @@
             <fieldset class="col-span-6 search-bar hidden md:flex flex-row w-full items-center h-8">
                 <input type="search" name="search" id="search" placeholder="Search for products..." />
                 <button
-                    class="category relative hidden lg:flex flex-row gap-x-1 lg:gap-x-2 items-center justify-between col-span-1 px-1 lg:px-2 xl:px-3 hover:opacity-75 transition duration-200 border-y border-neutral-300"
+                    class="category relative hidden lg:flex flex-row gap-x-1 lg:gap-x-2 items-center justify-between col-span-1 px-1 lg:px-2 xl:px-3 border-y border-neutral-300 hover:border-amber-500 focus:border-amber-500 transition duration-200"
                 >
                     <span class="text-sm text-neutral-600 truncate tracking-wide capitalize">All Categories</span>
                     <div class="i-carbon-chevron-down text-base text-neutral-500"></div>
@@ -63,7 +63,7 @@
 
 <style scoped>
 .nav-links input[type='search'] {
-    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm;
+    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm hover:ring-amber-500 focus:ring-amber-500 transition duration-200;
 }
 .nav-links input[type='search'],
 .nav-links button {
