@@ -3,7 +3,15 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    content: ['./components/**/*.{js,vue,ts}', './layouts/**/*.vue', './pages/**/*.vue', './plugins/**/*.{js,ts}', './nuxt.config.{js,ts}'],
+    content: [
+        './components/**/*.{js,vue,ts}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './nuxt.config.{js,ts}',
+        './src/**/*.{html,js}',
+        './node_modules/tw-elements/dist/js/**/*.js',
+    ],
     theme: {
         extend: {
             colors: {
@@ -27,5 +35,5 @@ module.exports = {
         },
     },
     darkMode: 'class',
-    plugins: [require('@tailwindcss/line-clamp')],
+    plugins: [require('@tailwindcss/line-clamp'), require('tw-elements/dist/plugin')],
 }
