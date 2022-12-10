@@ -1,9 +1,3 @@
-<!-- <script setup lang="ts">
-defineProps<{
-    img: string
-}>()
-</script> -->
-
 <template>
     <div
         class="w-full min-h-[10rem] xs:min-h-[12rem] sm:min-h-[14rem] max-h-[19.5rem] xs:max-h-[21rem] sm:max-h-[22rem] grid grid-rows-3 rounded-md ring-1 ring-neutral-200"
@@ -22,17 +16,17 @@ defineProps<{
                     Portable
                 </p>
             </div>
-            <div class="actions w-full flex flex-row justify-between items-center pt-0.5">
-                <button class="flex flex-row items-center px-2 py-0.5 gap-x-1.5 rounded-2xl bg-amber-400">
-                    <div class="icon w-3.5 xs:w-4 h-3.5 xs:h-4 text-gray-50 flex items-center justify-center">
+            <div class="actions w-full flex flex-row justify-between items-center">
+                <button class="flex flex-row items-center gap-x-1 rounded-2xl">
+                    <div class="icon w-3.5 xs:w-4 h-3.5 xs:h-4 text-orange-500 flex items-center justify-center">
                         <IconsStarIcon />
                     </div>
-                    <span class="text-gray-50 tracking-wide text-xs sm:text-sm">5.0</span>
+                    <span class="text-neutral-700 tracking-wide text-xs sm:text-sm">5.0</span>
                 </button>
-                <button class="py-1 px-1.5 items-center justify-center flex rounded-full bg-orange-500">
-                    <div class="icon w-3.5 xs:w-4 h-3.5 xs:h-4 text-gray-200 flex items-center justify-center">
-                        <IconsCartIcon />
-                    </div>
+                <button
+                    class="p-[1px] items-center justify-center flex rounded-full bg-orange-500 hover:bg-opacity-80 transition-colors duration-200"
+                >
+                    <div class="i-carbon-add text-gray-50 text-xl xl:text-2xl"></div>
                 </button>
             </div>
             <div class="seller-label w-full grid grid-cols-2 items-center pt-0.5 xs:pt-1">
