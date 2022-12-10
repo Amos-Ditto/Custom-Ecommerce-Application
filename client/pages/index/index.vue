@@ -1,6 +1,6 @@
 <template>
     <main class="w-full flex flex-col">
-        <section class="hero w-full grid grid-cols-1 md:grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 gap-x-8">
+        <section class="hero w-full grid grid-cols-1 md:grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 gap-x-4 lg:gap-x-8">
             <aside class="col-span-2 hidden md:flex flex-col">
                 <div class="w-full h-full rounded bg-gray-50 shadow-sm min-h-[10rem]">
                     <LayoutCategoriesSideBar />
@@ -12,18 +12,16 @@
                     <NuxtLink to="/search">Trending Products</NuxtLink>
                     <NuxtLink to="/">Merchants</NuxtLink>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-10 gap-y-6 md:gap-x-3 w-full">
-                    <div
-                        class="md:col-span-7 min-h-[16rem] md:min-h-[24rem] bg-[url('assets/images/Banner.webp')] bg-no-repeat bg-top object-cover rounded"
-                    >
+                <div class="flex flex-col gap-y-6 md:gap-x-3 w-full">
+                    <div class="h-[18rem] md:-h-[22rem] xl:h-[24rem] rounded w-full">
                         <HeroCarousel />
                     </div>
-                    <div class="other-descriptions col-span-3 grid md:grid-rows-2 grid-cols-1 gap-y-3">
+                    <!-- <div class="other-descriptions col-span-3 grid lg:grid-rows-2 grid-cols-1 gap-y-3">
                         <div class="shop px-2 py-2 bg-orange-600 flex flex-col-reverse gap-y-4 justify-center items-center rounded">
                             <article class="w-full flex flex-col text-center items-center gap-y-2.5">
-                                <p class="text-lg font-bold text-gray-100 font-hand">Sell fast with less work</p>
+                                <p class="text-xl lg:text-lg font-bold text-gray-100 font-hand">Sell fast with less work</p>
                                 <button
-                                    class="text-base md:text-lg ring-1 ring-gray-100 tracking-wide text-gray-100 px-12 py-0.5 rounded-sm flex flex-row items-center gap-x-4 md:gap-x-2"
+                                    class="text-base xl:text-lg ring-1 ring-gray-100 tracking-wide text-gray-100 px-12 py-0.5 rounded-sm flex flex-row items-center gap-x-4 md:gap-x-2"
                                 >
                                     <span class="">Sell</span>
                                     <div class="i-carbon-arrow-right transition-transform duration-200"></div>
@@ -33,8 +31,10 @@
                                 <img src="~/assets/images/trade_in_banner_icons_white.webp" alt="" class="max-h-[65px]" />
                             </div>
                         </div>
-                        <div class="shop bg-purple-900 rounded"></div>
-                    </div>
+                        <div class="shop bg-purple-900 rounded flex items-center justify-center">
+                            <img src="~/assets/images/use_flow.webp" alt="" class="w-full h-full scale-110" />
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </section>
