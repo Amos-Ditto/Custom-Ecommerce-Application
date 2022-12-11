@@ -53,11 +53,6 @@ useHead({
                         </button>
                     </div>
                 </div>
-                <!-- <div class="carousel-item float-left w-full h-full">
-                    <div
-                        class="c-body w-full h-full flex flex-col items-center justify-center bg-[url('assets/images/c-bg.webp')] bg-contain rounded-sm px-2 md:px-8"
-                    ></div>
-                </div> -->
             </div>
             <button
                 class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -left-5 md:-left-8"

@@ -1,5 +1,5 @@
 <template>
-    <main class="w-full flex flex-col">
+    <main class="w-full flex flex-col gap-y-10">
         <section class="hero w-full grid grid-cols-1 md:grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 gap-x-4 lg:gap-x-8">
             <aside class="col-span-2 hidden md:flex flex-col">
                 <div class="w-full h-full rounded bg-gray-50 shadow-sm min-h-[10rem]">
@@ -38,7 +38,13 @@
                 </div>
             </div>
         </section>
-        <section></section>
+        <section class="flex flex-col w-full px-2 sm:px-4 xl:px-8 2xl:px-20">
+            <div class="featured w-full flex flex-col gap-y-2">
+                <div class="featured-header w-full flex flex-row">
+                    <h3 class="text-xl sm:text-2xl font-bold text-dark tracking-wide">Featured / Best Sellers</h3>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
