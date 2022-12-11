@@ -99,7 +99,7 @@
 <style scoped>
 .seller-category label input[type='checkbox'],
 .condition-category label input[type='checkbox'] {
-    @apply w-5 w-5 h-5 h-5 appearance-none first:border rounded-sm border-gray-300;
+    @apply w-5 h-5 appearance-none first:border rounded-sm border-gray-300;
     @apply flex items-center justify-center checked:after:content-['\2713'] checked:after:text-xl;
 }
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
     script: [{ src: 'https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js' }],
-})
+});
 </script>
 <template>
     <div class="w-full h-full flex flex-col">

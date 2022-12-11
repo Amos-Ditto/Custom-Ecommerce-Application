@@ -1,15 +1,15 @@
 <template>
     <div class="w-full flex flex-col gap-y-3 relative h-full">
         <div
-            class="user-display w-full px-6 py-2 flex flex-row justify-between items-center border-b border-neutral-300 cursor-pointer hover:opacity-80"
+            class="user-display w-full px-4 2xl:px-6 py-2 flex flex-row justify-between items-center border-b border-neutral-300 cursor-pointer hover:opacity-80"
         >
             <div class="user-name flex flex-row gap-x-2 items-center">
-                <img src="~/assets/images/Logo.webp" alt="" class="w-12 lg:w-14 h-10 lg:h-12 p-1" />
-                <small class="text-lg text-dark tracking-wide font-bold">Amos Kipyegon</small>
+                <img src="~/assets/images/Logo.webp" alt="" class="w-12 2xl:w-14 h-10 2xl:h-12 p-1" />
+                <small class="text-base 2xl:text-lg text-dark tracking-wide font-bold">Amos Kipyegon</small>
             </div>
             <div class="i-carbon-chevron-down"></div>
         </div>
-        <div class="menu-context flex flex-col gap-y-2 px-3">
+        <div class="menu-context flex flex-col gap-y-2 px-2 2xl:px-3">
             <div class="user-display w-full px-3 py-2 flex flex-row justify-between items-center">
                 <span class="text-neutral-500 text-base uppercase tracking-wide">menu</span>
                 <div class="i-carbon-add text-neutral-600 text-lg"></div>
@@ -23,7 +23,7 @@
                 </li>
                 <li>
                     <div class="icon w-5 text-neutral-700">
-                        <IconsProductsIcon />
+                        <IconsLabelIcon />
                     </div>
                     <span>Products</span>
                 </li>
@@ -37,9 +37,16 @@
 
                 <li>
                     <div class="icon w-5 text-neutral-700">
-                        <IconsProductsIcon />
+                        <IconsUsersIcon />
                     </div>
-                    <span>Products</span>
+                    <span>Customers</span>
+                </li>
+
+                <li>
+                    <div class="icon w-5 text-neutral-700">
+                        <IconsDiscountIcon />
+                    </div>
+                    <span>Discounts</span>
                 </li>
             </ul>
         </div>
@@ -73,7 +80,7 @@
     @apply px-4 py-2 flex flex-row gap-x-3 items-center hover:ring-1 ring-neutral-200 hover:bg-gray-100 cursor-pointer transition duration-200 rounded-sm;
 }
 .menu-context ul li span {
-    @apply tracking-wide text-base text-neutral-700 transition-colors duration-200;
+    @apply tracking-wide text-sm text-neutral-700 transition-colors duration-200;
 }
 .menu-context ul li:hover span,
 .menu-context ul li:hover .icon {
