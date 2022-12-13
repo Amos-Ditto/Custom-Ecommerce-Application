@@ -15,7 +15,6 @@ onMounted(() => {
         <header class="flex flex-col gap-y-3 py-4">
             <h3 class="text-xl tracking-wide font-semibold">Dashboard</h3>
             <div class="dates flex flex-row gap-x-3 items-center w-full">
-                <!-- <span class="text-sm tracking-wide">Dates Range :</span> -->
                 <Datepicker
                     v-model="date"
                     range

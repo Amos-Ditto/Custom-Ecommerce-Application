@@ -22,10 +22,12 @@
                     <span>Dashboard</span>
                 </li>
                 <li>
-                    <div class="icon w-5 text-neutral-700">
-                        <IconsLabelIcon />
-                    </div>
-                    <span>Products</span>
+                    <NuxtLink to="/account/products">
+                        <div class="icon w-5 text-neutral-700">
+                            <IconsLabelIcon />
+                        </div>
+                        <span>Products</span>
+                    </NuxtLink>
                 </li>
 
                 <li>
@@ -54,7 +56,7 @@
             <h4 class="text-base text-neutral-500 tracking-wide uppercase">setting</h4>
             <div class="setting-links w-full flex flex-row gap-y-2 gap-x-3">
                 <NuxtLink
-                    to="/"
+                    :to="{ name: 'Home' }"
                     class="set w-full flex flex-row items-center gap-x-3 px-2 py-2 cursor-pointer hover:bg-gray-100 hover:ring-1 ring-neutral-200 rounded transition duration-200"
                 >
                     <div class="icon w-4 text-neutral-700">
