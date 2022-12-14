@@ -9,7 +9,7 @@
             <div class="hero w-full flex flex-col gap-x-1 gap-y-3 col-span-1 md:col-span-8 border-t border-neutral-300">
                 <div class="hero-links w-full flex flex-row justify-end items-center gap-x-3 md:gap-x-8">
                     <NuxtLink to="/">Home</NuxtLink>
-                    <NuxtLink to="/search">Trending Products</NuxtLink>
+                    <NuxtLink :to="{ name: 'HomeSearch' }">Trending Products</NuxtLink>
                     <NuxtLink to="/">Merchants</NuxtLink>
                 </div>
                 <div class="flex flex-col gap-y-6 md:gap-x-3 w-full">

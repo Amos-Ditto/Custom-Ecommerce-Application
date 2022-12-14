@@ -12,16 +12,22 @@ onMounted(() => {
 </script>
 <template>
     <section class="w-full flex flex-col text-dark px-8 gap-y-6">
-        <header class="flex flex-col gap-y-3 py-4">
-            <h3 class="text-xl tracking-wide font-semibold">Dashboard</h3>
-            <div class="dates flex flex-row gap-x-3 items-center w-full">
+        <header class="flex flex-col md:flex-row justify-between gap-x-3 gap-y-4 items-start md:items-center py-4 w-full">
+            <h3 class="text-2xl tracking-wide font-semibold">Dashboard</h3>
+            <div class="dates flex flex-row gap-x-3 items-center py-1 ring-1 ring-neutral-300 rounded-sm bg-zinc-50 shadow-sm">
+                <div class="date-labels flex flex-row gap-x-2 items-center relative px-2">
+                    <div class="icon w-4 text-neutral-500">
+                        <IconsCalendarIcon />
+                    </div>
+                    <small class="text-sm sm:text-base tracking-wide text-neutral-600">Dates</small>
+                </div>
                 <Datepicker
                     v-model="date"
                     range
                     multi-calendars
                     :text-size="8"
                     :enable-time-picker="false"
-                    class="text-sm bg-inherit w-[20%]"
+                    class="relative text-sm bg-inherit w-auto flex flex-row items-center gap-x-3"
                     menu-class-name="dp-custom-menu"
                 >
                     <template #dp-input="{ value }">
@@ -29,18 +35,78 @@ onMounted(() => {
                             type="text"
                             :value="value"
                             placeholder="Select date range"
-                            class="text-sm py-1.5 px-2 w-full bg-zinc-50 text-neutral-600 tracking-wide rounded ring-1 ring-neutral-200 outline-none hover:ring-[dodgerblue] focus:ring-[dodgerblue] font-sans transition duration-200"
+                            class="text-xs sm:text-sm py-1.5 px-2 w-[12rem] md:w-[13rem] bg-neutral-100 text-neutral-600 tracking-wide outline-none hover:ring-[dodgerblue] focus:ring-[dodgerblue] font-sans transition duration-200"
                         />
                     </template>
                     <template #clear-icon="{ clear }">
-                        <div class="px-2 py-1 flex items-center justify-center" @click="clear">
-                            <div class="i-carbon-close"></div>
+                        <div class="h-[20px] w-6 mr-1 flex items-center justify-center" @click="clear">
+                            <div class="i-carbon-close text-lg"></div>
                         </div>
                     </template>
                 </Datepicker>
             </div>
         </header>
-        <main class="flex flex-col w-full gap-y-2">
+        <div class="stats w-full grid grid-cols-3 gap-x-6">
+            <div class="sales px-4 py-2 min-h-[6rem] bg-gray-50 rounded-lg flex flex-row items-center gap-x-4 ring-1 ring-neutral-200">
+                <div class="logo w-14 h-14 flex items-center justify-center rounded-full bg-gray-100">
+                    <div class="icon w-8 text-amber-400">
+                        <IconsCartIcon />
+                    </div>
+                </div>
+                <div class="stats-context flex flex-col gap-y-2">
+                    <h5 class="text-base text-neutral-500 tracking-wide">Total Sales</h5>
+                    <div class="stats-figures flex flex-row gap-x-8 items-center">
+                        <div class="figure">
+                            <span class="text-2xl tracking-wide font-bold">263k</span>
+                        </div>
+                        <div class="percentage flex flex-row items-center gap-x-0.5">
+                            <div class="i-carbon-arrow-up text-teal-500 text-base"></div>
+                            <small class="text-sm tracking-wide text-teal-500">15.6%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="visitors px-4 py-2 min-h-[6rem] bg-gray-50 rounded-lg flex flex-row items-center gap-x-4 ring-1 ring-neutral-200">
+                <div class="logo w-14 h-14 flex items-center justify-center rounded-full bg-gray-100">
+                    <div class="icon w-8 text-amber-400">
+                        <IconsUsersIcon />
+                    </div>
+                </div>
+                <div class="stats-context flex flex-col gap-y-2">
+                    <h5 class="text-base text-neutral-500 tracking-wide">Total Orders</h5>
+                    <div class="stats-figures flex flex-row gap-x-8 items-center">
+                        <div class="figure">
+                            <span class="text-2xl tracking-wide font-bold">165k</span>
+                        </div>
+                        <div class="percentage flex flex-row items-center gap-x-0.5">
+                            <div class="i-carbon-arrow-down text-tomato text-base"></div>
+                            <small class="text-sm tracking-wide text-tomato">6.2%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visitors px-4 py-2 min-h-[6rem] bg-gray-50 rounded-lg flex flex-row items-center gap-x-4 ring-1 ring-neutral-200">
+                <div class="logo w-14 h-14 flex items-center justify-center rounded-full bg-gray-100">
+                    <div class="icon w-8 text-amber-400">
+                        <IconsClipCheckIcon />
+                    </div>
+                </div>
+                <div class="stats-context flex flex-col gap-y-2">
+                    <h5 class="text-base text-neutral-500 tracking-wide">Total Visitors</h5>
+                    <div class="stats-figures flex flex-row gap-x-8 items-center">
+                        <div class="figure">
+                            <span class="text-2xl tracking-wide font-bold">2k</span>
+                        </div>
+                        <div class="percentage flex flex-row items-center gap-x-0.5">
+                            <div class="i-carbon-arrow-up text-teal-500 text-base"></div>
+                            <small class="text-sm tracking-wide text-teal-500">3.5%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <main class="flex flex-col w-full gap-y-2">
             <div class="products-context grid grid-cols-10 gap-x-2">
                 <div class="p-div col-span-8 2xl:col-span-7 ring-1 ring-neutral-200 rounded pt-3 flex flex-col gap-y-1">
                     <div class="div-nav px-3 py-2 flex flex-row justify-between items-center">
@@ -156,11 +222,19 @@ onMounted(() => {
                 </div>
                 <div class="col-span-2 2xl:col-span-3"></div>
             </div>
-        </main>
+        </main> -->
     </section>
 </template>
 
 <style scoped>
+.date-labels::after {
+    content: '';
+    @apply bg-neutral-300 w-[1px] h-[80%] absolute right-0;
+}
+
+.dates:focus-within {
+    @apply ring-orange-500;
+}
 .div-nav-links button {
     @apply tracking-wide text-sm capitalize px-3 py-1 hover:bg-gray-50 rounded hover:shadow;
     @apply first:bg-gray-50;
