@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex flex-col gap-y-3 relative h-full">
         <div
-            class="user-display w-full px-4 2xl:px-6 py-2 flex flex-row justify-between items-center border-b border-neutral-300 cursor-pointer hover:opacity-80"
+            class="user-display w-full px-2 lg:px-4 2xl:px-6 py-2 flex flex-row justify-between items-center border-b border-neutral-300 cursor-pointer hover:opacity-80"
         >
             <div class="user-name flex flex-row gap-x-2 items-center">
                 <img src="~/assets/images/Logo.webp" alt="" class="w-12 2xl:w-14 h-10 2xl:h-12 p-1" />
@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="menu-context flex flex-col gap-y-2 px-2 2xl:px-3">
-            <div class="user-display w-full px-3 py-2 flex flex-row justify-between items-center">
+            <div class="user-display w-full px-1 lg:px-3 py-2 flex flex-row justify-between items-center">
                 <span class="text-neutral-500 text-base uppercase tracking-wide">menu</span>
                 <div class="i-carbon-add text-neutral-600 text-lg"></div>
             </div>
@@ -61,7 +61,7 @@
         </div>
         <div class="settings w-full absolute left-0 bottom-2 px-4 flex flex-col gap-y-4 border-t border-neutral-300 py-3">
             <h4 class="text-base text-neutral-500 tracking-wide uppercase">setting</h4>
-            <div class="setting-links w-full flex flex-row gap-y-2 gap-x-3">
+            <div class="setting-links w-full flex flex-col lg:flex-row gap-y-2 gap-x-3">
                 <NuxtLink
                     :to="{ name: 'Home' }"
                     class="set w-full flex flex-row items-center gap-x-3 px-2 py-2 cursor-pointer hover:bg-gray-200 hover:ring-1 ring-neutral-300 rounded transition duration-200"
@@ -86,7 +86,7 @@
 
 <style scoped>
 .menu-context ul li a {
-    @apply px-4 py-2 flex flex-row gap-x-3 items-center hover:ring-1 ring-neutral-200 hover:bg-gray-100 cursor-pointer transition duration-200 rounded-sm;
+    @apply px-2 lg:px-4 py-2 flex flex-row gap-x-3 items-center hover:ring-1 ring-neutral-200 hover:bg-gray-100 cursor-pointer transition duration-200 rounded-sm;
 }
 .menu-context ul li .router-link-exact-active {
     @apply ring-1 bg-gray-100;
