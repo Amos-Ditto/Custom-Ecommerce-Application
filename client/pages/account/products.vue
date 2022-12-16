@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import { QuillEditor } from '@vueup/vue-quill';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 const emptyproducts = ref<boolean>(false);
+
+const description = ref<string>('<p>Content of the editor.</p>');
 </script>
 <template>
     <section class="w-full flex flex-col text-dark px-2 sm:px-4 md:px-8 gap-y-6">
@@ -32,26 +37,25 @@ const emptyproducts = ref<boolean>(false);
                 <h3 class="text-xl sm:text-2xl font-bold tracking-wide">Add product</h3>
             </header>
             <div class="form-body grid grid-cols-10 gap-x-4 gap-y-4">
-                <div class="main-forms col-span-6 flex flex-col gap-y-4">
-                    <div class="title w-full min-h-[6rem] flex flex-col gap-y-2 px-4 py-4 rounded bg-gray-50 shadow">
+                <div class="main-forms col-span-6 flex flex-col gap-y-8">
+                    <div class="title w-full min-h-[6rem] flex flex-col gap-y-3 px-4 py-4 rounded bg-gray-50 shadow">
                         <div class="name flex flex-col w-full gap-y-2">
                             <h5 class="text-base tracking-wide">Title</h5>
                             <input type="text" name="name" id="name" />
                         </div>
                         <div class="name flex flex-col w-full gap-y-2">
                             <h5 class="text-base tracking-wide">Description</h5>
-                            <textarea
-                                name="description"
-                                id="description"
-                                cols="30"
-                                rows="10"
-                                class="outline-none tracking-wide text-base ring-1 ring-neutral-200 rounded py-1.5 px-2 hover:ring-neutral-400 focus:ring-neutral-400 transition duration-200"
-                            ></textarea>
+                            <ClientOnly>
+                                <QuillEditor theme="snow" toolbar="full" v-model:content="description" class="min-h-[12rem]" />
+                            </ClientOnly>
                         </div>
                     </div>
 
                     <div class="media w-full min-h-[6rem] flex flex-col gap-y-2 px-4 py-4 rounded bg-gray-50 shadow">
                         <h5 class="text-base tracking-wide">Media</h5>
+                        <div
+                            class="imgs grid grid-cols-4 w-full min-h-[8rem] border-dashed border border-neutral-400 rounded-md px-3 py-2"
+                        ></div>
                     </div>
                 </div>
             </div>
