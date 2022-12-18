@@ -2,12 +2,17 @@
 import { QuillEditor } from '@vueup/vue-quill';
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
+const emits = defineEmits<{
+    (e: 'toggleAddProductsForm'): void;
+}>();
+
 const description = ref<string>('<p>Content of the editor.</p>');
 </script>
 <template>
     <main class="w-full flex flex-col gap-y-4 py-6">
         <header class="w-full items-center flex gap-x-4 flex-row">
             <div
+                @click="emits('toggleAddProductsForm')"
                 class="icon p-1 rounded-sm flex items-center justify-center ring-1 ring-neutral-300 cursor-pointer hover:bg-neutral-100 hover:opacity-80"
             >
                 <div class="i-carbon-arrow-left text-neutral-700 text-xl sm:text-2xl"></div>

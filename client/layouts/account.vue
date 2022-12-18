@@ -23,11 +23,11 @@ const toggleAccountSideBar = (): void => {
                 v-if="storelayout.account_side_toggle"
                 class="w-screen z-40 fixed top-0 bottom-0 left-0 right-0 md:hidden py-2 border-r border-neutral-300 h-full grid grid-cols-10 grid-rows-1"
             >
-                <LayoutAccountSidebar class="col-span-8 bg-gray-50" />
-                <div @click="toggleAccountSideBar" class="closing-toggle col-span-2 bg-gray-400 opacity-5"></div>
+                <LayoutAccountSidebar class="col-span-7 bg-gray-50" />
+                <div @click="toggleAccountSideBar" class="closing-toggle col-span-3 bg-gray-400 opacity-5"></div>
                 <div
                     @click="toggleAccountSideBar"
-                    class="close p-2 rounded-full bg-gray-300 bg-opacity-90 hover:bg-opacity-75 cursor-pointer flex items-center justify-center absolute right-[11%] top-[10%]"
+                    class="close p-2 rounded-full bg-gray-200 bg-opacity-90 hover:bg-opacity-75 cursor-pointer flex items-center justify-center absolute right-[21%] top-[1%]"
                 >
                     <div class="i-carbon-close text-2xl text-neutral-700"></div>
                 </div>
