@@ -20,19 +20,68 @@
                 </button>
             </fieldset>
             <div class="md:col-span-4 flex flex-row items-center justify-end gap-x-4 sm:gap-x-8">
-                <div class="account flex flex-row items-center gap-x-1 relative pl-2 lg:pl-3 cursor-pointer">
-                    <div class="icon">
-                        <div class="icon w-7 sm:w-8 text-neutral-700">
-                            <IconsAccountIcon />
+                <div class="account relative px-3 py-2">
+                    <div class="account-display flex flex-row items-center gap-x-1 cursor-pointer">
+                        <div class="icon">
+                            <div class="icon w-7 sm:w-8 text-neutral-700">
+                                <IconsAccountIcon />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-0">
+                            <small
+                                class="text-xs font-light text-neutral-500 tracking-wide flex flex-row gap-x-0.5 items-center transition-colors duration-200 truncate"
+                            >
+                                Sign In
+                                <div class="i-carbon-chevron-down"></div
+                            ></small>
+                            <small class="text-xs sm:text-sm font-bold text-dark tracking-wide">Account</small>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-y-0">
-                        <small
-                            class="text-xs font-light text-neutral-500 tracking-wide flex flex-row gap-x-0.5 items-center transition-colors duration-200"
-                            >Sign in
-                            <div class="i-carbon-chevron-down"></div
-                        ></small>
-                        <small class="text-xs sm:text-sm font-bold text-dark tracking-wide">Account</small>
+                    <div
+                        class="account-dropdown flex flex-col min-w-[13.5rem] w-auto min-h-[10rem] bg-white shadow rounded z-40 py-3 absolute top-[102%] right-0"
+                    >
+                        <div class="sign-auth flex flex-col gap-y-2.5 px-3 pb-2 border-b border-neutral-200 w-full">
+                            <small class="text-base font-light text-neutral-600">Welcome to Odaplace!</small>
+                            <div class="auth-options flex flex-row justify-between gap-x-2 items-center">
+                                <button
+                                    class="px-5 py-1.5 text-sm tracking-wide rounded-sm bg-orange-500 bg-opacity-80 hover:bg-opacity-100 text-gray-50 font-semibold transition duration-200"
+                                >
+                                    Sign Up
+                                </button>
+                                <button
+                                    class="px-5 py-1.5 text-sm tracking-wide rounded-sm bg-orange-600 bg-opacity-10 font-semibold hover:bg-opacity-20 transition duration-200"
+                                >
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="w-full flex flex-col gap-y-1">
+                            <li>
+                                <div class="w-4 scale-110 text-neutral-700">
+                                    <IconsBoxIcon />
+                                </div>
+                                <span>My Orders</span>
+                            </li>
+                            <li>
+                                <div class="w-4 scale-110 text-neutral-700">
+                                    <IconsHeartIcon />
+                                </div>
+                                <span>My Favorite</span>
+                            </li>
+                            <li>
+                                <div class="w-4 scale-110 text-neutral-700">
+                                    <IconsUserIcon />
+                                </div>
+                                <span>My Account</span>
+                            </li>
+
+                            <li>
+                                <div class="w-4 scale-110 text-neutral-700">
+                                    <IconsHomeCogIcon />
+                                </div>
+                                <span>Merchant</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div
@@ -66,14 +115,21 @@
     @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm hover:ring-amber-500 focus:ring-amber-500 transition duration-200;
 }
 .nav-links input[type='search'],
-.nav-links button {
+.nav-links fieldset button {
     @apply h-full box-content py-1;
 }
 
-.account:hover small {
+.account-display:hover small {
     @apply first:text-amber-500;
 }
 .cart:hover .icon {
     @apply text-amber-500;
+}
+
+.account-dropdown ul li {
+    @apply flex flex-row gap-x-2 items-center px-3 py-2 hover:bg-gray-200 transition duration-200 cursor-pointer;
+}
+.account-dropdown ul li span {
+    @apply text-sm font-light tracking-wide text-neutral-700;
 }
 </style>

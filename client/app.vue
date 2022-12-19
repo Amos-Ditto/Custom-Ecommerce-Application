@@ -1,7 +1,12 @@
+<script setup lang="ts">
+import { useLayoutStore } from './store/layoutStore';
+
+const storelayout = useLayoutStore();
+</script>
 <template>
     <main>
         <NuxtPage />
-        <AuthenticationAuthContainer />
+        <AuthenticationAuthContainer v-if="storelayout.showauth" />
     </main>
 </template>
 

@@ -7,8 +7,15 @@ export const useLayoutStore = defineStore('layout', () => {
         account_side_toggle.value = !account_side_toggle.value;
     };
 
+    // Authentications
+    const showauth = ref<boolean>(false);
+    const toggleAuth = (): void => {
+        showauth.value = !showauth.value;
+    };
     return {
         account_side_toggle,
         toggleAccountSideBar,
+        showauth,
+        toggleAuth,
     };
 });
