@@ -1,9 +1,41 @@
+<script setup lang="ts">
+import { useLayoutStore } from '~~/store/layoutStore';
+
+const storelayout = useLayoutStore();
+const showauthdropdown = ref<boolean>(false);
+const showcartdropdown = ref<boolean>(false);
+
+const toggleAuthDropDown = (): void => {
+    showauthdropdown.value = !showauthdropdown.value;
+};
+const checkDropDownToggle = (): void => {
+    if (showauthdropdown.value) {
+        showauthdropdown.value = !showauthdropdown.value;
+    } else if (showcartdropdown.value) {
+        showcartdropdown.value = !showcartdropdown.value;
+    } else {
+        return;
+    }
+};
+
+const openLogin = (): void => {
+    storelayout.toggleAuthType(false);
+    showauthdropdown.value = !showauthdropdown.value;
+    storelayout.closeAuth(true);
+};
+
+const openSignUp = (): void => {
+    storelayout.toggleAuthType(true);
+    showauthdropdown.value = !showauthdropdown.value;
+    storelayout.closeAuth(true);
+};
+</script>
 <template>
     <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-2.5 sm:py-4">
         <div class="label col-span-4 md:col-span-2">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-8 w-full pr-2">
                 <img src="@/assets/images/Logo.webp" alt="" class="w-10 ms:w-12 lg:w-14 h-10 lg:h-12 p-1" />
-                <span class="text-dark text-lg lg:text-xl font-light sm:font-semibold tracking-wide">Odaplace</span>
+                <span class="text-dark text-xl font-semibold tracking-wide">Odaplace</span>
             </NuxtLink>
         </div>
         <div class="nav-links col-span-6 md:col-span-8 grid grid-cols-1 md:grid-cols-10 items-center pl-1">
@@ -21,7 +53,7 @@
             </fieldset>
             <div class="md:col-span-4 flex flex-row items-center justify-end gap-x-4 sm:gap-x-8">
                 <div class="account relative px-3 py-2">
-                    <div class="account-display flex flex-row items-center gap-x-1 cursor-pointer">
+                    <div @click="toggleAuthDropDown" class="account-display flex flex-row items-center gap-x-1 cursor-pointer">
                         <div class="icon">
                             <div class="icon w-7 sm:w-8 text-neutral-700">
                                 <IconsAccountIcon />
@@ -32,81 +64,56 @@
                                 class="text-xs font-light text-neutral-500 tracking-wide flex flex-row gap-x-0.5 items-center transition-colors duration-200 truncate"
                             >
                                 Sign In
-                                <div class="i-carbon-chevron-down"></div
+                                <div
+                                    class="i-carbon-chevron-down transition-transform duration-200"
+                                    :class="showauthdropdown && 'rotate-180'"
+                                ></div
                             ></small>
                             <small class="text-xs sm:text-sm font-bold text-dark tracking-wide">Account</small>
                         </div>
                     </div>
-                    <div
-                        class="account-dropdown flex flex-col min-w-[13.5rem] w-auto min-h-[10rem] bg-white shadow rounded z-40 py-3 absolute top-[102%] right-0"
-                    >
-                        <div class="sign-auth flex flex-col gap-y-2.5 px-3 pb-2 border-b border-neutral-200 w-full">
-                            <small class="text-base font-light text-neutral-600">Welcome to Odaplace!</small>
-                            <div class="auth-options flex flex-row justify-between gap-x-2 items-center">
-                                <button
-                                    class="px-5 py-1.5 text-sm tracking-wide rounded-sm bg-orange-500 bg-opacity-80 hover:bg-opacity-100 text-gray-50 font-semibold transition duration-200"
-                                >
-                                    Sign Up
-                                </button>
-                                <button
-                                    class="px-5 py-1.5 text-sm tracking-wide rounded-sm bg-orange-600 bg-opacity-10 font-semibold hover:bg-opacity-20 transition duration-200"
-                                >
-                                    Login
-                                </button>
-                            </div>
-                        </div>
-                        <ul class="w-full flex flex-col gap-y-1">
-                            <li>
-                                <div class="w-4 scale-110 text-neutral-700">
-                                    <IconsBoxIcon />
-                                </div>
-                                <span>My Orders</span>
-                            </li>
-                            <li>
-                                <div class="w-4 scale-110 text-neutral-700">
-                                    <IconsHeartIcon />
-                                </div>
-                                <span>My Favorite</span>
-                            </li>
-                            <li>
-                                <div class="w-4 scale-110 text-neutral-700">
-                                    <IconsUserIcon />
-                                </div>
-                                <span>My Account</span>
-                            </li>
-
-                            <li>
-                                <div class="w-4 scale-110 text-neutral-700">
-                                    <IconsHomeCogIcon />
-                                </div>
-                                <span>Merchant</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <Transition name="drop-down">
+                        <DropdownsAccountDropDown v-if="showauthdropdown" @open-login="openLogin" @open-sign-up="openSignUp" />
+                    </Transition>
                 </div>
-                <div
-                    class="cart flex flex-row items-center gap-x-1 relative pl-2 lg:pl-3 cursor-pointer hover:opacity-80 transition duration-200"
-                >
-                    <div class="icon">
-                        <div class="icon w-7 sm:w-8 text-neutral-700 relative transition-colors duration-200">
-                            <IconsCartIcon />
+                <div class="cart px-3 py-2">
+                    <div
+                        @click="showcartdropdown = !showcartdropdown"
+                        class="cart-display flex flex-row items-center gap-x-1 cursor-pointer hover:opacity-80 transition duration-200"
+                    >
+                        <div class="icon">
                             <div
-                                class="count -top-2 -right-0.5 absolute px-1.5 sm:px-2 py-0.5 sm:py-1 bg-orange-400 rounded-full flex items-center justify-center"
+                                class="icon w-7 sm:w-8 text-neutral-700 relative transition-colors duration-200"
+                                :class="showcartdropdown && 'text-amber-500'"
                             >
-                                <small class="text-xs text-gray-50">0</small>
+                                <IconsCartIcon />
+                                <div
+                                    class="count -top-2 -right-0.5 absolute px-1.5 sm:px-2 py-0.5 sm:py-1 bg-orange-400 rounded-full flex items-center justify-center"
+                                >
+                                    <small class="text-xs text-gray-50">0</small>
+                                </div>
                             </div>
                         </div>
+                        <div class="flex flex-col gap-y-0">
+                            <small
+                                class="text-xs font-light text-neutral-500 tracking-wide flex flex-row items-center transition-colors duration-200"
+                                >Total</small
+                            >
+                            <small class="text-xs sm:text-sm font-bold text-dark tracking-wide">$ 0.0</small>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-y-0">
-                        <small
-                            class="text-xs font-light text-neutral-500 tracking-wide flex flex-row items-center transition-colors duration-200"
-                            >Total</small
-                        >
-                        <small class="text-xs sm:text-sm font-bold text-dark tracking-wide">$ 0.0</small>
-                    </div>
+                    <Transition name="slide-right">
+                        <DropdownsCartDropDown v-if="showcartdropdown" />
+                    </Transition>
                 </div>
             </div>
         </div>
+        <div
+            v-if="showauthdropdown || showcartdropdown"
+            @click="checkDropDownToggle"
+            class="drop-down-toggle-container fixed top-0 bottom-0 right-0 left-0 bg-gray-400 z-40"
+            :class="showcartdropdown ? 'bg-opacity-20' : 'bg-opacity-0'"
+        ></div>
     </div>
 </template>
 
@@ -122,14 +129,31 @@
 .account-display:hover small {
     @apply first:text-amber-500;
 }
-.cart:hover .icon {
+.cart-display:hover .icon {
     @apply text-amber-500;
 }
 
-.account-dropdown ul li {
-    @apply flex flex-row gap-x-2 items-center px-3 py-2 hover:bg-gray-200 transition duration-200 cursor-pointer;
+.drop-down-enter-from {
+    @apply -translate-y-2 opacity-5;
 }
-.account-dropdown ul li span {
-    @apply text-sm font-light tracking-wide text-neutral-700;
+.drop-down-leave-to {
+    @apply opacity-0 translate-y-1;
+}
+
+.drop-down-enter-active,
+.drop-down-leave-active {
+    @apply transition duration-200;
+}
+
+.slide-right-enter-from {
+    @apply translate-x-full opacity-5;
+}
+.slide-right-leave-to {
+    @apply opacity-0 translate-x-full;
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+    @apply transition duration-500;
 }
 </style>

@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { useLayoutStore } from '~~/store/layoutStore';
+
+const storelayout = useLayoutStore();
+</script>
 <template>
     <div class="register-container flex flex-col gap-y-10">
         <div class="header w-full flex flex-col gap-y-1 px-[1.8rem] py-[1rem] items-center justify-center">
@@ -70,7 +75,11 @@
         <div class="not-registered w-full flex flex-col items-center justify-center gap-y-4 py-3 bg-gray-100 rounded-b">
             <div class="flex flex-row gap-x-2">
                 <small class="text-base text-neutral-600 font-semibold">Already have an account?</small>
-                <span class="text-[steelblue] text-base tracking-wide font-semibold">Log In</span>
+                <span
+                    @click="storelayout.toggleAuthType(true)"
+                    class="text-[dodgerblue] text-base tracking-wide font-semibold hover:text-[steelblue] transition-colors duration-200 cursor-pointer"
+                    >Log In</span
+                >
             </div>
             <p class="text-xs text-neutral-500">I accept the site Terms of Service and agree to the Privacy Policy.</p>
         </div>
