@@ -1,8 +1,8 @@
-import presetIcons from '@unocss/preset-icons'
+import presetIcons from '@unocss/preset-icons';
 
 export default defineNuxtConfig({
     css: ['~/assets/css/tailwind.css'],
-    modules: ['@nuxtjs/tailwindcss', '@unocss/nuxt', '@nuxtjs/color-mode'],
+    modules: ['@nuxtjs/tailwindcss', '@unocss/nuxt', '@nuxtjs/color-mode', '@pinia/nuxt'],
     colorMode: {
         classSuffix: '',
     },
@@ -21,4 +21,4 @@ export default defineNuxtConfig({
         icons: true,
         presets: [presetIcons({})],
     },
-})
+});

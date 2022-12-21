@@ -11,11 +11,11 @@ onMounted(() => {
 });
 </script>
 <template>
-    <section class="w-full flex flex-col text-dark px-8 gap-y-6">
-        <header class="flex flex-col md:flex-row justify-between gap-x-3 gap-y-4 items-start md:items-center py-4 w-full">
+    <section class="w-full flex flex-col text-dark px-4 lg:px-8 gap-y-4 sm:gap-y-6">
+        <header class="flex flex-col sm:flex-row justify-between gap-x-3 gap-y-8 items-start md:items-center py-4 w-full">
             <h3 class="text-2xl tracking-wide font-semibold">Dashboard</h3>
             <div class="dates flex flex-row gap-x-3 items-center py-1 ring-1 ring-neutral-300 rounded-sm bg-zinc-50 shadow-sm">
-                <div class="date-labels flex flex-row gap-x-2 items-center relative px-2">
+                <div class="date-labels flex flex-row gap-x-1 ms:gap-x-2 items-center relative px-2">
                     <div class="icon w-4 text-neutral-500">
                         <IconsCalendarIcon />
                     </div>
@@ -35,7 +35,7 @@ onMounted(() => {
                             type="text"
                             :value="value"
                             placeholder="Select date range"
-                            class="text-xs sm:text-sm py-1.5 px-2 w-[12rem] md:w-[13rem] bg-neutral-100 text-neutral-600 tracking-wide outline-none hover:ring-[dodgerblue] focus:ring-[dodgerblue] font-sans transition duration-200"
+                            class="text-sm py-1.5 px-2 w-[13rem] bg-neutral-100 text-neutral-600 tracking-wide outline-none hover:ring-[dodgerblue] focus:ring-[dodgerblue] font-sans transition duration-200"
                         />
                     </template>
                     <template #clear-icon="{ clear }">
@@ -46,7 +46,7 @@ onMounted(() => {
                 </Datepicker>
             </div>
         </header>
-        <div class="stats w-full grid grid-cols-3 gap-x-6">
+        <div class="stats w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
             <div class="sales px-4 py-2 min-h-[6rem] bg-gray-50 rounded-lg flex flex-row items-center gap-x-4 ring-1 ring-neutral-200">
                 <div class="logo w-14 h-14 flex items-center justify-center rounded-full bg-gray-100">
                     <div class="icon w-8 text-amber-400">

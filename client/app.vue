@@ -1,6 +1,14 @@
+<script setup lang="ts">
+import { useLayoutStore } from './store/layoutStore';
+
+const storelayout = useLayoutStore();
+</script>
 <template>
     <main>
         <NuxtPage />
+        <Transition name="auth-pop-up">
+            <AuthenticationAuthContainer v-if="storelayout.showauth" />
+        </Transition>
     </main>
 </template>
 
@@ -28,6 +36,18 @@ body {
     @apply -translate-y-0.5;
 }
 .page-leave-to {
+    opacity: 0;
+}
+
+.auth-pop-up-enter-active,
+.auth-pop-up-leave-active {
+    transition: all 0.4s;
+}
+.auth-pop-up-enter-from {
+    opacity: 0;
+    @apply scale-50;
+}
+.auth-pop-up-leave-to {
     opacity: 0;
 }
 

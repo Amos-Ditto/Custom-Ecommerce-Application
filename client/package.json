@@ -27,7 +27,9 @@
     "prettier": "^2.8.0"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
     "@vuepic/vue-datepicker": "^3.6.1",
+    "@vueup/vue-quill": "^1.0.0",
     "tw-elements": "^1.0.0-alpha13"
   }
 }
