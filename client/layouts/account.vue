@@ -23,11 +23,11 @@ const toggleAccountSideBar = (): void => {
                 v-if="storelayout.account_side_toggle"
                 class="w-screen z-40 fixed top-0 bottom-0 left-0 right-0 md:hidden py-2 border-r border-neutral-300 h-full grid grid-cols-10 grid-rows-1"
             >
-                <LayoutAccountSidebar class="col-span-7 bg-gray-50" />
-                <div @click="toggleAccountSideBar" class="closing-toggle col-span-3 bg-gray-400 opacity-5"></div>
+                <LayoutAccountSidebar class="col-span-5 bg-gray-50" />
+                <div @click="toggleAccountSideBar" class="closing-toggle col-span-5 bg-gray-400 opacity-5"></div>
                 <div
                     @click="toggleAccountSideBar"
-                    class="close p-2 rounded-full bg-gray-200 bg-opacity-90 hover:bg-opacity-75 cursor-pointer flex items-center justify-center absolute right-[21%] top-[1%]"
+                    class="close p-2 rounded-full bg-gray-200 bg-opacity-90 hover:bg-opacity-75 cursor-pointer flex items-center justify-center absolute right-[42%] top-[1%]"
                 >
                     <div class="i-carbon-close text-2xl text-neutral-700"></div>
                 </div>
@@ -37,16 +37,15 @@ const toggleAccountSideBar = (): void => {
 </template>
 
 <style scoped>
-/* we will explain what these classes do next! */
-.v-enter-active,
-.v-leave-active {
-    transition: opacity 0.15s ease, right 0.25s ease, left 0.25s ease;
+.v-enter-from {
+    @apply -translate-x-full opacity-5;
+}
+.v-leave-to {
+    @apply opacity-0 -translate-x-full;
 }
 
-.v-enter-from,
-.v-leave-to {
-    /* opacity: 0;
-    transform: translateX(0%); */
-    @apply opacity-5 right-full -left-full top-0 bottom-0;
+.v-enter-active,
+.v-leave-active {
+    @apply transition duration-500;
 }
 </style>

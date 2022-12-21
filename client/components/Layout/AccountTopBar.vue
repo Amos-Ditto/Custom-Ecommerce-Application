@@ -8,9 +8,7 @@ const toggleAccountSideBar = (): void => {
 };
 </script>
 <template>
-    <nav
-        class="w-full text-dark flex flex-row items-center justify-between px-4 2xl:px-6 py-1 md:py-3 lg:py-4 border-b border-neutral-300 bg-inherit z-30"
-    >
+    <nav class="w-full text-dark flex flex-row items-center justify-between px-4 2xl:px-6 py-3 border-b border-neutral-300 bg-inherit z-30">
         <div class="left flex flex-row gap-x-4 items-center">
             <div
                 @click="toggleAccountSideBar"

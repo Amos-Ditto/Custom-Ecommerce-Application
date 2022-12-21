@@ -16,35 +16,10 @@
                     <div class="h-[18rem] md:-h-[22rem] xl:h-[24rem] rounded w-full">
                         <HeroCarousel />
                     </div>
-                    <!-- <div class="other-descriptions col-span-3 grid lg:grid-rows-2 grid-cols-1 gap-y-3">
-                        <div class="shop px-2 py-2 bg-orange-600 flex flex-col-reverse gap-y-4 justify-center items-center rounded">
-                            <article class="w-full flex flex-col text-center items-center gap-y-2.5">
-                                <p class="text-xl lg:text-lg font-bold text-gray-100 font-hand">Sell fast with less work</p>
-                                <button
-                                    class="text-base xl:text-lg ring-1 ring-gray-100 tracking-wide text-gray-100 px-12 py-0.5 rounded-sm flex flex-row items-center gap-x-4 md:gap-x-2"
-                                >
-                                    <span class="">Sell</span>
-                                    <div class="i-carbon-arrow-right transition-transform duration-200"></div>
-                                </button>
-                            </article>
-                            <div class="banner w-full flex items-center justify-center">
-                                <img src="~/assets/images/trade_in_banner_icons_white.webp" alt="" class="max-h-[65px]" />
-                            </div>
-                        </div>
-                        <div class="shop bg-purple-900 rounded flex items-center justify-center">
-                            <img src="~/assets/images/use_flow.webp" alt="" class="w-full h-full scale-110" />
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
-        <section class="flex flex-col w-full px-2 sm:px-4 xl:px-8 2xl:px-20">
-            <div class="featured w-full flex flex-col gap-y-2">
-                <div class="featured-header w-full flex flex-row">
-                    <h3 class="text-xl sm:text-2xl font-bold text-dark tracking-wide">Featured / Best Sellers</h3>
-                </div>
-            </div>
-        </section>
+        <ContentsHomeProducts />
     </main>
 </template>
 

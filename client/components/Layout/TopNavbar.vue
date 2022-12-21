@@ -2,7 +2,7 @@
     <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-12 py-2.5 sm:py-4 border-b border-neutral-300">
         <div class="left col-span-3 md:col-span-7 2xl:col-span-6 grid grid-cols-8 lg:grid-cols-6 gap-x-32 items-center pr-1">
             <NuxtLink :to="{ name: 'Home' }" class="label flex flex-row gap-x-2 items-center col-span-8 md:col-span-1">
-                <img src="@/assets/images/Logo.webp" alt="" class="w-12 lg:w-14 h-10 lg:h-12 p-1" />
+                <img src="~/assets/images/alt-logo.svg" alt="" class="bg-orange-400 rounded-full w-10 h-10" />
                 <span class="text-dark text-lg lg:text-xl font-semibold tracking-wide">Odaplace</span>
             </NuxtLink>
             <fieldset class="col-span-5 search-bar hidden md:flex flex-row w-full items-center h-8">

@@ -6,7 +6,7 @@ useHead({
 <template>
     <div class="w-full h-full flex flex-col">
         <div id="carouselExampleIndicators" class="carousel slide relative w-full h-full" data-bs-ride="carousel">
-            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-1">
                 <button
                     type="button"
                     data-bs-target="#carouselExampleIndicators"
@@ -41,13 +41,13 @@ useHead({
                 </div>
                 <div class="carousel-item float-left w-full h-full">
                     <div
-                        class="c-body w-full h-full flex flex-col items-center justify-center bg-[url('assets/images/c-bg.webp')] bg-contain rounded-sm px-2 md:px-8"
+                        class="c-body w-full h-full flex flex-col items-start justify-center bg-[url('assets/images/c-bg.webp')] bg-contain rounded-sm px-2 md:px-8"
                     >
-                        <div class="img-component w-full h-full flex items-center justify-center">
+                        <div class="img-component w-full h-full flex items-start justify-center">
                             <img src="~/assets/images/c_2.webp" alt="" class="" />
                         </div>
                         <button
-                            class="absolute bottom-[14%] md:bottom-[12%] text-sm md:text-base tracking-wide bg-[#ff9c19] text-gray-50 px-8 py-2 rounded-sm hover:bg-opacity-90"
+                            class="absolute right-[10%] bottom-[5%] md:bottom-[12%] text-sm md:text-base tracking-wide bg-[#ff9c19] text-gray-50 px-8 py-2 rounded-sm hover:bg-opacity-90"
                         >
                             Let's start
                         </button>
@@ -55,7 +55,7 @@ useHead({
                 </div>
             </div>
             <button
-                class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -left-5 md:-left-8"
+                class="carousel-control-prev absolute w-10 h-10 top-1/2 -translate-y-1/2 flex items-center justify-center p-0 text-center border-0 bg-black bg-opacity-50 hover:bg-opacity-90 transition duration-200"
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev"
@@ -64,7 +64,7 @@ useHead({
                 <span class="visually-hidden">Previous</span>
             </button>
             <button
-                class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -right-5 md:-right-8"
+                class="carousel-control-next bg-black bg-opacity-50 hover:bg-opacity-90 absolute w-10 h-10 top-1/2 -translate-y-1/2 flex items-center justify-center p-0 text-center border-0 right-0 transition duration-200"
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next"

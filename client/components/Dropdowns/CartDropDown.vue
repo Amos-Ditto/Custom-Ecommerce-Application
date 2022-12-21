@@ -312,4 +312,20 @@
 .redirect-cart:hover .i-carbon-arrow-right {
     @apply translate-x-0.5;
 }
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+    border-radius: 32px;
+}
+::-webkit-scrollbar-corner {
+    background-color: #f9fbff;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400;
+    border-radius: 32px;
+}
+::-webkit-scrollbar-track {
+    background-color: #f9fbff;
+}
 </style>

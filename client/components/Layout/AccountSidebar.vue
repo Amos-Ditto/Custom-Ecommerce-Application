@@ -1,10 +1,10 @@
 <template>
-    <div class="w-full flex flex-col gap-y-3 relative h-full">
+    <div class="w-full flex flex-col gap-y-3 relative h-full shadow-md">
         <div
-            class="user-display w-full px-2 lg:px-4 2xl:px-6 py-2 flex flex-row justify-between items-center border-b border-neutral-300 cursor-pointer hover:opacity-80"
+            class="user-display w-full px-2 lg:px-4 2xl:px-6 py-3 md:py-2 flex flex-row justify-between items-center border-b border-neutral-300 cursor-pointer hover:opacity-80"
         >
             <div class="user-name flex flex-row gap-x-2 items-center">
-                <img src="~/assets/images/Logo.webp" alt="" class="w-12 2xl:w-14 h-10 2xl:h-12 p-1" />
+                <img src="~/assets/images/alt-logo.svg" alt="" class="bg-orange-400 rounded-full w-10 h-10" />
                 <small class="text-xl 2xl:text-xl text-dark tracking-wide font-bold">Odaplace</small>
             </div>
         </div>
