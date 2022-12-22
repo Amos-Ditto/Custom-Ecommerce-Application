@@ -13,62 +13,122 @@
             >
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Mens_1.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Mens_1.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Lap_2.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Lap_2.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Lap_3.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Lap_3.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Phone_2.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Phone_2.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Lap_4.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Lap_4.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Mens_1.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Mens_1.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Phone_2.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Phone_2.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Lap_4.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Lap_4.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Mens_1.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Mens_1.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Mens_1.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Mens_1.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Lap_2.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Lap_2.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
                 <CardsHomeProductCard>
                     <template #image>
-                        <img src="~/assets/images/Products/Lap_3.webp" alt="item" class="w-full h-full object-fill rounded-t-md" />
+                        <img
+                            src="~/assets/images/Products/Phone_3.webp"
+                            alt="item"
+                            class="w-full h-full object-fill rounded-t-md"
+                            loading="lazy"
+                        />
                     </template>
                 </CardsHomeProductCard>
             </div>

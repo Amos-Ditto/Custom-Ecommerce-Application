@@ -6,5 +6,8 @@
         <main class="w-full flex flex-col">
             <slot />
         </main>
+        <footer>
+            <LayoutFooterView />
+        </footer>
     </section>
 </template>
