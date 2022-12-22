@@ -10,6 +10,11 @@ const home_links = {
             component: () => import('~/pages/index/index.vue'),
             name: 'Home',
         },
+        {
+            path: 'item',
+            component: () => import('~/pages/index/item.vue'),
+            name: 'HomeItem',
+        },
     ],
 };
 
