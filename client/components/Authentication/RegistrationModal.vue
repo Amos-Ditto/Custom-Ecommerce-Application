@@ -72,7 +72,7 @@ const storelayout = useLayoutStore();
             </div>
         </div>
 
-        <div class="not-registered w-full flex flex-col items-center justify-center gap-y-4 py-3 bg-gray-100 rounded-b">
+        <div class="not-registered w-full flex flex-col items-center justify-center gap-y-4 py-3 px-2 bg-gray-100 rounded-b">
             <div class="flex flex-row gap-x-2">
                 <small class="text-base text-neutral-600 font-semibold">Already have an account?</small>
                 <span

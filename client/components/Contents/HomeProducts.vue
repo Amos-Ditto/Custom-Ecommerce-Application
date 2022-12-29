@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const viewItem = (): void => {
+    useRouter().push('/item');
+};
+</script>
 <template>
     <section id="home-products" class="w-full flex flex-col gap-y-2 px-2 lg:px-4 xl:px-8 2xl:px-20 pb-8">
         <div id="products-header" class="w-full flex flex-row items-center gap-x-3 px-0 md:px-4 py-2">
@@ -14,6 +19,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -24,6 +30,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Lap_2.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -34,6 +41,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Lap_3.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -44,6 +52,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Phone_2.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -54,6 +63,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Lap_4.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -64,6 +74,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -74,6 +85,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Phone_2.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -84,6 +96,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Lap_4.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -94,6 +107,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -104,6 +118,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -114,6 +129,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Lap_2.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"
@@ -124,6 +140,7 @@
                 <CardsHomeProductCard>
                     <template #image>
                         <img
+                            @click="viewItem"
                             src="~/assets/images/Products/Phone_3.webp"
                             alt="item"
                             class="w-full h-full object-fill rounded-t-md"

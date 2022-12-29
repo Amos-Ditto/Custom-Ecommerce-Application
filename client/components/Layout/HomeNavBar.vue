@@ -31,11 +31,11 @@ const openSignUp = (): void => {
 };
 </script>
 <template>
-    <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-2 sm:py-4">
+    <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-2 sm:py-4 shadow sm:shadow-none bg-gray-50 sm:bg-inherit">
         <div class="label col-span-4 md:col-span-2">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-8 w-full pr-2">
-                <img src="~/assets/images/alt-logo.svg" alt="" class="bg-orange-400 rounded-full w-10 h-10" />
                 <span class="text-dark text-xl font-semibold tracking-wide">Odaplace</span>
+                <img src="~/assets/images/alt-logo.svg" alt="" class="bg-orange-400 rounded-full w-10 h-10" />
             </NuxtLink>
         </div>
         <div class="nav-links col-span-6 md:col-span-8 grid grid-cols-1 md:grid-cols-10 items-center pl-1">
