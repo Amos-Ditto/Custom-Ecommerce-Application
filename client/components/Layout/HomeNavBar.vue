@@ -18,13 +18,13 @@ const checkDropDownToggle = (): void => {
     }
 };
 
-const openLogin = (): void => {
+const openSignUp = (): void => {
     storelayout.toggleAuthType(false);
     showauthdropdown.value = !showauthdropdown.value;
     storelayout.closeAuth(true);
 };
 
-const openSignUp = (): void => {
+const openLogin = (): void => {
     storelayout.toggleAuthType(true);
     showauthdropdown.value = !showauthdropdown.value;
     storelayout.closeAuth(true);

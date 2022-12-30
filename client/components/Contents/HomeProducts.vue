@@ -6,10 +6,10 @@ const viewItem = (): void => {
 <template>
     <section id="home-products" class="w-full flex flex-col gap-y-2 px-2 lg:px-4 xl:px-8 2xl:px-20 pb-8">
         <div id="products-header" class="w-full flex flex-row items-center gap-x-3 px-0 md:px-4 py-2">
-            <div class="w-6 h-6 flex items-center justify-center">
+            <div class="w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center">
                 <img src="~/assets/images/Icons/icon_hot.webp" alt="" class="w-full h-full" />
             </div>
-            <h3 class="text-xl sm:text-xl font-bold text-dark tracking-wide">Featured</h3>
+            <h3 class="text-lg sm:text-xl font-bold text-dark tracking-wide">Featured</h3>
         </div>
         <div id="list-products" class="w-full flex flex-col gap-y-2 gap-x-4 px-0 md:px-4">
             <div
@@ -22,7 +22,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -33,7 +33,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Lap_2.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -44,7 +44,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Lap_3.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -55,7 +55,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Phone_2.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -66,7 +66,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Lap_4.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -77,7 +77,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -88,7 +88,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Phone_2.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -99,7 +99,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Lap_4.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -110,7 +110,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -121,7 +121,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Mens_1.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -132,7 +132,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Lap_2.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>
@@ -143,7 +143,7 @@ const viewItem = (): void => {
                             @click="viewItem"
                             src="~/assets/images/Products/Phone_3.webp"
                             alt="item"
-                            class="w-full h-full object-fill rounded-t-md"
+                            class="w-full h-full object-fill rounded-t"
                             loading="lazy"
                         />
                     </template>

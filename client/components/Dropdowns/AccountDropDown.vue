@@ -9,20 +9,32 @@ const emits = defineEmits<{
         class="account-dropdown flex flex-col min-w-[13.5rem] w-auto min-h-[10rem] bg-white shadow rounded z-50 py-3 absolute top-[102%] right-0"
     >
         <div class="sign-auth flex flex-col gap-y-2.5 px-3 pb-2 border-b border-neutral-200 w-full">
-            <small class="text-base font-light text-neutral-600">Welcome to Odaplace!</small>
+            <small class="text-sm sm:text-base font-light text-neutral-600">Welcome to Odaplace!</small>
             <div class="auth-options flex flex-row justify-between gap-x-2 items-center">
-                <button
+                <!-- <button
                     @click="emits('openLogin')"
                     class="px-5 py-1.5 text-sm tracking-wide rounded-sm bg-orange-500 bg-opacity-80 hover:bg-opacity-100 text-gray-50 font-semibold transition duration-200"
                 >
                     Sign Up
+                </button> -->
+                <button
+                    @click="emits('openSignUp')"
+                    class="w-full py-1.5 rounded-sm bg-amber-500 bg-opacity-90 hover:bg-opacity-100 text-gray-50 tracking-wide uppercase text-sm font-light shadow-md transition duration-200"
+                >
+                    Sign Up
                 </button>
                 <button
+                    @click="emits('openLogin')"
+                    class="w-full py-1.5 rounded-sm bg-amber-500 bg-opacity-30 hover:bg-opacity-40 text-dark tracking-wide uppercase text-sm font-light shadow-md transition duration-200"
+                >
+                    Login
+                </button>
+                <!-- <button
                     @click="emits('openSignUp')"
                     class="px-5 py-1.5 text-sm tracking-wide rounded-sm bg-orange-600 bg-opacity-10 font-semibold hover:bg-opacity-20 transition duration-200"
                 >
                     Login
-                </button>
+                </button> -->
             </div>
         </div>
         <ul class="w-full flex flex-col gap-y-1">
@@ -60,6 +72,6 @@ const emits = defineEmits<{
     @apply flex flex-row gap-x-2 items-center px-3 py-2 hover:bg-gray-200 transition duration-200 cursor-pointer;
 }
 .account-dropdown ul li span {
-    @apply text-sm font-light tracking-wide text-neutral-700;
+    @apply text-xs sm:text-sm font-light tracking-wide text-neutral-700;
 }
 </style>

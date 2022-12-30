@@ -58,7 +58,7 @@
                         <small class="text-xs text-neutral-600 font-light">Positive Feedback</small>
                     </div>
                     <button
-                        class="px-8 py-1 sm:py-2 text-xs sm:text-sm text-gray-50 tracking-wide bg-tomato rounded-3xl hover:bg-opacity-80 transition duration-200"
+                        class="px-8 py-1.5 sm:py-2 text-sm text-gray-50 tracking-wide bg-tomato rounded-3xl hover:bg-opacity-80 transition duration-200"
                     >
                         Visit Store
                     </button>

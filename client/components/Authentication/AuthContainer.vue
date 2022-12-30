@@ -4,10 +4,8 @@ import { useLayoutStore } from '~~/store/layoutStore';
 const storelayout = useLayoutStore();
 </script>
 <template>
-    <div
-        class="auth-modals fixed top-0 bottom-0 left-0 right-0 flex justify-center items-start sm:items-center z-40 overflow-y-auto py-[4rem]"
-    >
-        <div class="w-[80vw] sm:w-[28rem] bg-gray-50 shadow-md rounded z-40">
+    <div class="auth-modals fixed top-0 bottom-0 left-0 right-0 flex justify-center items-start sm:items-center z-40 overflow-y-auto py-8">
+        <div class="w-[84vw] sm:w-[28rem] bg-gray-50 shadow-md rounded z-40">
             <Transition name="slide" mode="out-in">
                 <AuthenticationLoginModal v-if="storelayout.toggleauths" />
                 <AuthenticationRegistrationModal v-else />
