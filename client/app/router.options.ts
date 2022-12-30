@@ -64,6 +64,12 @@ const account_links = {
     ],
 };
 
+const sellers_view = {
+    path: '/sellers',
+    component: () => import('~/pages/sellers/index.vue'),
+    name: 'Seller',
+};
+
 export default <RouterConfig>{
-    routes: (_routes) => [home_links, search_links, account_links],
+    routes: (_routes) => [home_links, search_links, account_links, sellers_view],
 };
