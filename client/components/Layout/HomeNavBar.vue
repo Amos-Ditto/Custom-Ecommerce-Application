@@ -31,14 +31,16 @@ const openSignUp = (): void => {
 };
 </script>
 <template>
-    <div class="w-full grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-2 sm:py-4 shadow sm:shadow-none bg-gray-50 sm:bg-inherit">
+    <div
+        class="w-full flex flex-row justify-between items-center sm:grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-4 shadow sm:shadow-none bg-gray-50 sm:bg-inherit"
+    >
         <div class="label col-span-4 md:col-span-2">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-8 w-full pr-2">
-                <span class="text-dark text-xl font-semibold tracking-wide">Odaplace</span>
+                <span class="text-dark hidden sm:block text-base sm:text-xl font-semibold tracking-wide">Odaplace</span>
                 <img src="~/assets/images/alt-logo.svg" alt="" class="bg-orange-400 rounded-full w-10 h-10" />
             </NuxtLink>
         </div>
-        <div class="nav-links col-span-6 md:col-span-8 grid grid-cols-1 md:grid-cols-10 items-center pl-1">
+        <div class="nav-links col-span-6 md:col-span-8 flex flex-row sm:grid grid-cols-1 md:grid-cols-10 justify-between items-center pl-1">
             <fieldset class="col-span-6 search-bar hidden md:flex flex-row w-full items-center h-8">
                 <input type="search" name="search" id="search" placeholder="Search for products..." />
                 <button
@@ -51,8 +53,8 @@ const openSignUp = (): void => {
                     <div class="i-carbon-search text-base text-gray-50"></div>
                 </button>
             </fieldset>
-            <div class="md:col-span-4 flex flex-row items-center justify-end gap-x-0 sm:gap-x-8">
-                <div class="account relative px-3 py-2">
+            <div class="md:col-span-4 flex flex-row items-center justify-end gap-x-1 sm:gap-x-8">
+                <div class="account relative px-2 sm:px-3">
                     <div @click="toggleAuthDropDown" class="account-display flex flex-row items-center gap-x-1 cursor-pointer">
                         <div class="icon">
                             <div class="icon w-7 sm:w-8 text-neutral-700">
@@ -76,7 +78,7 @@ const openSignUp = (): void => {
                         <DropdownsAccountDropDown v-if="showauthdropdown" @open-login="openLogin" @open-sign-up="openSignUp" />
                     </Transition>
                 </div>
-                <div class="cart px-3 py-2">
+                <div class="cart px-2 sm:px-3">
                     <div
                         @click="showcartdropdown = !showcartdropdown"
                         class="cart-display flex flex-row items-center gap-x-1 cursor-pointer hover:opacity-80 transition duration-200"
