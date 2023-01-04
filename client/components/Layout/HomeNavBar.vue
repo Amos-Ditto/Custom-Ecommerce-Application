@@ -32,7 +32,7 @@ const openLogin = (): void => {
 </script>
 <template>
     <div
-        class="w-full flex flex-row justify-between items-center sm:grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-4 shadow sm:shadow-none bg-gray-50 sm:bg-inherit"
+        class="w-full flex flex-row justify-between items-center sm:border-b border-neutral-200 sm:grid grid-cols-10 px-2 sm:px-4 xl:px-8 2xl:px-20 py-4 shadow sm:shadow-none bg-gray-50 sm:bg-inherit"
     >
         <div class="label col-span-4 md:col-span-2">
             <NuxtLink to="/" class="label flex flex-row gap-x-2 items-center col-span-8 w-full pr-2">
@@ -121,7 +121,7 @@ const openLogin = (): void => {
 
 <style scoped>
 .nav-links input[type='search'] {
-    @apply w-full px-4 ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm hover:ring-amber-500 focus:ring-amber-500 transition duration-200;
+    @apply w-full px-4 border-none ring-1 ring-neutral-300 text-base text-dark tracking-wide outline-none bg-inherit rounded-l-sm hover:ring-amber-500 focus:ring-amber-500 transition duration-200;
 }
 .nav-links input[type='search'],
 .nav-links fieldset button {

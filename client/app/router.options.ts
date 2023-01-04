@@ -15,6 +15,12 @@ const home_links = {
             component: () => import('~/pages/index/item.vue'),
             name: 'HomeItem',
         },
+
+        {
+            path: 'shoppingcart',
+            component: () => import('~/pages/index/shoppingcart.vue'),
+            name: 'ShoppingCart',
+        },
     ],
 };
 

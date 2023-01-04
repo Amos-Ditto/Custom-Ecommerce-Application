@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
     content: [
@@ -11,6 +11,7 @@ module.exports = {
         './nuxt.config.{js,ts}',
         './src/**/*.{html,js}',
         './node_modules/tw-elements/dist/js/**/*.js',
+        './node_modules/flowbite/**/*.js',
     ],
     theme: {
         extend: {
@@ -35,5 +36,5 @@ module.exports = {
         },
     },
     darkMode: 'class',
-    plugins: [require('@tailwindcss/line-clamp'), require('tw-elements/dist/plugin')],
-}
+    plugins: [require('@tailwindcss/line-clamp'), require('tw-elements/dist/plugin'), require('flowbite/plugin')],
+};

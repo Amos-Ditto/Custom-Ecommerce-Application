@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full h-full flex flex-col gap-y-1.5">
+    <section id="home-nav" class="w-full h-full flex flex-col gap-y-1.5">
         <nav>
             <LayoutHomeNavBar />
         </nav>

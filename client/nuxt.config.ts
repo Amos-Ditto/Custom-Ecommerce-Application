@@ -21,4 +21,5 @@ export default defineNuxtConfig({
         icons: true,
         presets: [presetIcons({})],
     },
+    plugins: ['@/plugins/flowbite.client.ts'],
 });
