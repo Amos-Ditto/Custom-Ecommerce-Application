@@ -1,5 +1,0 @@
-{
-    "css.lint.unknownAtRules": "ignore",
-    "vetur.format.defaultFormatter.html": "none",
-    "editor.formatOnSave": true
-}
