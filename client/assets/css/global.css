@@ -3,7 +3,7 @@ html {
 	font-size: 15px;
 }
 body {
-	overflow-y: scroll;
+	overflow-y: auto;
 	overflow-x: hidden;
 	-webkit-tap-highlight-color: transparent;
 }
@@ -12,9 +12,8 @@ body {
 	margin: 0%;
 	padding: 0%;
 	box-sizing: border-box;
-	line-height: inherit;
 	touch-action: pan-x pan-y;
-	background-color: rgb(250, 250, 250);
+	@apply bg-c-base text-neutral-800;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:focus {

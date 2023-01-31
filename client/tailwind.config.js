@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require("tailwindcss/colors");
-
 module.exports = {
 	content: ["./components/**/*.{js,vue,ts}", "./layouts/**/*.vue", "./pages/**/*.vue", "./plugins/**/*.{js,ts}", "./nuxt.config.{js,ts}"],
 	theme: {
 		extend: {
 			colors: {
-				"app-bg": "rgb(242, 236, 235)",
+				"c-base": "rgb(250, 250, 250)",
+				custom: "#F1a930",
 			},
 			transitionProperty: {
 				length: "height, width",
