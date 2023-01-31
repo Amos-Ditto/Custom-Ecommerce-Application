@@ -1,14 +1,14 @@
 <template>
 	<nav class="w-full flex flex-col z-20 sticky top-0">
 		<ContentsTopNav />
-		<div class="w-full flex flex-col px-4 md:px-8 lg:px-20 2xl:px-44 pt-2 md:pt-3 backdrop-blur-[100px] bg-base/80">
+		<div class="w-full flex flex-col px-4 md:px-8 lg:px-20 2xl:px-44 pt-2 md:pt-3 backdrop-blur-[100px] bg-c-base/80">
 			<div class="w-full flex flex-row justify-between">
 				<div class="flex flex-row items-center">
 					<NuxtImg src="/logo.png" class="mr-3 max-h-[2.2rem] sm:max-h-[2.6rem] rounded-lg shadow opacity-90" />
 					<small class="text-xl sm:text-2xl tracking-wide font-bold"><span class="text-custom">S</span>hop</small>
 				</div>
 				<!-- Search input -->
-				<div class="hidden md:block w-[40%]">
+				<div class="hidden md:block w-[50%] lg:w-[40%]">
 					<label for="search" class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
 					<div class="relative flex flex-row items-center">
 						<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -31,13 +31,13 @@
 						<input
 							type="search"
 							id="search"
-							class="block w-full p-3 pl-10 text-base text-gray-800 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
+							class="block w-full p-2 lg:p-3 pl-10 text-base text-gray-800 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
 							placeholder="Search"
 							required
 						/>
 						<button
 							type="submit"
-							class="text-white absolute right-1.5 bg-custom hover:bg-opacity-90 focus:bg-opacity-90 focus:outline-none font-medium rounded-md text-base px-4 py-2.5"
+							class="text-white absolute right-1.5 bg-custom hover:bg-opacity-90 focus:bg-opacity-90 focus:outline-none font-medium rounded-md text-base px-4 py-1.5 lg:py-2.5"
 						>
 							Search
 						</button>

@@ -11,5 +11,13 @@
 				</button>
 			</div>
 		</div>
+		<div class="flex flex-row gap-x-3 items-center w-full">
+			<div class="category flex flex-col p-2 ring-1 ring-neutral-200 rounded">
+				<div class="flex items-center min-h-[8rem] bg-gray-200"></div>
+				<div class="flex flex-col gap-y-1 mt-2.5">
+					<small class="text-sm text-neutral-600 truncate">Men clothing & Fashion</small>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
