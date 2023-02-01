@@ -31,7 +31,7 @@
 						<input
 							type="search"
 							id="search"
-							class="block w-full py-2 lg:py-3 pl-10 text-base text-gray-800 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
+							class="block w-full py-2 lg:py-3 pl-10 pr-24 text-base text-gray-800 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
 							placeholder="Search products, brands and categories"
 							required
 						/>
