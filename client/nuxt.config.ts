@@ -1,24 +1,18 @@
-import presetIcons from '@unocss/preset-icons';
-
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    css: ['~/assets/css/tailwind.css'],
-    modules: ['@nuxtjs/tailwindcss', '@unocss/nuxt', '@nuxtjs/color-mode', '@pinia/nuxt'],
-    colorMode: {
-        classSuffix: '',
-    },
-    app: {
-        head: {
-            charset: 'utf-16',
-            title: 'Market',
-            meta: [
-                { name: 'description', content: 'Buy or Sell products' },
-                { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-            ],
-        },
-        pageTransition: { name: 'page', mode: 'out-in' },
-    },
-    unocss: {
-        icons: true,
-        presets: [presetIcons({})],
-    },
+	css: ["~/assets/css/tailwind.css", "~/assets/css/global.css"],
+	modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxt/image-edge", "@nuxtjs/color-mode"],
+	app: {
+		pageTransition: { name: "page", mode: "out-in" },
+	},
+	colorMode: {
+		preference: "system", // default value of $colorMode.preference
+		fallback: "light", // fallback value if not system preference found
+		hid: "nuxt-color-mode-script",
+		globalName: "__NUXT_COLOR_MODE__",
+		componentName: "ColorScheme",
+		classPrefix: "",
+		classSuffix: "",
+		storageKey: "nuxt-color-mode",
+	},
 });
