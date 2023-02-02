@@ -3,7 +3,7 @@
 		<div class="w-full flex flex-row items-center justify-between py-1.5">
 			<h3 class="text-lg sm:text-xl md:text-2xl font-semibold dark:text-c-base">Product Categories</h3>
 			<div class="flex flex-row items-center gap-x-5">
-				<span class="h-2.5 w-12 rounded-3xl bg-custom"></span>
+				<!-- <span class="h-2 sm:h-2.5 w-12 rounded-3xl bg-custom"></span> -->
 				<button
 					class="text-sm md:text-base font-serif font-medium hover:text-custom capitalize flex flex-row items-center justify-center gap-x-1 transition-colors duration-200 dark:text-c-base dark:hover:text-custom"
 				>

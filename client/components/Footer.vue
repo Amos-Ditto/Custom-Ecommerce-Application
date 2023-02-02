@@ -13,18 +13,18 @@
 					<input
 						type="email"
 						id="email-input"
-						class="block w-full sm:w-[56%] lg:w-full p-3 text-gray-800 rounded-sm border border-gray-300 bg-gray-100 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+						class="block w-[80%] sm:w-[56%] lg:w-full p-2 md:p-3 text-gray-800 rounded-sm border border-gray-300 bg-gray-100 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
 						placeholder="mail@example.com"
 					/>
 					<button
 						type="button"
-						class="text-white bg-inherit rounded-sm ring-1 ring-custom focus:ring-4 focus:outline-none font-light text-lg px-6 py-2 text-center transition duration-200"
+						class="text-white bg-inherit rounded-sm ring-1 ring-custom focus:ring-4 focus:outline-none font-light text-base md:text-lg px-6 py-2 text-center transition duration-200"
 					>
 						Subscribe
 					</button>
 				</div>
 			</div>
-			<div class="flex flex-col gap-y-4 mt-8 lg:mt-0 border-b border-neutral-700 pb-3">
+			<div class="flex flex-col gap-y-4 mt-8 lg:mt-0 border-b border-neutral-700 lg:border-transparent pb-3">
 				<h4 class="text-base text-custom font-semibold capitalize">Useful links</h4>
 				<ul class="list hidden lg:flex flex-col gap-y-1 px-6 lg:px-0">
 					<li>Home</li>
@@ -35,7 +35,7 @@
 				</ul>
 			</div>
 
-			<div class="flex flex-col gap-y-4 border-b border-neutral-700 pb-3">
+			<div class="flex flex-col gap-y-4 border-b border-neutral-700 lg:border-transparent pb-3">
 				<h4 class="text-base text-custom font-semibold capitalize">My Account</h4>
 				<ul class="list hidden lg:flex flex-col gap-y-1 px-6 lg:px-0">
 					<li>Login</li>
@@ -44,7 +44,7 @@
 					<li>my account</li>
 				</ul>
 			</div>
-			<div class="flex flex-col gap-y-4 border-b border-neutral-700 pb-3">
+			<div class="flex flex-col gap-y-4 border-b border-neutral-700 lg:border-transparent pb-3">
 				<h4 class="text-base text-custom font-semibold capitalize">contact us</h4>
 				<div class="hidden lg:flex flex-col gap-y-4">
 					<div class="flex flex-col gap-y-1 px-6 lg:px-0">
@@ -84,7 +84,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="rules" class="w-full flex flex-row gap-x-10 items-center py-6 border-y border-neutral-700">
+		<div id="rules" class="w-full flex flex-row gap-x-5 sm:gap-x-10 items-center py-4 sm:py-6 border-y border-neutral-700">
 			<a href="#">Terms & Condition</a>
 			<a href="#">Privacy policy</a>
 		</div>
@@ -96,6 +96,6 @@
 	@apply text-sm tracking-wide capitalize text-white font-medium py-1.5 hover:opacity-90 cursor-pointer;
 }
 #rules a {
-	@apply text-base font-medium text-white;
+	@apply text-sm sm:text-base font-medium text-white;
 }
 </style>

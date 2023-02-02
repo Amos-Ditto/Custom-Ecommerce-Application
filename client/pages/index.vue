@@ -3,5 +3,8 @@
 		<ContainersHomeHero />
 		<ContainersHomeCategories />
 		<ContainersTopSales />
+		<ContainersShopsHome />
+		<ContainersTopCategories />
+		<ContainersDiscover />
 	</section>
 </template>

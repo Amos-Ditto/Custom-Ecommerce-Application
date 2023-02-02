@@ -87,7 +87,7 @@
 						<span> Computer & Accessories </span>
 					</button>
 				</div>
-				<div
+				<!-- <div
 					id="mobi-nav-links"
 					class="w-full flex md:hidden flex-row gap-x-2 overflow-x-auto py-2 px-0.5 border-t border-neutral-200 dark:border-neutral-600"
 				>
@@ -109,7 +109,7 @@
 					<button>
 						<span> Computer & Accessories </span>
 					</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</nav>
@@ -137,7 +137,7 @@
 #nav-links button:nth-child(1) {
 	background-size: 100% 2px;
 }
-
+/* 
 #mobi-nav-links button {
 	@apply px-3 py-2 bg-gray-200 rounded flex flex-row items-center dark:bg-neutral-700;
 }
@@ -153,5 +153,5 @@
 #mobi-nav-links::-webkit-scrollbar {
 	width: 0px;
 	height: 0px;
-}
+} */
 </style>
