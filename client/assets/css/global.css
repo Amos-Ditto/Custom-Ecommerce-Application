@@ -13,7 +13,7 @@ body {
 	padding: 0%;
 	box-sizing: border-box;
 	touch-action: pan-x pan-y;
-	@apply bg-c-base text-neutral-800;
+	@apply bg-c-base text-neutral-800 dark:bg-c-dark dark:text-c-mode dark:opacity-95;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:focus {

@@ -6,6 +6,8 @@ module.exports = {
 		extend: {
 			colors: {
 				"c-base": "rgb(250, 250, 250)",
+				"c-mode": "#f3f3f3",
+				"c-dark": "#191919",
 				custom: "#F1a930",
 			},
 			transitionProperty: {
@@ -15,5 +17,5 @@ module.exports = {
 		},
 	},
 	darkMode: "class",
-	plugins: [require("@tailwindcss/line-clamp")],
+	plugins: [require("@tailwindcss/line-clamp"), require("tailwindcss-dark-mode")()],
 };

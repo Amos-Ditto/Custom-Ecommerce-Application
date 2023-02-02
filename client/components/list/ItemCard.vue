@@ -2,7 +2,7 @@
 const add_favorite = ref<boolean>(false);
 </script>
 <template>
-	<div class="w-full flex flex-col py-2 px-2 ring-1 ring-neutral-200 rounded">
+	<div class="w-full flex flex-col py-2 px-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700">
 		<div class="w-full flex relative">
 			<NuxtImg src="/items/tecno.jpg" class="w-full rounded" loading="lazy" />
 			<div class="absolute top-1 -left-2">
@@ -13,11 +13,11 @@ const add_favorite = ref<boolean>(false);
 		</div>
 		<div class="flex flex-col mt-1.5 gap-y-1 w-full">
 			<div class="price flex flex-row items-center gap-x-2 w-full">
-				<span class="text-base sm:text-lg text-neutral-500 line-through font-light">$30.00</span>
-				<span class="text-base sm:text-lg text-neutral-800 font-semibold">$25.00</span>
+				<span class="text-base sm:text-lg text-neutral-500 line-through font-light dark:text-neutral-200">$30.00</span>
+				<span class="text-base sm:text-lg text-neutral-800 font-semibold dark:text-c-mode">$25.00</span>
 			</div>
 			<div class="name w-full">
-				<small class="line-clamp-2 text-sm">Asus ROG Phone 5 Dual Sim s888 Phantom</small>
+				<small class="line-clamp-2 text-sm dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</small>
 			</div>
 			<div class="w-full flex flex-row justify-between items-center">
 				<button
