@@ -27,6 +27,9 @@
 					<IconsCart />
 				</div>
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Cart</small>
+				<div class="rounded-full px-2 py-0 bg-custom absolute top-0 right-0 translate-x-[20%] -translate-y-[20%]">
+					<span class="text-c-base text-xs">0</span>
+				</div>
 			</button>
 			<button>
 				<div class="w-6 h-6">
@@ -40,6 +43,6 @@
 
 <style scoped>
 #mobi-nav button {
-	@apply flex flex-col gap-y-1 items-center justify-center px-2 py-1 text-neutral-700 hover:text-custom dark:text-c-mode dark:hover:text-custom dark:first:text-custom;
+	@apply relative flex flex-col gap-y-1 items-center justify-center px-2 py-1 text-neutral-700 hover:text-custom dark:text-c-mode dark:hover:text-custom dark:first:text-custom;
 }
 </style>
