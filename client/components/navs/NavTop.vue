@@ -59,11 +59,12 @@
 							Login
 						</NuxtLink>
 						<span class="text-sm font-normal">or</span>
-						<button
+						<NuxtLink
+							to="/auth/register"
 							class="text-base lg:text-lg font-semibold text-neutral-600 px-3 py-0.5 hover:bg-gray-100 rounded-sm dark:text-neutral-400 dark:hover:bg-inherit dark:hover:text-neutral-300 transition-colors duration-200"
 						>
 							Register
-						</button>
+						</NuxtLink>
 					</div>
 				</div>
 			</div>

@@ -18,6 +18,11 @@ export default <RouterConfig>{
 					path: "",
 					component: () => import("~/pages/auth/login.vue"),
 				},
+				{
+					name: "Register",
+					path: "register",
+					component: () => import("~/pages/auth/register.vue"),
+				},
 			],
 		},
 	],
