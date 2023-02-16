@@ -3,12 +3,12 @@
 		<ContentsTopNav />
 		<div class="w-full flex flex-col px-4 md:px-8 lg:px-20 2xl:px-44 pt-2 md:pt-3 backdrop-blur-[100px] bg-c-base/80 dark:bg-c-dark/90">
 			<div class="w-full flex flex-row justify-between">
-				<div class="flex flex-row items-center">
+				<NuxtLink to="/" class="flex flex-row items-center">
 					<NuxtImg src="/logo.png" class="mr-3 max-h-[2.2rem] sm:max-h-[2.6rem] rounded-lg shadow opacity-90" />
 					<small class="text-xl sm:text-2xl tracking-wide font-bold dark:text-c-mode"
 						><span class="text-custom">S</span>hop</small
 					>
-				</div>
+				</NuxtLink>
 				<!-- Search input -->
 				<div class="hidden md:block w-[50%] lg:w-[40%]">
 					<label for="search" class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -52,17 +52,19 @@
 						<IconsUser />
 					</div>
 					<div class="flex flex-row items-center gap-x-1 lg:gap-x-2">
-						<button
+						<NuxtLink
+							to="/auth"
 							class="text-base lg:text-lg font-semibold text-neutral-600 px-3 py-0.5 hover:bg-gray-100 rounded-sm dark:text-neutral-400 dark:hover:bg-inherit dark:hover:text-neutral-300 transition-colors duration-200"
 						>
 							Login
-						</button>
+						</NuxtLink>
 						<span class="text-sm font-normal">or</span>
-						<button
+						<NuxtLink
+							to="/auth/register"
 							class="text-base lg:text-lg font-semibold text-neutral-600 px-3 py-0.5 hover:bg-gray-100 rounded-sm dark:text-neutral-400 dark:hover:bg-inherit dark:hover:text-neutral-300 transition-colors duration-200"
 						>
 							Register
-						</button>
+						</NuxtLink>
 					</div>
 				</div>
 			</div>

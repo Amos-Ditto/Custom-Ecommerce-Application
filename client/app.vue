@@ -10,9 +10,24 @@ useHead({
 		},
 	],
 });
+if (process.client) {
+	await new Promise((resolve) => setTimeout(resolve, 2000));
+}
 </script>
 <template>
 	<NuxtLayout>
+		<NuxtLoadingIndicator />
 		<NuxtPage />
 	</NuxtLayout>
 </template>
+<style>
+.page-enter-active,
+.page-leave-active {
+	transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+	opacity: 0;
+	filter: blur(1rem);
+}
+</style>
