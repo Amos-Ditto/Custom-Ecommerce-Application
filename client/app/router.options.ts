@@ -25,5 +25,10 @@ export default <RouterConfig>{
 				},
 			],
 		},
+		{
+			name: "Products",
+			path: "/products",
+			component: () => import("~/pages/products.vue"),
+		},
 	],
 };

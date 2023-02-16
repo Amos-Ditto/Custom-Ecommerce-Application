@@ -1,8 +1,6 @@
 <template>
-	<div class="w-full flex flex-col">
-		<div
-			class="w-full flex flex-col-reverse lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-4 py-4 ring-1 ring-neutral-200 rounded shadow-md"
-		>
+	<div class="w-full flex flex-col bg-white">
+		<div class="w-full flex flex-col-reverse lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-4 py-4 ring-1 ring-neutral-200 rounded">
 			<div class="flex justify-center items-start">
 				<NuxtImg src="/register.webp" class="w-full" />
 			</div>
@@ -20,7 +18,7 @@
 							type="text"
 							name="f_name"
 							id="f_name"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
+							class="py-2.5 px-3 bg-inherit border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
 							placeholder="Full Name"
 						/>
 					</div>
@@ -30,7 +28,7 @@
 							type="text"
 							name="phone"
 							id="phone"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
+							class="py-2.5 px-3 bg-inherit border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
 							placeholder="phone number"
 						/>
 					</div>
@@ -40,7 +38,7 @@
 							type="email"
 							name="email"
 							id="email"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
+							class="py-2.5 px-3 bg-inherit border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
 							placeholder="Enter your email"
 						/>
 					</div>
@@ -50,7 +48,7 @@
 							type="password"
 							name="password"
 							id="password"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
+							class="py-2.5 px-3 bg-inherit border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
 							placeholder="Enter your password"
 						/>
 					</div>
@@ -60,7 +58,7 @@
 							type="password"
 							name="c_password"
 							id="c_password"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
+							class="py-2.5 px-3 bg-inherit border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
 							placeholder="Enter your password"
 						/>
 					</div>

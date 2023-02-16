@@ -1,8 +1,6 @@
 <template>
-	<div class="w-full flex flex-col">
-		<div
-			class="w-full flex flex-col-reverse lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-4 py-4 ring-1 ring-neutral-200 rounded shadow-md"
-		>
+	<div class="w-full flex flex-col bg-white">
+		<div class="w-full flex flex-col-reverse lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-4 py-4 ring-1 ring-neutral-200 rounded">
 			<div class="flex justify-center items-center">
 				<NuxtImg src="/auth.webp" class="w-full" />
 			</div>
