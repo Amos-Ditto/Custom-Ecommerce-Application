@@ -26,9 +26,28 @@ export default <RouterConfig>{
 			],
 		},
 		{
-			name: "Products",
+			name: "All-Products",
 			path: "/products",
 			component: () => import("~/pages/products.vue"),
+			children: [
+				{
+					name: "Products",
+					path: "",
+					component: () => import("~/pages/products/index.vue"),
+				},
+				{
+					name: "Categories",
+					path: "category",
+					component: () => import("~/pages/products/category.vue"),
+					children: [
+						{
+							name: "Category",
+							path: ":category",
+							component: () => import("~/pages/products/category/[category].vue"),
+						},
+					],
+				},
+			],
 		},
 	],
 };

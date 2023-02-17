@@ -70,12 +70,12 @@
 			</div>
 			<div class="w-full mt-3 sm:mt-4 border-b border-neutral-200 dark:border-neutral-600">
 				<div id="nav-links" class="w-full hidden md:flex flex-row items-center justify-center gap-x-4 lg:gap-x-6">
-					<button>
+					<NuxtLink :to="{ name: 'Home' }">
 						<span> Home </span>
-					</button>
-					<button>
-						<span> All categories </span>
-					</button>
+					</NuxtLink>
+					<NuxtLink :to="{ name: 'Products' }">
+						<span> All Products </span>
+					</NuxtLink>
 					<button>
 						<span> Shops </span>
 					</button>
@@ -89,43 +89,34 @@
 						<span> Computer & Accessories </span>
 					</button>
 				</div>
-				<!-- <div
-					id="mobi-nav-links"
-					class="w-full flex md:hidden flex-row gap-x-2 overflow-x-auto py-2 px-0.5 border-t border-neutral-200 dark:border-neutral-600"
-				>
-					<button>
-						<span> Home </span>
-					</button>
-					<button>
-						<span> All categories </span>
-					</button>
-					<button>
-						<span> Shops </span>
-					</button>
-					<button>
-						<span> Offers </span>
-					</button>
-					<button>
-						<span> Men Clothing & Fashion </span>
-					</button>
-					<button>
-						<span> Computer & Accessories </span>
-					</button>
-				</div> -->
 			</div>
 		</div>
 	</nav>
 </template>
 
 <style scoped>
-#nav-links button {
-	@apply font-semibold first:text-custom text-neutral-700 px-2 py-2.5 hover:text-custom dark:text-neutral-200 transition-colors duration-300;
+#nav-links button,
+#nav-links a {
+	@apply font-semibold text-neutral-700 px-2 py-2.5 hover:text-custom dark:text-neutral-200 transition-colors duration-300;
 }
 
-#nav-links button span {
+#nav-links a.router-link-active {
+	@apply text-custom;
+}
+
+#nav-links a.router-link-active {
+	background-image: linear-gradient(#dd9933, #dd9933);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 2px;
+	transition: background-size 0.2s, padding 0.2s;
+}
+#nav-links button span,
+#nav-links a span {
 	@apply text-sm lg:text-base;
 }
-#nav-links button {
+#nav-links button,
+#nav-links a {
 	@apply pr-3 cursor-pointer;
 	background-image: linear-gradient(#dd9933, #dd9933);
 	background-position: 0% 100%;
@@ -133,27 +124,8 @@
 	background-size: 0% 2px;
 	transition: background-size 0.2s, padding 0.2s;
 }
-#nav-links button:hover {
+#nav-links button:hover,
+#nav-links a:hover {
 	background-size: 100% 2px;
 }
-#nav-links button:nth-child(1) {
-	background-size: 100% 2px;
-}
-/* 
-#mobi-nav-links button {
-	@apply px-3 py-2 bg-gray-200 rounded flex flex-row items-center dark:bg-neutral-700;
-}
-#mobi-nav-links button span {
-	@apply truncate text-sm transition-colors duration-200 dark:text-neutral-200;
-}
-#mobi-nav-links button:hover span {
-	@apply text-custom;
-}
-#mobi-nav-links button:nth-child(1) span {
-	@apply text-custom;
-}
-#mobi-nav-links::-webkit-scrollbar {
-	width: 0px;
-	height: 0px;
-} */
 </style>
