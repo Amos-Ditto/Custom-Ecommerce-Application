@@ -42,7 +42,7 @@
 				<ListShowShopCard />
 				<ListShowShopCard />
 			</div>
-			<div class="w-full flex flex-row items-center justify-between justify-center py-4 mt-4">
+			<div class="w-full flex flex-row items-center justify-center py-4 mt-6">
 				<ul class="inline-flex items-center -space-x-px">
 					<li>
 						<button
