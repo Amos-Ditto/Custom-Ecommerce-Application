@@ -49,5 +49,17 @@ export default <RouterConfig>{
 				},
 			],
 		},
+		{
+			name: "Shops",
+			path: "/shops",
+			component: () => import("~/pages/shops.vue"),
+			children: [
+				{
+					name: "All-shops",
+					path: "",
+					component: () => import("~/pages/shops/all-shops.vue"),
+				},
+			],
+		},
 	],
 };

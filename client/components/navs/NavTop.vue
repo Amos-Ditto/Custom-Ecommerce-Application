@@ -76,9 +76,9 @@
 					<NuxtLink :to="{ name: 'Products' }">
 						<span> All Products </span>
 					</NuxtLink>
-					<button>
+					<NuxtLink to="/shops">
 						<span> Shops </span>
-					</button>
+					</NuxtLink>
 					<button>
 						<span> Offers </span>
 					</button>
