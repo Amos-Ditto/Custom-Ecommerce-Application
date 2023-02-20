@@ -7,7 +7,9 @@
 		<Footer />
 
 		<!-- Cart floating container -->
-		<div class="fixed right-0 bottom-1/2 translate-y-1/2 hidden md:flex flex-col gap-y-2 py-3 pl-3 pr-1 rounded-l-xl bg-custom">
+		<div
+			class="fixed right-0 bottom-1/2 translate-y-1/2 hidden md:flex flex-col gap-y-2 py-3 pl-3 pr-1 rounded-l-xl bg-custom cursor-pointer"
+		>
 			<div class="flex flex-row justify-between items-center gap-x-2 text-c-base">
 				<div class="w-5 h-5">
 					<IconsCart />

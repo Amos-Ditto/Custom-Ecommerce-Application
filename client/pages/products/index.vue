@@ -1,5 +1,8 @@
 <template>
 	<section class="w-full flex flex-col gap-y-2 px-4 md:px-8 lg:px-20 2xl:px-44">
+		<div class="ad-image w-full flex flex-row items-center">
+			<NuxtImg src="/products.png" class="w-full rounded-sm" />
+		</div>
 		<div class="w-full grid grid-cols-12 gap-x-6">
 			<div class="col-span-3 hidden lg:flex flex-col border-r border-neutral-200">
 				<NavsAsideProducts />
