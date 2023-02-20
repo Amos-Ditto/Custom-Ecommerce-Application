@@ -26,9 +26,45 @@ export default <RouterConfig>{
 			],
 		},
 		{
-			name: "Products",
+			name: "All-Products",
 			path: "/products",
 			component: () => import("~/pages/products.vue"),
+			children: [
+				{
+					name: "Products",
+					path: "",
+					component: () => import("~/pages/products/index.vue"),
+				},
+				{
+					name: "Categories",
+					path: "category",
+					component: () => import("~/pages/products/category.vue"),
+					children: [
+						{
+							name: "Category",
+							path: ":category",
+							component: () => import("~/pages/products/category/[category].vue"),
+						},
+					],
+				},
+				{
+					name: "Product",
+					path: "product-:productId",
+					component: () => import("~~/pages/products/product-[productId].vue"),
+				},
+			],
+		},
+		{
+			name: "Shops",
+			path: "/shops",
+			component: () => import("~/pages/shops.vue"),
+			children: [
+				{
+					name: "All-shops",
+					path: "",
+					component: () => import("~/pages/shops/all-shops.vue"),
+				},
+			],
 		},
 	],
 };

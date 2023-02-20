@@ -1,5 +1,5 @@
 <template>
-	<main class="w-full flex flex-col py-4">
+	<main class="w-full flex flex-col">
 		<NuxtPage />
 	</main>
 </template>

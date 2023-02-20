@@ -5,13 +5,41 @@
 				<h4 class="text-lg font-semibold">Categories</h4>
 			</div>
 			<ul class="py-2 px-1 flex flex-col gap-y-1 border-b border-neutral-200">
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Automobile & Motorcycle</li>
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Computer & Accessories</li>
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Cellphones & Tabs</li>
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Beauty, Health & Hair</li>
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Women Clothing & Fashion</li>
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Men Clothing & Fashion</li>
-				<li class="text-neutral-700 text-base font-light capitalize py-1.5">Sports & Outdoor</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Automobile & Motorcycle' } }" class="w-full h-full block">
+						Automobile & Motorcycle
+					</NuxtLink>
+				</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Computer & Accessories' } }" class="w-full h-full block">
+						Computer & Accessories
+					</NuxtLink>
+				</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Cellphones & Tabs' } }" class="w-full h-full block">
+						Cellphones & Tabs
+					</NuxtLink>
+				</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Beauty, Health & Hair' } }" class="w-full h-full block">
+						Beauty, Health & Hair
+					</NuxtLink>
+				</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Women Clothing & Fashion' } }" class="w-full h-full block">
+						Women Clothing & Fashion
+					</NuxtLink>
+				</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Men Clothing & Fashion' } }" class="w-full h-full block">
+						Men Clothing & Fashion
+					</NuxtLink>
+				</li>
+				<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Sports & Outdoor' } }" class="w-full h-full block"
+						>Sports & Outdoor</NuxtLink
+					>
+				</li>
 			</ul>
 		</div>
 		<div class="w-full flex flex-col gap-y-1">
