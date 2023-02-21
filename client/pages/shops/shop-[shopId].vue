@@ -29,8 +29,8 @@
 		<div class="w-full flex flex-col py-4 px-4 md:px-8 lg:px-20 2xl:px-44 bg-c-dark">
 			<div id="shop-links" class="w-full flex flex-row gap-x-8 md:gap-x-12 items-center justify-start">
 				<NuxtLink to="/shops/shop-1" class="text-base tracking-wide text-c-base py-1 px-2">Shop</NuxtLink>
-				<NuxtLink to="/shops/shop-2/offers" class="text-base tracking-wide text-c-base py-1 px-2">Offers</NuxtLink>
-				<NuxtLink to="/shops/shop-2/products" class="text-base tracking-wide text-c-base py-1 px-2">All Products</NuxtLink>
+				<NuxtLink to="/shops/shop-1/offers" class="text-base tracking-wide text-c-base py-1 px-2">Offers</NuxtLink>
+				<NuxtLink to="/shops/shop-1/products" class="text-base tracking-wide text-c-base py-1 px-2">All Products</NuxtLink>
 			</div>
 		</div>
 		<div class="w-full flex flex-col px-4 md:px-8 lg:px-20 2xl:px-44 py-4">

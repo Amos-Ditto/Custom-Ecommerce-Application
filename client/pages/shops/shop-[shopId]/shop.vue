@@ -44,7 +44,10 @@
 			</div>
 		</div>
 		<div class="w-full mt-10 border border-custom bg-[tomato]/10 flex flex-col items-center justify-center py-4 rounded">
-			<button class="text-lg md:text-xl py-1 font-semibold flex flex-row items-center gap-x-3">
+			<button
+				@click="() => useRouter().push('/shops/shop-1/products')"
+				class="text-lg md:text-xl py-1 font-semibold flex flex-row items-center gap-x-3"
+			>
 				<span>View all Products of This Shop</span>
 				<div class="w-6 h-6">
 					<IconsArrow />

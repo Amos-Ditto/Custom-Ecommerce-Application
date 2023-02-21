@@ -33,7 +33,7 @@ export default <RouterConfig>{
 				{
 					name: "Products",
 					path: "",
-					component: () => import("~/pages/products/index.vue"),
+					component: () => import("~~/pages/products/all-products.vue"),
 				},
 				{
 					name: "Categories",
@@ -83,6 +83,18 @@ export default <RouterConfig>{
 							name: "Shop-products",
 							path: "products",
 							component: () => import("~/pages/shops/shop-[shopId]/products.vue"),
+							children: [
+								{
+									name: "Shop-All-Products",
+									path: "",
+									component: () => import("~/pages/shops/shop-[shopId]/products/all-products.vue"),
+								},
+								{
+									name: "Shop-Products-Category",
+									path: ":categoryName",
+									component: () => import("~~/pages/shops/shop-[shopId]/products/[categoryName].vue"),
+								},
+							],
 						},
 					],
 				},
