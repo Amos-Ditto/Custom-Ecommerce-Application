@@ -1,8 +1,8 @@
 <template>
 	<div class="flex flex-col gap-y-0 ring-1 ring-neutral-200 rounded">
-		<div class="w-full flex flex-col">
+		<NuxtLink to="/shops/shop-1" class="w-full flex flex-col">
 			<NuxtImg src="/shop-1-banner.webp" class="h-[150px] w-full rounded-t" />
-		</div>
+		</NuxtLink>
 		<div class="w-full flex flex-col h-full gap-y-4">
 			<div class="w-full flex flex-row items-center justify-center relative">
 				<NuxtImg
@@ -13,7 +13,7 @@
 			</div>
 			<div class="w-full flex flex-col gap-y-2.5 items-center h-full justify-between mt-10 px-4 py-4">
 				<div class="">
-					<h3 class="text-2xl font-semibold capitalize truncate">Beauty Shop</h3>
+					<NuxtLink to="/shops/shop-1" class="text-2xl font-semibold capitalize truncate">Beauty Shop</NuxtLink>
 				</div>
 				<div class="flex flex-row">
 					<p class="text-neutral-600 text-sm font-light line-clamp-2 text-center">
@@ -43,7 +43,12 @@
 					<p class="text-neutral-600 text-sm font-light text-center">Total Products 181</p>
 				</div>
 				<div class="flex flex-row items-center mt-2">
-					<button class="bg-[#212121] px-4 py-2.5 rounded tracking-wide text-sm font-semibold text-gray-100">Visit Store</button>
+					<button
+						@click="() => useRouter().push('/shops/shop-1')"
+						class="bg-[#212121] px-4 py-2.5 rounded tracking-wide text-sm font-semibold text-gray-100"
+					>
+						Visit Store
+					</button>
 				</div>
 			</div>
 		</div>

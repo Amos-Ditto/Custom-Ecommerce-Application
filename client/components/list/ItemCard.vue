@@ -3,14 +3,14 @@ const add_favorite = ref<boolean>(false);
 </script>
 <template>
 	<div class="w-full flex flex-col py-2 px-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700">
-		<div class="w-full flex relative">
+		<NuxtLink to="/products/product-1" class="w-full flex relative">
 			<NuxtImg src="/items/tecno.jpg" class="w-full rounded" loading="lazy" />
 			<div class="absolute top-1 -left-2">
 				<button class="bg-[tomato] rounded-sm text-xs text-white px-1.5 py-1 uppercase -translate-x-1/4 translate-y-1/2 -rotate-90">
 					off 2%
 				</button>
 			</div>
-		</div>
+		</NuxtLink>
 		<div class="flex flex-col mt-1.5 gap-y-1 w-full">
 			<div class="price flex flex-row items-center gap-x-2 w-full">
 				<span class="text-base sm:text-lg text-neutral-400 line-through font-light dark:text-neutral-200">$30.00</span>

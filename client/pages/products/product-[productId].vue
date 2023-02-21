@@ -66,7 +66,7 @@
 									<small class="text-base text-neutral-500">Price</small>
 								</div>
 								<div class="col-span-8 flex flex-row items-center gap-x-4">
-									<span class="text-2xl text-neutral-500 font-medium line-through">$351.00</span>
+									<span class="text-xl text-neutral-500 font-medium line-through">$351.00</span>
 									<div class="flex flex-row gap-x-2 items-center">
 										<button class="px-2 bg-[tomato] text-white uppercase text-sm shadow-md">off 5%</button>
 									</div>

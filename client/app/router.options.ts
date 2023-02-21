@@ -64,6 +64,28 @@ export default <RouterConfig>{
 					path: "",
 					component: () => import("~/pages/shops/all-shops.vue"),
 				},
+				{
+					name: "Shop-ID",
+					path: "shop-:shopId",
+					component: () => import("~/pages/shops/shop-[shopId].vue"),
+					children: [
+						{
+							name: "Shop-Name",
+							path: "",
+							component: () => import("~/pages/shops/shop-[shopId]/shop.vue"),
+						},
+						{
+							name: "Shop-offers",
+							path: "offers",
+							component: () => import("~/pages/shops/shop-[shopId]/offers.vue"),
+						},
+						{
+							name: "Shop-products",
+							path: "products",
+							component: () => import("~/pages/shops/shop-[shopId]/products.vue"),
+						},
+					],
+				},
 			],
 		},
 	],
