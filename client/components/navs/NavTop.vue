@@ -82,12 +82,8 @@
 					<button>
 						<span> Offers </span>
 					</button>
-					<button>
-						<span> Men Clothing & Fashion </span>
-					</button>
-					<button>
-						<span> Computer & Accessories </span>
-					</button>
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Men Clothing & Fashion' } }"> Men Clothing & Fashion </NuxtLink>
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Computer & Accessories' } }"> Computer & Accessories </NuxtLink>
 				</div>
 			</div>
 		</div>
@@ -100,11 +96,11 @@
 	@apply font-semibold text-neutral-700 px-2 py-2.5 hover:text-custom dark:text-neutral-200 transition-colors duration-300;
 }
 
-#nav-links a.router-link-active {
+#nav-links a.router-link-exact-active {
 	@apply text-custom;
 }
 
-#nav-links a.router-link-active {
+#nav-links a.router-link-exact-active {
 	background-image: linear-gradient(#dd9933, #dd9933);
 	background-position: 0% 100%;
 	background-repeat: no-repeat;
