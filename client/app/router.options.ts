@@ -107,8 +107,25 @@ export default <RouterConfig>{
 			children: [
 				{
 					name: "User-Dashboard",
-					path: "",
+					path: "dashboard",
 					component: () => import("~/pages/user/dashboard.vue"),
+				},
+				{
+					name: "Purchases",
+					path: "purchase",
+					component: () => import("~/pages/user/purchases.vue"),
+					children: [
+						{
+							name: "Purchase-Home",
+							path: "",
+							component: () => import("~/pages/user/purchases/home.vue"),
+						},
+						{
+							name: "Purchase-Order",
+							path: ":orderID",
+							component: () => import("~/pages/user/purchases/[orderID].vue"),
+						},
+					],
 				},
 			],
 		},

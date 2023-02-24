@@ -82,8 +82,12 @@
 					<button>
 						<span> Offers </span>
 					</button>
-					<NuxtLink :to="{ name: 'Category', params: { category: 'Men Clothing & Fashion' } }"> Men Clothing & Fashion </NuxtLink>
-					<NuxtLink :to="{ name: 'Category', params: { category: 'Computer & Accessories' } }"> Computer & Accessories </NuxtLink>
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Men Clothing & Fashion' } }"
+						><span>Men Clothing & Fashion</span></NuxtLink
+					>
+					<NuxtLink :to="{ name: 'Category', params: { category: 'Computer & Accessories' } }"
+						><span>Computer & Accessories</span></NuxtLink
+					>
 				</div>
 			</div>
 		</div>

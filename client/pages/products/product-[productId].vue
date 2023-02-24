@@ -2,7 +2,7 @@
 	<section class="w-full flex flex-col py-4 px-4 md:px-8 lg:px-20 2xl:px-44">
 		<div class="w-full grid grid-cols-1 xl:grid-cols-12 gap-x-6 gap-y-12">
 			<div class="xl:col-span-9 flex flex-col gap-y-4">
-				<div class="w-full grid grid-cols-1 md:grid-cols-10 gap-x-4 gap-y-8">
+				<div class="w-full grid grid-cols-1 md:grid-cols-10 gap-x-4 gap-y-8 border-b border-neutral-200 pb-8">
 					<div class="md:col-span-4 flex flex-col gap-y-4">
 						<ul class="w-full flex overflow-x-auto">
 							<li class="w-full flex flex-col border border-neutral-200 rounded">
@@ -174,7 +174,7 @@
 						<!--  -->
 					</div>
 				</div>
-				<div class="w-full flex flex-col gap-y-4 mt-12">
+				<div class="w-full flex flex-col gap-y-4 mt-4">
 					<ContainersProductDetails />
 				</div>
 				<div class="mt-10 flex flex-col gap-y-4 w-full">

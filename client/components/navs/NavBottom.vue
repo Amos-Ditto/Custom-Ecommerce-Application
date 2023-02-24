@@ -27,8 +27,13 @@
 					<IconsCart />
 				</div>
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Cart</small>
-				<div class="rounded-full px-2 py-0 bg-custom absolute top-0 right-0 translate-x-[20%] -translate-y-[20%]">
+				<!-- <div class="rounded-full px-2 py-0 bg-custom absolute top-0 right-0 translate-x-[20%] -translate-y-[20%]">
 					<span class="text-c-base text-xs">0</span>
+				</div> -->
+				<div
+					class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-custom border-2 border-gray-400 rounded-full -top-2 -right-2 dark:border-gray-900"
+				>
+					8
 				</div>
 			</button>
 			<button>
