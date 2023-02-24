@@ -132,6 +132,11 @@ export default <RouterConfig>{
 					path: "wishlist",
 					component: () => import("~/pages/user/wishlist.vue"),
 				},
+				{
+					name: "User-Profile",
+					path: "profile",
+					component: () => import("~/pages/user/profile.vue"),
+				},
 			],
 		},
 	],
