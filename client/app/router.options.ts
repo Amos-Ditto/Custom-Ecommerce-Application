@@ -127,6 +127,11 @@ export default <RouterConfig>{
 						},
 					],
 				},
+				{
+					name: "User-Wishlist",
+					path: "wishlist",
+					component: () => import("~/pages/user/wishlist.vue"),
+				},
 			],
 		},
 	],
