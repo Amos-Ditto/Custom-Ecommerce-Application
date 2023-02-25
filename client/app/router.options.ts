@@ -139,5 +139,10 @@ export default <RouterConfig>{
 				},
 			],
 		},
+		{
+			name: "Register-Shop",
+			path: "/register-shop",
+			component: () => import("~/pages/register-shop.vue"),
+		},
 	],
 };
