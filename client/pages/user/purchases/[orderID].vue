@@ -39,6 +39,15 @@
 						<span class="text-sm sm:text-base">amosk@gmail.com</span>
 					</div>
 				</li>
+
+				<li>
+					<div class="flex fle-row items-start">
+						<span class="text-sm sm:text-base font-semibold">Phone number:</span>
+					</div>
+					<div class="flex flex-col text-neutral-600 dark:text-c-mode">
+						<span class="text-sm sm:text-base">0794818111</span>
+					</div>
+				</li>
 				<li>
 					<div class="flex fle-row items-start">
 						<span class="text-sm sm:text-base font-semibold">Shipping Address:</span>

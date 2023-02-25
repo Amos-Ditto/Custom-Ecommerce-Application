@@ -32,11 +32,16 @@
 					<span class="tracking-wide">Purchase History</span>
 				</NuxtLink>
 			</li>
-			<li class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer">
-				<div class="w-5 h-5">
-					<IconsHeart />
-				</div>
-				<span class="tracking-wide">Wishlist</span>
+			<li class="w-full">
+				<NuxtLink
+					to="/user/wishlist"
+					class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer"
+				>
+					<div class="w-5 h-5">
+						<IconsHeart />
+					</div>
+					<span class="tracking-wide">Wishlist</span>
+				</NuxtLink>
 			</li>
 			<li class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer">
 				<div class="w-5 h-5">
@@ -44,11 +49,16 @@
 				</div>
 				<span class="tracking-wide">Product Queries (0)</span>
 			</li>
-			<li class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer">
-				<div class="w-5 h-5">
-					<IconsUser />
-				</div>
-				<span class="tracking-wide">Manage Profile</span>
+			<li class="w-full">
+				<NuxtLink
+					to="/user/profile"
+					class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer"
+				>
+					<div class="w-5 h-5">
+						<IconsUser />
+					</div>
+					<span class="tracking-wide">Manage Profile</span>
+				</NuxtLink>
 			</li>
 		</ul>
 	</div>
