@@ -155,12 +155,18 @@ export default <RouterConfig>{
 			name: "Sellers",
 			path: "/seller",
 			component: () => import("~/pages/seller.vue"),
-
 			children: [
 				{
-					name: "Seller-Home",
+					name: "Seller-Account",
 					path: "",
-					component: () => import("~/pages/seller/home.vue"),
+					component: () => import("~/pages/seller/main.vue"),
+					children: [
+						{
+							name: "Seller-Home",
+							path: "",
+							component: () => import("~/pages/seller/main/home.vue"),
+						},
+					],
 				},
 				{
 					name: "Login-Seller",
