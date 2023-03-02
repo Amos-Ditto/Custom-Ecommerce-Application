@@ -48,21 +48,17 @@
 
 				<!-- Toggle auth btns -->
 				<div class="flex flex-row items-center gap-x-2 text-neutral-500 dark:text-neutral-400">
-					<div class="w-6 lg:w-7 h-6 lg:h-7">
+					<!-- <div class="w-6 lg:w-7 h-6 lg:h-7">
 						<IconsUser />
-					</div>
+					</div> -->
 					<div class="flex flex-row items-center gap-x-1 lg:gap-x-2">
 						<NuxtLink
 							to="/auth"
-							class="text-base lg:text-lg font-semibold text-neutral-600 px-3 py-0.5 hover:bg-gray-100 rounded-sm dark:text-neutral-400 dark:hover:bg-inherit dark:hover:text-neutral-300 transition-colors duration-200"
+							class="text-base lg:text-base font-semibold text-neutral-700 px-3 py-0.5 hover:text-custom dark:text-c-mode dark:hover:text-custom transition-colors duration-200"
 						>
 							Login
 						</NuxtLink>
-						<span class="text-sm font-normal">or</span>
-						<NuxtLink
-							to="/auth/register"
-							class="text-base lg:text-lg font-semibold text-neutral-600 px-3 py-0.5 hover:bg-gray-100 rounded-sm dark:text-neutral-400 dark:hover:bg-inherit dark:hover:text-neutral-300 transition-colors duration-200"
-						>
+						<NuxtLink to="/auth/register" class="px-4 py-2 text-base border border-custom font-semibold text-custom rounded">
 							Register
 						</NuxtLink>
 					</div>

@@ -88,7 +88,7 @@
 					</div>
 					<button
 						type="submit"
-						class="text-white bg-custom/90 hover:bg-custom focus:ring-2 outline-none focus:ring-custom/60 font-medium rounded text-base tracking-wide px-8 py-2.5 text-center"
+						class="text-white bg-custom hover:bg-custom/90 focus:ring-2 outline-none focus:ring-custom/60 font-medium rounded text-base tracking-wide px-8 py-2.5 text-center"
 					>
 						Update
 					</button>
@@ -101,7 +101,7 @@
 				<h4 class="text-lg sm:text-xl font-semibold dark:text-c-mode">Addresses</h4>
 				<button
 					type="button"
-					class="text-white bg-custom/90 hover:bg-custom focus:ring-2 outline-none focus:ring-custom/60 font-medium rounded text-base tracking-wide px-6 py-2.5 text-center"
+					class="text-white bg-custom hover:bg-custom/90 focus:ring-2 outline-none focus:ring-custom/60 font-medium rounded text-base tracking-wide px-6 py-2.5 text-center"
 				>
 					Add New
 				</button>

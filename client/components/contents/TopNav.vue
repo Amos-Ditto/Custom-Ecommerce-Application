@@ -13,11 +13,12 @@ const toggleColor = (): void => {
 		class="w-full backdrop-blur-[100px] bg-c-base/90 hidden md:flex flex-row justify-between items-center py-2 px-8 lg:px-20 2xl:px-36 text-neutral-500 border-b border-neutral-200 dark:bg-c-dark/90 dark:border-neutral-700"
 	>
 		<div class="flex flex-row items-center gap-x-2">
-			<button
+			<NuxtLink
+				to="/register-shop"
 				class="text-sm px-2.5 text-neutral-500 hover:text-neutral-600 transition-colors duration-200 bg-inherit dark:text-neutral-300"
 			>
 				Be a Seller
-			</button>
+			</NuxtLink>
 			<span
 				class="h-full relative after:h-[14px] after:w-[1px] after:bg-neutral-300 after:content-[''] after:absolute after:right-0 flex items-center"
 			></span>

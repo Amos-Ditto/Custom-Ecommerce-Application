@@ -107,6 +107,16 @@
 					Register Shop
 				</button>
 			</div>
+			<div class="w-full mt-2 flex flex-row gap-x-2">
+				<small class="text-base font-medium">Already have Seller account,</small>
+				<NuxtLink to="/seller/login" target="_blank" class="text-[steelblue] text-base hover:underline">Login</NuxtLink>
+			</div>
 		</div>
 	</section>
 </template>
+
+<style scoped>
+input {
+	outline: none;
+}
+</style>

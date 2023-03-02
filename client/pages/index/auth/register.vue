@@ -76,8 +76,8 @@
 				</div>
 				<div class="w-full flex flex-col items-start gap-y-4">
 					<div class="w-[90%] flex justify-between flex-row items-center gap-x-2">
-						<small class="text-sm text-neutral-500 font-medium">or, Join With</small>
-						<span class="w-[82%] h-[1px] bg-neutral-200"></span>
+						<small class="text-sm text-neutral-500 font-medium">Or</small>
+						<span class="w-[92%] h-[1px] bg-neutral-200"></span>
 					</div>
 					<button
 						type="button"

@@ -1,7 +1,6 @@
+<script setup lang="ts"></script>
 <template>
 	<main class="w-full flex flex-col">
-		<NuxtLayout>
-			<NuxtPage />
-		</NuxtLayout>
+		<NuxtPage />
 	</main>
 </template>
