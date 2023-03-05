@@ -5,12 +5,9 @@
 			<div class="flex flex-row items-center gap-x-5">
 				<!-- <span class="h-2 sm:h-2.5 w-12 rounded-3xl bg-custom"></span> -->
 				<button
-					class="text-sm md:text-base font-serif font-medium hover:text-custom capitalize flex flex-row items-center justify-center gap-x-1 transition-colors duration-200 dark:text-c-base dark:hover:text-custom"
+					class="text-sm text-neutral-600 hover:text-custom capitalize flex flex-row items-center justify-center gap-x-1 transition-colors duration-200 dark:text-c-base dark:hover:text-custom"
 				>
-					all
-					<div class="w-3 sm:w-4 h-3 sm:h-4 -translate-y-[15%] sm:translate-y-0">
-						<IconsChevronRight />
-					</div>
+					see all
 				</button>
 			</div>
 		</div>

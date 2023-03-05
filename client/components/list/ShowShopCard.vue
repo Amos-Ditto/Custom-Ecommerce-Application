@@ -16,12 +16,12 @@
 					<NuxtLink to="/shops/shop-1" class="text-2xl font-semibold capitalize truncate">Beauty Shop</NuxtLink>
 				</div>
 				<div class="flex flex-row">
-					<p class="text-neutral-600 text-sm font-light line-clamp-2 text-center">
+					<p class="text-neutral-600 text-sm line-clamp-2 text-center">
 						Cellphones & Tabs, Women Clothing & Fashion, Beauty, Health & Hair, Men Clothing & Fashion
 					</p>
 				</div>
 				<div class="flex flex-row items-center justify-center gap-x-1 text-neutral-700 dark:text-c-mode">
-					<small class="text-sm font-light">4.0</small>
+					<small class="text-sm">4.0</small>
 					<div class="flex flex-row gap-x-0.5 items-center">
 						<button class="w-4 h-4 text-yellow-400">
 							<IconsStar />
@@ -36,11 +36,11 @@
 							<IconsStar />
 						</button>
 					</div>
-					<small class="text-sm font-light truncate">(10 Ratings)</small>
+					<small class="text-sm truncate">(10 Ratings)</small>
 				</div>
 				<div class="flex flex-col gap-y-0.5 items-center justify-center">
-					<p class="text-neutral-600 text-sm font-light text-center">Shop since 17 Jan, 2022</p>
-					<p class="text-neutral-600 text-sm font-light text-center">Total Products 181</p>
+					<p class="text-neutral-600 text-sm text-center">Shop since 17 Jan, 2022</p>
+					<p class="text-neutral-600 text-sm text-center">Total Products 181</p>
 				</div>
 				<div class="flex flex-row items-center mt-2">
 					<button

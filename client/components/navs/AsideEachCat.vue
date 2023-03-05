@@ -10,7 +10,7 @@
 						<div class="w-4 h-4 rotate-180">
 							<IconsChevronRight />
 						</div>
-						<span class="text-neutral-700 text-base font-light">All categories</span>
+						<span class="text-neutral-700 text-base">All categories</span>
 					</NuxtLink>
 				</li>
 				<li class="w-full flex flex-col py-1.5">
@@ -21,7 +21,7 @@
 						<span class="text-neutral-700 font-semibold text-base truncate">{{ $route.params.category }}</span>
 					</div>
 					<ul class="py-2 pl-6 pr-2 flex flex-col gap-y-1 border-b border-neutral-200">
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink
 								:to="{ name: 'Category', params: { category: 'Automobile & Motorcycle' } }"
 								class="w-full h-full block"
@@ -29,7 +29,7 @@
 								Automobile & Motorcycle
 							</NuxtLink>
 						</li>
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink
 								:to="{ name: 'Category', params: { category: 'Computer & Accessories' } }"
 								class="w-full h-full block"
@@ -37,17 +37,17 @@
 								Computer & Accessories
 							</NuxtLink>
 						</li>
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink :to="{ name: 'Category', params: { category: 'Cellphones & Tabs' } }" class="w-full h-full block">
 								Cellphones & Tabs
 							</NuxtLink>
 						</li>
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink :to="{ name: 'Category', params: { category: 'Beauty, Health & Hair' } }" class="w-full h-full block">
 								Beauty, Health & Hair
 							</NuxtLink>
 						</li>
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink
 								:to="{ name: 'Category', params: { category: 'Women Clothing & Fashion' } }"
 								class="w-full h-full block"
@@ -55,7 +55,7 @@
 								Women Clothing & Fashion
 							</NuxtLink>
 						</li>
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink
 								:to="{ name: 'Category', params: { category: 'Men Clothing & Fashion' } }"
 								class="w-full h-full block"
@@ -63,7 +63,7 @@
 								Men Clothing & Fashion
 							</NuxtLink>
 						</li>
-						<li class="text-neutral-700 text-base font-light capitalize truncate py-1.5">
+						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink :to="{ name: 'Category', params: { category: 'Sports & Outdoor' } }" class="w-full h-full block"
 								>Sports & Outdoor</NuxtLink
 							>

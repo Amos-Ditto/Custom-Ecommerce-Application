@@ -8,11 +8,9 @@
 			</h3>
 			<div class="flex flex-row items-center mr-4">
 				<button
-					class="text-neutral-900 flex items-center p-1 rounded-full shadow bg-white hover:text-custom hover:shadow-md transition duration-200 dark:bg-neutral-700 dark:text-c-base dark:hover:text-custom"
+					class="text-sm text-neutral-600 hover:text-custom capitalize flex flex-row items-center justify-center gap-x-1 transition-colors duration-200 dark:text-c-base dark:hover:text-custom"
 				>
-					<div class="w-5 sm:w-4 h-5 sm:h-4 flex items-center justify-center">
-						<IconsChevronRight />
-					</div>
+					see all
 				</button>
 			</div>
 		</div>

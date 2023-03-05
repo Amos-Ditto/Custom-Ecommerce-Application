@@ -13,7 +13,7 @@ const add_favorite = ref<boolean>(false);
 		</NuxtLink>
 		<div class="flex flex-col mt-1.5 gap-y-1 w-full">
 			<div class="price flex flex-row items-center gap-x-2 w-full">
-				<span class="text-base sm:text-lg text-neutral-400 line-through font-light dark:text-neutral-200">$30.00</span>
+				<span class="text-base sm:text-lg text-neutral-400 line-through dark:text-neutral-200">$30.00</span>
 				<span class="text-base sm:text-lg text-neutral-700 font-semibold dark:text-c-mode">$25.00</span>
 			</div>
 			<div class="name w-full">
