@@ -1,18 +1,99 @@
 <template>
 	<div class="w-full flex flex-col">
-		<div class="w-full grid grid-cols-1 md:grid-cols-12 gap-x-2 sm:gap-x-5 gap-y-2 sm:gap-y-5">
-			<div class="md:col-span-12 lg:col-span-6 lg:max-h-[17.5rem] bg-base">
-				<NuxtImg src="/slides/11.webp" class="bg-cover cursor-pointer h-full w-full rounded-md" alt="" />
-			</div>
-			<div class="hidden md:block md:col-span-6 lg:col-span-3 lg:max-h-[17.5rem] bg-base">
-				<NuxtImg src="/slides/21.webp" class="h-full w-full cursor-pointer rounded-md" alt="" />
-			</div>
-			<div class="md:col-span-6 lg:col-span-3 lg:max-h-[17.5rem] hidden md:grid md:grid-rows-2 grid-cols-1 gap-y-1 sm:gap-y-4">
-				<div class="bg-base rounded-tr row-span-1 col-span-1">
-					<NuxtImg src="/slides/14.webp" class="bg-cover cursor-pointer rounded-md h-full w-full" alt="" />
+		<div class="grid grid-cols-10 gap-x-3">
+			<div class="col-span-2 hidden md:flex flex-col bg-white rounded py-2 border dark:border-none dark:bg-[#212121]">
+				<div
+					class="w-full flex flex-row items-center gap-x-2 px-2.5 py-1 text-gray-900 border-b border-neutral-200 dark:border-neutral-700 dark:text-c-base"
+				>
+					<div class="w-5 h-5">
+						<IconsListBullet />
+					</div>
+					<p class="font-semibold text-base lg:text-lg">Categories</p>
 				</div>
-				<div class="bg-base rounded-br row-span-1 col-span-1">
-					<NuxtImg src="/slides/13.webp" class="bg-cover cursor-pointer rounded-md h-full w-full" alt="" />
+				<ul class="w-full flex flex-col gap-y-1">
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="mdi:cellphone" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Phone's & Tablets</span>
+					</li>
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="uil:monitor" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Laptops & Computers</span>
+					</li>
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="mdi:speaker-wireless" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Speakers & Electronics</span>
+					</li>
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="mdi:face-woman-outline" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Health & Beauty</span>
+					</li>
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="mdi:man" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Mens Clothings</span>
+					</li>
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="mdi:woman" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Women's Clothings</span>
+					</li>
+					<li
+						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
+					>
+						<Icon name="mdi:shoe-sneaker" class="w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Bags and Shoes</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col-span-10 md:col-span-6 flex flex-row justify-center rounded-md">
+				<NuxtImg src="/slides/slide-1.webp" class="cursor-pointer w-[96%] md:w-full rounded-md" alt="" />
+			</div>
+			<div class="col-span-2 hidden md:grid grid-cols-1 grid-rows-2">
+				<div class="w-full">
+					<div class="bg-white rounded-xl flex flex-col gap-y-4 py-3 px-2.5 dark:bg-[#212121] dark:text-c-mode">
+						<div class="flex flex-row gap-x-1.5 items-center">
+							<div class="w-6 lg:w-8 h-6 lg:h-8 text-custom">
+								<NuxtImg src="/icons/help.png" class="w-full h-full" />
+							</div>
+							<div class="flex flex-col">
+								<h5 class="text-sm lg:text-base uppercase">Help Center</h5>
+								<p class="text-xs lg:text-sm line-clamp-1">Guide To Customer Care</p>
+							</div>
+						</div>
+						<div class="flex flex-row gap-x-1.5 items-center">
+							<div class="w-6 lg:w-8 h-6 lg:h-8 text-custom">
+								<Icon name="mdi:account-plus" />
+							</div>
+							<div class="flex flex-col">
+								<h5 class="text-sm lg:text-base uppercase">New Here</h5>
+								<p class="text-xs lg:text-sm line-clamp-1">Signup as New User</p>
+							</div>
+						</div>
+						<div class="flex flex-row gap-x-1.5 items-center">
+							<div class="w-6 lg:w-8 h-6 lg:h-8 text-custom">
+								<NuxtImg src="/icons/seller-payment.png" class="w-full h-full" />
+							</div>
+							<div class="flex flex-col">
+								<h5 class="text-sm lg:text-base uppercase">Sell on Shop</h5>
+								<p class="text-xs lg:text-sm line-clamp-1">Thousands Of Visitors</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w-full">
+					<div class="w-full flex items-center justify-end">
+						<NuxtImg src="/slides/21.webp" class="w-[90%] cursor-pointer rounded-md" alt="" />
+					</div>
 				</div>
 			</div>
 		</div>

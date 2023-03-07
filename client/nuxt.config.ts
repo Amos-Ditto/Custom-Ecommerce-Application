@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	css: ["~/assets/css/tailwind.css", "~/assets/css/global.css"],
-	modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxt/image-edge", "@nuxtjs/color-mode"],
+	modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxt/image-edge", "@nuxtjs/color-mode", "nuxt-icon"],
 	app: {
 		pageTransition: { name: "page", mode: "out-in" },
 	},

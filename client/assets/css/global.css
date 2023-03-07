@@ -37,15 +37,15 @@ input[data-autocompleted] {
 }
 
 ::-webkit-scrollbar-track {
-	background: #eee;
 	border-radius: 1px;
+	@apply bg-[#eee] dark:bg-neutral-500;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #8885;
 	border-radius: 1px;
+	@apply bg-[#8885] dark:bg-neutral-700;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #8886;
+	@apply bg-[#8886] dark:bg-neutral-600;
 }

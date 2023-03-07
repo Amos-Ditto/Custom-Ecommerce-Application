@@ -1,89 +1,124 @@
 <template>
-	<div class="w-full flex flex-col gap-y-2 mt-1 sm:mt-2">
-		<div class="w-full flex flex-row items-center justify-between py-1.5">
-			<h3 class="text-lg sm:text-xl md:text-2xl font-semibold dark:text-c-base">Product Categories</h3>
-			<div class="flex flex-row items-center gap-x-5">
-				<!-- <span class="h-2 sm:h-2.5 w-12 rounded-3xl bg-custom"></span> -->
-				<button
-					class="text-sm text-neutral-600 hover:text-custom capitalize flex flex-row items-center justify-center gap-x-1 transition-colors duration-200 dark:text-c-base dark:hover:text-custom"
-				>
-					see all
-				</button>
+	<div class="w-full flex flex-row gap-y-2 mt-2 sm:mt-4 bg-[rgb(234,237,237)] dark:bg-[#212121] px-2 pt-4 pb-1 shadow rounded">
+		<div class="hidden md:flex flex-col items-center justify-center mr-1">
+			<button class="p-2 rounded-full bg-c-base dark:bg-c-dark dark:text-c-base">
+				<div class="w-5 h-5 rotate-180">
+					<IconsChevronRight />
+				</div>
+			</button>
+		</div>
+		<div class="w-full flex flex-row gap-x-2 sm:gap-x-4 items-center px-2 overflow-x-auto pb-3">
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/Laptops.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Laptops
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/Phones.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Phones
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/Speakers.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Speakers
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/MenClothing.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Men Clothing
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/Beauty.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Beauty
+					</p>
+				</div>
+			</div>
+			<!--  -->
+
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/Speakers.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Speakers
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/MenClothing.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Men Clothing
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col gap-y-2 w-[100px] md:w-[140px] sm:h-[140px] md:h-[183px] bg-c-base dark:bg-c-dark py-2 px-2 items-center rounded-xl"
+			>
+				<div class="h-[80px] md:h-[124px] w-[80px] md:w-[124px] flex items-center justify-center">
+					<NuxtImg src="/cat/Beauty.png" class="rounded-md w-full h-full" loading="lazy" />
+				</div>
+				<div class="w-full flex-col">
+					<p class="text-xs sm:text-sm md:text-base text-center line-clamp-2 font-medium text-neutral-900 dark:text-c-base">
+						Beauty
+					</p>
+				</div>
 			</div>
 		</div>
-		<div class="flex flex-row gap-x-3 md:gap-x-5 items-center w-full overflow-x-auto px-0.5 py-1">
-			<div
-				class="category flex shrink-0 h-[10rem] sm:h-[12rem] w-[10rem] sm:w-[12rem] flex-col p-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
-			>
-				<div class="flex items-center h-[88%] w-full">
-					<NuxtImg src="/cat/comp.webp" class="h-full rounded-md w-full" loading="lazy" />
+		<div class="ml-1 hidden md:flex flex-col items-center justify-center">
+			<button class="p-2 rounded-full bg-c-base dark:bg-c-dark dark:text-c-base">
+				<div class="w-5 h-5">
+					<IconsChevronRight />
 				</div>
-				<div class="flex flex-col gap-y-1 py-1">
-					<small class="text-sm sm:text-base font-medium text-neutral-600 truncate dark:text-c-mode"
-						>Computers & Accessories</small
-					>
-				</div>
-			</div>
-			<div
-				class="category flex shrink-0 h-[10rem] sm:h-[12rem] w-[10rem] sm:w-[12rem] flex-col p-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
-			>
-				<div class="flex items-center h-[88%] w-full">
-					<NuxtImg src="/cat/men.webp" class="h-full rounded-md w-full" loading="lazy" />
-				</div>
-				<div class="flex flex-col gap-y-1 py-1">
-					<small class="text-sm sm:text-base font-medium text-neutral-600 truncate dark:text-c-mode"
-						>Men clothing & Fashion</small
-					>
-				</div>
-			</div>
-			<div
-				class="category flex shrink-0 h-[10rem] sm:h-[12rem] w-[10rem] sm:w-[12rem] flex-col p-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
-			>
-				<div class="flex items-center h-[88%] w-full">
-					<NuxtImg src="/cat/beauty.webp" class="h-full rounded-md w-full" loading="lazy" />
-				</div>
-				<div class="flex flex-col gap-y-1 py-1">
-					<small class="text-sm sm:text-base font-medium text-neutral-600 truncate dark:text-c-mode">Beauty, Health & Hair</small>
-				</div>
-			</div>
-			<div
-				class="category flex shrink-0 h-[10rem] sm:h-[12rem] w-[10rem] sm:w-[12rem] flex-col p-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
-			>
-				<div class="flex items-center h-[88%] w-full">
-					<NuxtImg src="/cat/drinks.webp" class="h-full rounded-md w-full" loading="lazy" />
-				</div>
-				<div class="flex flex-col gap-y-1 py-1">
-					<small class="text-sm sm:text-base font-medium text-neutral-600 truncate dark:text-c-mode">Drinks</small>
-				</div>
-			</div>
-			<div
-				class="category flex shrink-0 h-[10rem] sm:h-[12rem] w-[10rem] sm:w-[12rem] flex-col p-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
-			>
-				<div class="flex items-center h-[88%] w-full">
-					<NuxtImg src="/cat/shoes.webp" class="h-full rounded-md w-full" loading="lazy" />
-				</div>
-				<div class="flex flex-col gap-y-1 py-1">
-					<small class="text-sm sm:text-base font-medium text-neutral-600 truncate dark:text-c-mode">Shoes & Sneakers</small>
-				</div>
-			</div>
-			<div
-				class="category flex shrink-0 h-[10rem] sm:h-[12rem] w-[10rem] sm:w-[12rem] flex-col p-2 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
-			>
-				<div class="flex items-center h-[88%] w-full">
-					<NuxtImg src="/cat/speakers.webp" class="h-full rounded-md w-full" loading="lazy" />
-				</div>
-				<div class="flex flex-col gap-y-1 py-1">
-					<small class="text-sm sm:text-base font-medium text-neutral-600 truncate dark:text-c-mode"
-						>Speakers & Electronics</small
-					>
-				</div>
-			</div>
+			</button>
 		</div>
 	</div>
 </template>
 <style scoped>
 ::-webkit-scrollbar {
 	width: 0px;
-	height: 0px;
+	height: 2px;
 }
 </style>
