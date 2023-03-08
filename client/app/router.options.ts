@@ -166,6 +166,31 @@ export default <RouterConfig>{
 							path: "",
 							component: () => import("~/pages/seller/main/home.vue"),
 						},
+						{
+							name: "Seller-Products",
+							path: "products",
+							component: () => import("~/pages/seller/main/products.vue"),
+						},
+						{
+							name: "Seller-Orders",
+							path: "orders",
+							component: () => import("~/pages/seller/main/orders.vue"),
+						},
+						{
+							name: "Seller-Reviews",
+							path: "reviews",
+							component: () => import("~/pages/seller/main/reviews.vue"),
+						},
+						{
+							name: "Seller-Settings",
+							path: "settings",
+							component: () => import("~/pages/seller/main/settings.vue"),
+						},
+						{
+							name: "Seller-Queries",
+							path: "queries",
+							component: () => import("~/pages/seller/main/product-queries.vue"),
+						},
 					],
 				},
 				{

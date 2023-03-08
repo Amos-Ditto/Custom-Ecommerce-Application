@@ -1,5 +1,5 @@
 <template>
-	<nav class="w-full flex flex-col">
+	<nav class="w-full flex flex-col bg-white">
 		<div class="w-full grid grid-cols-2 items-center justify-between px-12 py-3 border-b border-neutral-200">
 			<div class="left grid grid-cols-3 gap-x-0 items-center">
 				<NuxtLink :to="{ name: 'Seller-Home' }" class="flex flex-row items-center">
@@ -29,10 +29,10 @@
 			</div>
 			<div class="right flex flex-row items-center justify-end gap-x-20">
 				<div class="seller-details flex gap-x-3">
-					<div class="flex flex-col">
+					<!-- <div class="flex flex-col">
 						<span class="text-base font-medium leading-tight">Amos Kip</span>
 						<small class="text-sm text-neutral-500 leading-tight">Seller</small>
-					</div>
+					</div> -->
 					<button class="flex flex-row items-center gap-x-0.5">
 						<div class="relative">
 							<NuxtImg src="/icons/male.png" class="w-9 h-9 rounded-full ring-1 ring-neutral-200" />
