@@ -8,6 +8,7 @@ module.exports = {
 				"c-base": "rgb(250, 250, 250)",
 				"c-mode": "#f3f3f3",
 				"c-dark": "#191919",
+				"alt-dark": "#212121",
 				custom: "#F1a930",
 			},
 			transitionProperty: {
