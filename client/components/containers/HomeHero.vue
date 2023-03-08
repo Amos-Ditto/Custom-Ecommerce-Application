@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full flex flex-col">
-		<div class="grid grid-cols-10 gap-x-3">
+		<div class="grid grid-cols-10 gap-x-5">
 			<div class="col-span-2 hidden md:flex flex-col bg-white rounded py-2 border dark:border-none dark:bg-[#212121]">
 				<div
 					class="w-full flex flex-row items-center gap-x-2 px-2.5 py-1 text-gray-900 border-b border-neutral-200 dark:border-neutral-700 dark:text-c-base"
