@@ -2,7 +2,7 @@
 	<div class="w-full flex flex-col gap-y-2 mt-4">
 		<div class="w-full flex flex-row items-center justify-between py-1.5 sm:py-2.5 border-neutral-200 dark:border-neutral-700">
 			<h3
-				class="text-lg sm:text-xl md:text-2xl font-semibold relative after:content-[''] after:w-[106%] after:h-[2px] after:bg-custom after:absolute after:left-0 after:-bottom-1.5 dark:text-c-base"
+				class="text-lg sm:text-xl font-semibold relative after:content-[''] after:w-[106%] after:h-[2px] after:bg-custom after:absolute after:left-0 after:-bottom-1.5 dark:text-c-base"
 			>
 				Featured Deals
 			</h3>

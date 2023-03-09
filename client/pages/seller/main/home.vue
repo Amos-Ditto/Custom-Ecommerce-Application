@@ -77,16 +77,16 @@
 			</div>
 			<div class="flex flex-col border border-neutral-200 bg-white px-4 -space-y-px">
 				<div class="flex flex-col items-start border-b border-neutral-200 py-3">
-					<h4 class="text-2xl font-semibold">Recent Orders</h4>
+					<h4 class="text-xl font-semibold">Recent Orders</h4>
 				</div>
 				<ul id="list-orders" class="w-full flex flex-col gap-y-0.5 -space-y-px">
 					<li class="flex flex-col border-t border-neutral-200 py-2.5 px-2 text-neutral-600">
-						<span class="text-lg font-semibold">20221221-16180436</span>
-						<span class="text-base">Dec 21, 2022</span>
+						<span class="text-lg font-medium">20221221-16180436</span>
+						<span class="text-sm">Dec 21, 2022</span>
 					</li>
 					<li class="flex flex-col border-t border-neutral-200 py-2.5 px-2 text-neutral-600">
-						<span class="text-lg font-semibold">20221221-16180436</span>
-						<span class="text-base">Dec 21, 2022</span>
+						<span class="text-lg font-medium">20221221-16180436</span>
+						<span class="text-sm">Dec 21, 2022</span>
 					</li>
 				</ul>
 				<div class="w-full border-t border-neutral-200 py-2.5 px-2 items-center">

@@ -9,23 +9,8 @@
 			<div class="flex flex-row p-1 sm:p-2 w-full items-center justify-center">
 				<h4 class="text-xl font-semibold capitalize text-center dark:text-c-mode">Beauty shop</h4>
 			</div>
-			<div class="flex flex-row items-center justify-center gap-x-1 text-neutral-700 dark:text-c-mode">
-				<small class="text-sm font-light">4.0</small>
-				<div class="flex flex-row gap-x-0.5 items-center">
-					<button class="w-4 h-4 text-yellow-400">
-						<IconsStar />
-					</button>
-					<button class="w-4 h-4 text-yellow-400">
-						<IconsStar /></button
-					><button class="w-4 h-4 text-yellow-400">
-						<IconsStar /></button
-					><button class="w-4 h-4 text-yellow-400">
-						<IconsStar /></button
-					><button class="w-4 h-4 text-gray-300">
-						<IconsStar />
-					</button>
-				</div>
-				<small class="text-sm font-light truncate">(10 Ratings)</small>
+			<div class="w-full flex flex-col">
+				<ContentsRatings />
 			</div>
 			<div class="w-full flex flex-col items-center mt-1">
 				<button
@@ -43,7 +28,7 @@
 					<NuxtImg src="/items/phone.png" class="max-h-14 lg:max-h-16 rounded" />
 				</div>
 				<div class="flex lg:hidden xl:flex flex-col gap-y-2">
-					<p class="font-light text-xs truncate dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</p>
+					<p class="text-xs truncate dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</p>
 					<span class="text-base font-semibold dark:text-c-mode truncate">$19.57</span>
 				</div>
 			</div>
@@ -54,7 +39,7 @@
 					<NuxtImg src="/items/phone.png" class="max-h-14 lg:max-h-16 rounded" />
 				</div>
 				<div class="flex lg:hidden xl:flex flex-col gap-y-2">
-					<p class="font-light text-xs truncate dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</p>
+					<p class="text-xs truncate dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</p>
 					<span class="text-base font-semibold dark:text-c-mode truncate">$19.57</span>
 				</div>
 			</div>
@@ -65,7 +50,7 @@
 					<NuxtImg src="/items/phone.png" class="max-h-14 lg:max-h-16 rounded" />
 				</div>
 				<div class="flex lg:hidden xl:flex flex-col gap-y-2">
-					<p class="font-light text-xs truncate dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</p>
+					<p class="text-xs truncate dark:text-c-mode">Asus ROG Phone 5 Dual Sim s888 Phantom</p>
 					<span class="text-base font-semibold dark:text-c-mode truncate">$19.57</span>
 				</div>
 			</div>
