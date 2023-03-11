@@ -170,6 +170,23 @@ export default <RouterConfig>{
 							name: "Seller-Products",
 							path: "products",
 							component: () => import("~/pages/seller/main/products.vue"),
+							children: [
+								{
+									name: "Seller-Product-List",
+									path: "",
+									component: () => import("~/pages/seller/main/products/products.vue"),
+								},
+								{
+									name: "Seller-Add-Product",
+									path: "add",
+									component: () => import("~/pages/seller/main/products/add-product.vue"),
+								},
+								{
+									name: "Seller-View-Product",
+									path: "view-:productID",
+									component: () => import("~/pages/seller/main/products/view-[productID].vue"),
+								},
+							],
 						},
 						{
 							name: "Seller-Orders",
