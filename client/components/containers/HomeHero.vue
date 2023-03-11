@@ -58,12 +58,14 @@
 			<div class="col-span-10 md:col-span-6 flex flex-row justify-center rounded-md">
 				<NuxtImg src="/slides/slide-1.webp" class="cursor-pointer w-[96%] md:w-full rounded-md" alt="" />
 			</div>
-			<div class="col-span-2 hidden md:grid grid-cols-1 grid-rows-2">
+			<div class="col-span-2 hidden md:grid grid-cols-1 grid-rows-2 -space-y-2">
 				<div class="w-full">
-					<div class="bg-white rounded-xl flex flex-col gap-y-4 py-3 px-2.5 dark:bg-[#212121] dark:text-c-mode">
+					<div
+						class="bg-white border border-neutral-200 rounded-md flex flex-col gap-y-4 py-3 px-2.5 dark:bg-[#212121] dark:text-c-mode"
+					>
 						<div class="flex flex-row gap-x-1.5 items-center">
-							<div class="w-6 lg:w-8 h-6 lg:h-8 text-custom">
-								<NuxtImg src="/icons/help.png" class="w-full h-full" />
+							<div class="px-1.5 py-1.5 border border-custom rounded-full">
+								<Icon name="mdi:account-multiple" class="text-custom text-3xl" />
 							</div>
 							<div class="flex flex-col">
 								<h5 class="text-sm lg:text-base uppercase">Help Center</h5>
@@ -71,17 +73,17 @@
 							</div>
 						</div>
 						<div class="flex flex-row gap-x-1.5 items-center">
-							<div class="w-6 lg:w-8 h-6 lg:h-8 text-custom">
-								<Icon name="mdi:account-plus" />
+							<div class="px-1.5 py-1.5 border border-custom rounded-full">
+								<Icon name="mdi:security" class="text-custom text-3xl" />
 							</div>
 							<div class="flex flex-col">
-								<h5 class="text-sm lg:text-base uppercase">New Here</h5>
-								<p class="text-xs lg:text-sm line-clamp-1">Signup as New User</p>
+								<h5 class="text-sm lg:text-base uppercase">Shop With confidence</h5>
+								<p class="text-xs lg:text-sm line-clamp-1">Buyer Protection policy</p>
 							</div>
 						</div>
 						<div class="flex flex-row gap-x-1.5 items-center">
-							<div class="w-6 lg:w-8 h-6 lg:h-8 text-custom">
-								<NuxtImg src="/icons/seller-payment.png" class="w-full h-full" />
+							<div class="px-1.5 py-1.5 border border-custom rounded-full">
+								<Icon name="mdi:currency-usd" class="text-custom text-3xl" />
 							</div>
 							<div class="flex flex-col">
 								<h5 class="text-sm lg:text-base uppercase">Sell on Shop</h5>
@@ -92,7 +94,7 @@
 				</div>
 				<div class="w-full">
 					<div class="w-full flex items-center justify-end">
-						<NuxtImg src="/slides/21.webp" class="w-[90%] cursor-pointer rounded-md" alt="" />
+						<NuxtImg src="/slides/21.webp" class="h-full cursor-pointer rounded-md" alt="" />
 					</div>
 				</div>
 			</div>

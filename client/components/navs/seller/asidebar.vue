@@ -19,7 +19,7 @@
 					</NuxtLink>
 				</li>
 				<li>
-					<NuxtLink :to="{ name: 'Seller-Products' }">
+					<NuxtLink :to="{ name: 'Seller-Product-List' }">
 						<Icon name="mdi:basket" class="icon" />
 						<span>Products</span>
 					</NuxtLink>
