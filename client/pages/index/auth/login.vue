@@ -1,41 +1,31 @@
 <template>
-	<div class="w-full flex flex-col bg-white">
-		<div class="w-full flex flex-col-reverse lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-4 py-4 ring-1 ring-neutral-200 rounded">
+	<div class="w-full flex flex-col bg-white dark:bg-alt-dark">
+		<div
+			class="w-full flex flex-col-reverse lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-4 py-4 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
+		>
 			<div class="flex justify-center items-center">
 				<NuxtImg src="/auth.webp" class="w-full" />
 			</div>
 			<div class="flex flex-col gap-y-4">
 				<div class="flex flex-col w-full">
-					<h3 class="text-3xl uppercase text-neutral-500 font-light">
+					<h3 class="text-3xl uppercase text-neutral-500 font-medium dark:text-c-base">
 						Login to <span class="text-custom font-extrabold">Shop</span>
 					</h3>
 				</div>
-				<div class="flex flex-col gap-y-8 w-[90%] mt-6">
+				<div class="flex flex-col gap-y-4 sm:gap-y-8 w-full sm:w-[90%] mt-4 sm:mt-6">
 					<div class="flex flex-col gap-y-1 w-full">
-						<label for="email" class="text-base">Email</label>
-						<input
-							type="email"
-							name="email"
-							id="email"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
-							placeholder="Enter your email"
-						/>
+						<label for="email" class="text-base dark:text-c-base">Email</label>
+						<input type="email" name="email" id="email" placeholder="Enter your email" />
 					</div>
 					<div class="flex flex-col gap-y-1 w-full">
-						<label for="password" class="text-base">Password</label>
-						<input
-							type="password"
-							name="password"
-							id="password"
-							class="py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200"
-							placeholder="Enter your password"
-						/>
+						<label for="password" class="text-base dark:text-c-base">Password</label>
+						<input type="password" name="password" id="password" placeholder="Enter your password" />
 						<div class="w-full flex justify-end items-center">
 							<span class="text-sm italic text-custom hover:underline cursor-pointer">forgot password?</span>
 						</div>
 					</div>
 				</div>
-				<div class="w-full flex flex-row items-center">
+				<div class="w-full flex flex-col sm:flex-row sm:items-center">
 					<button
 						class="bg-custom hover:bg-orange-500 px-14 py-3 text-xl text-gray-50 font-medium tracking-wide rounded transition-colors duration-200"
 					>
@@ -43,20 +33,26 @@
 					</button>
 				</div>
 				<div class="w-full flex flex-col items-start gap-y-4">
-					<small class="text-sm text-neutral-500 font-medium">or, Login with</small>
+					<small class="text-sm text-neutral-500 font-medium dark:text-c-base">or, Login with</small>
 					<button
 						type="button"
-						class="text-neutral-700 bg-gray-200 hover:bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center flex-row gap-x-2 focus:bg-gray-300 transition duration-200"
+						class="w-full sm:w-auto text-neutral-700 bg-gray-200 hover:bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center flex-row gap-x-2 focus:bg-gray-300 transition duration-200"
 					>
 						<NuxtImg src="/icons/google.svg" />
 						Sign in with Google
 					</button>
 				</div>
 				<div class="w-full mt-2 flex flex-row gap-x-2">
-					<small class="text-base">Don't have an account,</small>
+					<small class="text-base dark:text-c-base">Don't have an account,</small>
 					<NuxtLink to="/auth" class="text-custom text-base hover:underline">Signup</NuxtLink>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
+
+<style scoped>
+input {
+	@apply py-2.5 px-3 border border-neutral-200 rounded text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200 dark:bg-inherit dark:border-neutral-600 dark:focus:border-custom dark:text-c-mode;
+}
+</style>

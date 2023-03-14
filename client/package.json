@@ -16,6 +16,7 @@
 		"@nuxtjs/tailwindcss": "^6.3.0",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@tinymce/tinymce-vue": "^5",
+		"@vueuse/nuxt": "^9.13.0",
 		"eslint": "^8.32.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-nuxt": "^4.0.0",

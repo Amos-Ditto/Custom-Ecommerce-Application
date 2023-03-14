@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { watch } from "vue";
+import { useAppStore } from "./stores/appStore";
+
 useHead({
 	title: "Ecommerce",
 	meta: [{ name: "description", content: "Full app ecommerce" }],
@@ -14,9 +17,16 @@ useHead({
 if (process.client) {
 	await new Promise((resolve) => setTimeout(resolve, 2000));
 }
+const store = useAppStore();
+
+const el = ref<HTMLElement | null>(null);
+const { x, y } = useScroll(el, { behavior: "smooth" });
+watch(y, (newY) => {
+	store.changeHeight(newY);
+});
 </script>
 <template>
-	<div class="w-full flex flex-col">
+	<div ref="el" class="w-full h-screen flex flex-col overflow-y-auto">
 		<NuxtLoadingIndicator />
 		<NuxtPage />
 	</div>

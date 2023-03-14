@@ -8,8 +8,8 @@
 			</button>
 			<h4 class="text-2xl font-semibold">Add product</h4>
 		</div>
-		<div class="w-full grid grid-cols-10 gap-x-8 mt-10">
-			<div class="col-span-7 flex flex-col gap-y-8">
+		<div class="w-full grid xl:grid-cols-10 gap-x-8 gap-y-8 mt-10">
+			<div class="xl:col-span-7 flex flex-col gap-y-8">
 				<div class="form-container">
 					<label for="title" class="text-lg font-semibold">Title</label>
 					<input
@@ -30,6 +30,7 @@
 								>
 									Add main image
 								</button>
+								<p class="text-xs text-neutral-500">Thumbnail Image (300x300)</p>
 							</div>
 						</div>
 						<div class="grid grid-cols-2 grid-rows-2 gap-3">
@@ -40,6 +41,7 @@
 									>
 										Add other image
 									</button>
+									<p class="text-xs text-neutral-500">Gallery Images(600x600)</p>
 								</div>
 							</div>
 							<div class="flex items-center justify-center border border-dashed border-neutral-300 rounded p-2"></div>
@@ -107,9 +109,9 @@
 						<ContentsEditor />
 					</ClientOnly>
 				</div>
-				<div class="w-full flex flex-col -space-y-px pt-3 bg-white shadow-sm rounded border border-neutral-200">
+				<div class="form-container-alt">
 					<span class="text-lg font-semibold px-5">Variants</span>
-					<div class="variant-item w-full grid grid-cols-10 px-5 pt-6">
+					<div class="variant-item w-full grid grid-cols-10 px-0 pt-6">
 						<div class="col-span-1 flex flex-col pt-8">
 							<button class="text-neutral-500">
 								<Icon name="mdi:drag-vertical" class="text-2xl" />
@@ -154,12 +156,57 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-span-3">Other info</div>
+			<div class="xl:col-span-3 flex flex-col gap-y-6">
+				<div class="form-container-alt">
+					<div class="px-5 flex flex-col w-full">
+						<span class="text-lg font-semibold">Product status</span>
+						<div class="w-full flex flex-col py-4 gap-y-1">
+							<button
+								type="button"
+								class="text-base text-start text-neutral-600 px-4 py-2 border border-neutral-300 rounded tracking-wide outline-none focus:border-custom transition"
+							>
+								Active
+							</button>
+							<span class="text-sm text-neutral-500 leading-tight">This product will be available to 2 sales channels.</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-container-alt">
+					<div class="px-5 flex flex-col w-full">
+						<span class="text-lg font-semibold">Product Brand</span>
+						<div class="w-full flex flex-col py-4 gap-y-1">
+							<button
+								type="button"
+								class="text-base text-start text-neutral-600 px-4 py-2 border border-neutral-300 rounded tracking-wide outline-none focus:border-custom transition"
+							>
+								Select Brand
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-container-alt">
+					<div class="px-5 flex flex-col w-full">
+						<span class="text-lg font-semibold">Product tags</span>
+						<div class="w-full flex flex-col py-4 gap-y-1">
+							<button
+								type="button"
+								class="text-base text-start text-neutral-600 px-4 py-2 border border-neutral-300 rounded tracking-wide outline-none focus:border-custom transition"
+							>
+								Type and hit enter to add a tag
+							</button>
+							<span class="text-sm text-neutral-500 leading-tight">These will be used for product search.</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 <style scoped>
 .form-container {
 	@apply w-full flex flex-col gap-y-1 px-5 py-3 bg-white shadow-sm rounded border border-neutral-200;
+}
+.form-container-alt {
+	@apply w-full flex flex-col -space-y-px pt-3 bg-white shadow-sm rounded border border-neutral-200;
 }
 </style>

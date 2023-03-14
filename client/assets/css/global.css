@@ -3,7 +3,7 @@ html {
 	font-size: 15px;
 }
 body {
-	overflow-y: auto;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-font-smoothing: antialiased;
@@ -30,6 +30,7 @@ input[data-autocompleted] {
 
 ::-webkit-scrollbar {
 	width: 10px;
+	@apply w-[4px] sm:w-[10px];
 }
 
 ::-webkit-scrollbar:horizontal {

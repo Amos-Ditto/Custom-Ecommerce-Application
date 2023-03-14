@@ -1,7 +1,7 @@
 <template>
 	<nav class="w-full flex flex-col bg-white">
-		<div class="w-full grid grid-cols-2 items-center justify-between px-12 py-3 border-b border-neutral-200">
-			<div class="left grid grid-cols-3 gap-x-0 items-center">
+		<div class="w-full grid grid-cols-3 lg:grid-cols-2 items-center justify-between px-12 py-3 border-b border-neutral-200">
+			<div class="left col-span-2 lg:col-span-1 grid grid-cols-3 gap-x-0 items-center">
 				<NuxtLink :to="{ name: 'Seller-Home' }" class="flex flex-row items-center">
 					<NuxtImg src="/logo.png" class="mr-3 max-h-[2.2rem] sm:max-h-[2.6rem] rounded-lg shadow opacity-90" />
 					<small class="text-xl sm:text-2xl tracking-wide font-bold dark:text-c-mode"
@@ -9,22 +9,25 @@
 					>
 				</NuxtLink>
 				<div class="actions col-span-2 flex flex-row items-center gap-x-4">
-					<button
+					<NuxtLink
+						:to="{ name: 'Seller-Add-Product' }"
 						class="px-4 py-2 text-base font-medium text-neutral-700 flex flex-row gap-x-2 items-center border border-gray-200 rounded"
 					>
 						<div class="w-4 h-4">
 							<IconsPlus />
 						</div>
 						<span>Add New Products</span>
-					</button>
-					<button
+					</NuxtLink>
+					<NuxtLink
+						to="/"
+						target="_blank"
 						class="px-4 py-2 text-base font-medium text-neutral-700 flex flex-row gap-x-2 items-center border border-gray-200 rounded"
 					>
 						<div class="w-4 h-4">
 							<IconsWebsite />
 						</div>
 						<span>Browse Website</span>
-					</button>
+					</NuxtLink>
 				</div>
 			</div>
 			<div class="right flex flex-row items-center justify-end gap-x-20">
