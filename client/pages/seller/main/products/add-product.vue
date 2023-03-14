@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
 	<div class="w-full flex flex-col px-4">
 		<div class="w-full flex flex-row items-center space-x-4">
@@ -30,16 +32,19 @@
 								</button>
 							</div>
 						</div>
-						<div class="grid grid-cols-2 gap-3">
+						<div class="grid grid-cols-2 grid-rows-2 gap-3">
 							<div class="flex items-center justify-center border border-dashed border-neutral-300 rounded p-2">
 								<div class="py-8 flex flex-col gap-y-2 items-center justify-center">
 									<button
 										class="px-2.5 py-1 rounded text-base font-semibold bg-custom/20 text-neutral-600 hover:text-neutral-800"
 									>
-										Add Other images
+										Add other image
 									</button>
 								</div>
 							</div>
+							<div class="flex items-center justify-center border border-dashed border-neutral-300 rounded p-2"></div>
+							<div class="flex items-center justify-center border border-dashed border-neutral-300 rounded p-2"></div>
+							<div class="flex items-center justify-center border border-dashed border-neutral-300 rounded p-2"></div>
 						</div>
 					</div>
 					<small class="text-sm text-neutral-500">Accepts images: png, jpg, jpeg or webp</small>
@@ -96,6 +101,12 @@
 						<label for="selling" class="text-base font-medium">Continue selling when out of stock</label>
 					</div>
 				</div>
+				<div class="form-container">
+					<span class="text-lg font-semibold">Description</span>
+					<ClientOnly>
+						<ContentsEditor />
+					</ClientOnly>
+				</div>
 				<div class="w-full flex flex-col -space-y-px pt-3 bg-white shadow-sm rounded border border-neutral-200">
 					<span class="text-lg font-semibold px-5">Variants</span>
 					<div class="variant-item w-full grid grid-cols-10 px-5 pt-6">
@@ -138,7 +149,7 @@
 					<div class="px-5 w-full flex flex-col border-t border-neutral-200 mt-3">
 						<button class="text-custom flex flex-row items-center py-4 gap-x-4">
 							<Icon name="mdi:plus" class="text-2xl font-semibold" />
-							<span class="text-base">Add another option</span>
+							<span class="text-base">Add options like size or color</span>
 						</button>
 					</div>
 				</div>
