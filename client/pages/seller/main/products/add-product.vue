@@ -172,6 +172,77 @@
 					</div>
 				</div>
 				<div class="form-container-alt">
+					<div class="px-5 flex flex-col w-full pb-2.5">
+						<span class="text-lg font-semibold">Product category</span>
+					</div>
+					<div class="w-full max-h-[40vh] overflow-y-auto flex flex-col px-5 py-2 gap-y-1 border-t border-neutral-200">
+						<!-- <button
+							type="button"
+							class="text-base text-start text-neutral-600 px-4 py-2 border border-neutral-300 rounded tracking-wide outline-none focus:border-custom transition"
+						>
+							Select Brand
+						</button> -->
+						<ul class="w-full flex flex-col gap-y-1">
+							<li class="w-full px-2 py-1.5 flex flex-col gap-y-1">
+								<ListCheckListItem :itemName="'Mens Fashion & Clothing'" />
+								<ul class="child-list pl-6 mt-2 flex flex-col gap-y-1">
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Suits, Blazers & Waistcoats'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Mens Jeans'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'T-shirts'" />
+									</li>
+								</ul>
+							</li>
+							<li class="w-full px-2 py-1.5 flex flex-col gap-y-1">
+								<ListCheckListItem :itemName="'Womens Fashion & Clothing'" />
+								<ul class="child-list pl-6 mt-2 flex flex-col gap-y-1">
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Party Dresses'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Footwear'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Bags & Accessories'" />
+									</li>
+								</ul>
+							</li>
+							<li class="w-full px-2 py-1.5 flex flex-col gap-y-1">
+								<ListCheckListItem :itemName="'Mens Fashion & Clothing'" />
+								<ul class="child-list pl-6 mt-2 flex flex-col gap-y-1">
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Suits, Blazers & Waistcoats'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Mens Jeans'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'T-shirts'" />
+									</li>
+								</ul>
+							</li>
+							<li class="w-full px-2 py-1.5 flex flex-col gap-y-1">
+								<ListCheckListItem :itemName="'Womens Fashion & Clothing'" />
+								<ul class="child-list pl-6 mt-2 flex flex-col gap-y-1">
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Party Dresses'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Footwear'" />
+									</li>
+									<li class="w-full flex flex-col py-1">
+										<ListCheckListItem :itemName="'Bags & Accessories'" />
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-container-alt">
 					<div class="px-5 flex flex-col w-full">
 						<span class="text-lg font-semibold">Product Brand</span>
 						<div class="w-full flex flex-col py-4 gap-y-1">
@@ -208,5 +279,8 @@
 }
 .form-container-alt {
 	@apply w-full flex flex-col -space-y-px pt-3 bg-white shadow-sm rounded border border-neutral-200;
+}
+::-webkit-scrollbar {
+	width: 2px;
 }
 </style>

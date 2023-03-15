@@ -32,7 +32,7 @@ const { heightPos } = storeToRefs(store);
 							required
 						/>
 						<button
-							class="px-6 py-3 bg-neutral-100 hover:bg-neutral-200 rounded-r-3xl border border-neutral-200 transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
+							class="px-6 py-3 bg-neutral-100 hover:bg-custom hover:text-c-base rounded-r-3xl border border-neutral-200 hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
 						>
 							<div class="w-5 h-5">
 								<IconsSearch />
@@ -124,7 +124,7 @@ const { heightPos } = storeToRefs(store);
 							required
 						/>
 						<button
-							class="px-5 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-r-3xl border border-neutral-200 transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
+							class="px-5 py-2 bg-neutral-100 hover:bg-custom hover:text-c-base rounded-r-3xl border border-neutral-200 hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
 						>
 							<div class="w-5 h-5">
 								<IconsSearch />
