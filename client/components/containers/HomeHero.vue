@@ -10,48 +10,34 @@
 					</div>
 					<p class="font-semibold text-base lg:text-lg">Categories</p>
 				</div>
-				<ul class="w-full flex flex-col gap-y-1">
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="mdi:cellphone" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Phone's & Tablets</span>
+				<ul class="category-list w-full flex flex-col gap-y-1">
+					<li>
+						<Icon name="mdi:cellphone" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Phone's & Tablets</span>
 					</li>
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="uil:monitor" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Laptops & Computers</span>
+					<li>
+						<Icon name="uil:monitor" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Laptops & Computers</span>
 					</li>
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="mdi:speaker-wireless" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Speakers & Electronics</span>
+					<li>
+						<Icon name="mdi:speaker-wireless" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Speakers & Electronics</span>
 					</li>
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="mdi:face-woman-outline" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Health & Beauty</span>
+					<li>
+						<Icon name="mdi:face-woman-outline" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Health & Beauty</span>
 					</li>
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="mdi:man" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Mens Clothings</span>
+					<li>
+						<Icon name="mdi:man" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Mens Clothings</span>
 					</li>
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="mdi:woman" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Women's Clothings</span>
+					<li>
+						<Icon name="mdi:woman" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Women's Clothings</span>
 					</li>
-					<li
-						class="w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-500 cursor-pointer hover:bg-neutral-200 rounded transition duration-200 dark:text-neutral-400 dark:hover:bg-neutral-700"
-					>
-						<Icon name="mdi:shoe-sneaker" class="w-4 lg:w-5 h-4 lg:h-5" />
-						<span class="truncate text-sm lg:text-base text-neutral-700 dark:text-c-mode">Bags and Shoes</span>
+					<li>
+						<Icon name="mdi:shoe-sneaker" class="icon w-4 lg:w-5 h-4 lg:h-5" />
+						<span class="truncate text-sm lg:text-base">Bags and Shoes</span>
 					</li>
 				</ul>
 			</div>
@@ -101,3 +87,15 @@
 		</div>
 	</div>
 </template>
+
+<style scoped>
+ul.category-list li {
+	@apply w-full flex flex-row items-center gap-x-2 py-1.5 px-2.5 text-neutral-700 cursor-pointer hover:bg-custom hover:text-white rounded transition duration-200 dark:text-c-mode dark:hover:bg-custom dark:hover:text-c-mode;
+}
+ul li .icon {
+	@apply text-neutral-500 transition-colors duration-200;
+}
+ul li:hover .icon {
+	@apply text-c-mode;
+}
+</style>
