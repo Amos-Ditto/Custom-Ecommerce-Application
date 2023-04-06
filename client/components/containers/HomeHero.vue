@@ -42,7 +42,7 @@
 				</ul>
 			</div>
 			<div class="col-span-10 md:col-span-7 lg:col-span-6 flex flex-row justify-center rounded-md">
-				<NuxtImg src="/slides/slide-1.webp" class="cursor-pointer w-[96%] md:w-full rounded-md" alt="" />
+				<NuxtImg src="/slides/slide-1.webp" class="cursor-pointer w-full sm:w-[96%] md:w-full sm:rounded-md" alt="" />
 			</div>
 			<div class="col-span-2 hidden lg:grid grid-cols-1 grid-rows-2 gap-y-2 bg-white px-0 py-2 rounded shadow dark:bg-alt-dark">
 				<div class="w-full">

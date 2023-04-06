@@ -1,16 +1,15 @@
 <template>
-	<div class="w-full flex flex-col gap-y-2 mt-4">
+	<div class="w-full flex flex-col gap-y-2 mt-2 sm:mt-4 mb-2 sm:mb-0 px-3 sm:px-0">
 		<div class="w-full flex flex-row items-center justify-between py-1.5 sm:py-2.5 border-neutral-200 dark:border-neutral-700">
 			<h3
-				class="text-lg sm:text-xl font-semibold relative after:content-[''] after:w-[106%] after:h-[2px] after:bg-custom after:absolute after:left-0 after:-bottom-1.5 dark:text-c-base"
+				class="text-sm sm:text-xl sm:font-semibold relative after:content-[''] after:w-[106%] after:h-[2px] after:bg-custom after:absolute after:left-0 after:-bottom-1.5 dark:text-c-base"
 			>
 				Featured Deals
 			</h3>
-			<div class="flex flex-row items-center mr-4">
-				<button
-					class="text-sm text-neutral-600 hover:text-custom capitalize flex flex-row items-center justify-center gap-x-1 transition-colors duration-200 dark:text-c-base dark:hover:text-custom"
-				>
-					see all
+			<div class="flex flex-row items-center mr-4 dark:text-c-mode">
+				<button class="text-xs sm:text-sm font-medium flex flex-row items-center gap-x-2">
+					<span>See all</span>
+					<Icon name="mdi:arrow-right" />
 				</button>
 			</div>
 		</div>

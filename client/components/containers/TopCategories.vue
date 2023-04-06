@@ -1,10 +1,10 @@
 <template>
-	<div class="w-full flex flex-col gap-y-3 mt-4">
+	<div class="w-full flex flex-col gap-y-3 mt-2 mb-2 sm:mb-0 sm:mt-4 px-3 sm:px-0">
 		<div
-			class="w-full flex flex-col lg:flex-row items-center justify-between gap-y-4 py-1.5 sm:py-2.5 border-neutral-200 dark:border-neutral-700"
+			class="w-full flex flex-col lg:flex-row items-start sm:items-center justify-between gap-y-4 py-1.5 sm:py-2.5 border-neutral-200 dark:border-neutral-700"
 		>
 			<h3
-				class="text-lg sm:text-xl font-semibold relative after:content-[''] after:w-[106%] after:h-[2px] after:bg-custom after:absolute lg:after:left-0 after:left-[-3%] after:-bottom-1.5 dark:text-c-base"
+				class="text-sm sm:text-xl sm:font-semibold relative after:content-[''] sm:after:w-[106%] after:h-[2px] after:bg-custom after:absolute lg:after:left-0 after:left-[-3%] after:-bottom-1.5 dark:text-c-base"
 			>
 				Popular Categories
 			</h3>
@@ -36,7 +36,7 @@
 
 <style scoped>
 #categories button {
-	@apply px-1 tracking-tight sm:tracking-normal md:px-2 py-0.5 sm:py-1 text-sm md:text-base font-medium first:text-custom hover:text-custom border-b border-transparent hover:border-custom first:border-custom truncate dark:text-c-mode dark:hover:text-custom dark:first:text-custom transition duration-200;
+	@apply px-1 tracking-normal md:px-2 py-0.5 sm:py-1 text-xs sm:text-sm md:text-base font-medium first:text-custom hover:text-custom border-b border-transparent hover:border-custom first:border-custom truncate dark:text-c-mode dark:hover:text-custom dark:first:text-custom transition duration-200;
 }
 </style>
 <style scoped>
