@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "E-commerce graphql endpoints"
+authors = ["Amos Kipyegon <amoskip@kabarak.ac.ke>"]
+license = "GNU"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2"
+graphene-django = "^3.0.0"
+python-environ = "^0.4.54"
+black = "^23.3.0"
+django-graphql-jwt = "^0.3.4"
+django-cors-headers = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
