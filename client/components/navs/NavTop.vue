@@ -27,12 +27,12 @@ const { heightPos } = storeToRefs(store);
 						<input
 							type="search"
 							id="search"
-							class="block w-full px-5 text-base text-gray-800 border border-gray-200 rounded-l-3xl bg-gray-50 focus:outline-none focus:border-custom dark:focus:border-custom dark:bg-inherit dark:border-neutral-600 dark:text-c-base"
+							class="block w-full px-5 text-base text-gray-800 border border-gray-200 rounded-l bg-gray-50 focus:outline-none focus:border-custom dark:focus:border-custom dark:bg-inherit dark:border-neutral-600 dark:text-c-base"
 							placeholder="Search products, brands and categories"
 							required
 						/>
 						<button
-							class="px-6 py-3 bg-neutral-100 hover:bg-custom hover:text-c-base rounded-r-3xl border border-neutral-200 hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
+							class="px-6 py-2.5 bg-neutral-100 hover:bg-custom dark:hover:bg-custom hover:text-c-base rounded-r border border-neutral-200 hover:border-custom dark:hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
 						>
 							<div class="w-5 h-5">
 								<IconsSearch />
@@ -46,13 +46,13 @@ const { heightPos } = storeToRefs(store);
 					<div class="flex flex-row items-center gap-x-1 lg:gap-x-2">
 						<NuxtLink
 							to="/auth"
-							class="text-sm sm:text-base font-semibold text-neutral-700 px-3 py-0.5 hover:text-custom dark:text-c-mode dark:hover:text-custom transition-colors duration-200"
+							class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
 						>
 							Login
 						</NuxtLink>
 						<NuxtLink
 							to="/auth/register"
-							class="px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-custom font-semibold text-custom rounded"
+							class="px-3 sm:px-5 py-1 text-sm sm:text-base bg-custom border border-custom font-semibold text-white rounded"
 						>
 							Register
 						</NuxtLink>
@@ -119,12 +119,12 @@ const { heightPos } = storeToRefs(store);
 						<input
 							type="search"
 							id="search"
-							class="block w-full pl-5 pr-0.5 text-sm text-gray-800 border border-gray-200 rounded-l-3xl bg-gray-50 focus:outline-none focus:border-custom dark:focus:border-custom dark:bg-inherit dark:border-neutral-600 dark:text-c-base"
+							class="block w-full pl-5 pr-0.5 text-sm text-gray-800 border border-gray-200 rounded-l bg-gray-50 focus:outline-none focus:border-custom dark:focus:border-custom dark:bg-inherit dark:border-neutral-600 dark:text-c-base"
 							placeholder="Search products, brands and categories"
 							required
 						/>
 						<button
-							class="px-5 py-2 bg-neutral-100 hover:bg-custom hover:text-c-base rounded-r-3xl border border-neutral-200 hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
+							class="px-5 py-2 bg-neutral-100 hover:bg-custom dark:hover:bg-custom hover:text-c-base rounded-r border border-neutral-200 hover:border-custom dark:hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
 						>
 							<div class="w-5 h-5">
 								<IconsSearch />
