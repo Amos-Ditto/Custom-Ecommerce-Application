@@ -126,4 +126,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+HOST_URL = env.str("HOST_URL", default="http://127.0.0.1:8000")
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

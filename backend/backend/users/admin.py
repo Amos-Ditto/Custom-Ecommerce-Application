@@ -3,6 +3,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
 from .forms import UserChangeForm, UserCreationForm
+from .models import Seller
 
 
 AppUser = get_user_model()
@@ -32,6 +33,12 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ("email", "full_name")
     ordering = ("full_name",)
     filter_horizontal = ()
+
+
+@admin.register(Seller)
+class SellerAdmin(admin.ModelAdmin):
+    list_display = ["id", "userId", "shopName", "dateJoined"]
+    list_filter = ["dateJoined"]
 
 
 admin.site.unregister(Group)

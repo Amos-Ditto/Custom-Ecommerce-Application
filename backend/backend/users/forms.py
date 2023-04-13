@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
-from .models import AppUser
+from .models import AppUser, Seller
 
 
 class UserCreationForm(forms.ModelForm):
@@ -35,3 +35,9 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = AppUser
         fields = ("email", "full_name", "password", "is_active", "is_admin")
+
+
+class SellerCreationForm(forms.ModelForm):
+    class Meta:
+        model = Seller
+        fields = "__all__"

@@ -1,9 +1,9 @@
 import graphene
 import graphql_jwt
-from backend.users.schema import Mutation as UserMutations
+from backend.users.schema import Mutation as UserMutations, Query as UserQuery
 
 
-class Query(graphene.ObjectType):
+class Query(UserQuery, graphene.ObjectType):
     hello = graphene.String(default_value="Hi!")
 
 
