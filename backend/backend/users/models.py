@@ -40,7 +40,7 @@ class Seller(models.Model):
         AppUser, on_delete=models.CASCADE, related_name="seller"
     )
     shopName = models.CharField(max_length=250)
-    shopAvatar = models.ImageField()
+    shopAvatar = models.ImageField(upload_to="")
     dateJoined = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -67,3 +67,6 @@ class Seller(models.Model):
             return settings.HOST_URL + self.shopAvatar.url
         else:
             return ""
+
+
+# class SellerDetails()
