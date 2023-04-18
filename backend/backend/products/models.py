@@ -30,16 +30,38 @@ class SubCategory(models.Model):
         return self.name
 
 
+class Brand(models.Model):
+    name = models.CharField(max_length=250)
+    categoryId = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Product Brand"
+        verbose_name_plural = "Product Brands"
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=250)
     subCategoryId = models.ForeignKey(
         SubCategory, on_delete=models.CASCADE, related_name="product"
     )
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, blank=True, null=True)
     price = models.FloatField()
     discount = models.FloatField(null=True, blank=True)
     inStock = models.BooleanField(default=True)
+    quantity = models.IntegerField(default=0, blank=True, null=True)
     description = fields.RichTextUploadingField(blank=True, null=True)
+    searchTags = models.TextField(blank=True, null=True)
     dateCreated = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+
+    def __str__(self):
+        return self.name
 
 
 class ProductVariant(models.Model):
@@ -53,7 +75,7 @@ class ProductVariant(models.Model):
         verbose_name_plural = "Product Variants"
 
     def __str__(self):
-        return self.name
+        return f"{self.name} | {str(self.productId.name)}"
 
 
 class VariantItem(models.Model):
@@ -68,7 +90,7 @@ class VariantItem(models.Model):
         verbose_name_plural = "Item Variants"
 
     def __str__(self):
-        return self.name
+        return f"{self.name} | {str(self.variantId)}"
 
 
 class ProductImages(models.Model):
