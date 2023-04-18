@@ -38,7 +38,8 @@ PROJECT_APPS = [
 THIRD_PARTY_APPS = [
     "graphene_django",
     "corsheaders",
-    "tinymce",
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
@@ -76,7 +77,9 @@ ROOT_URLCONF = "backend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -125,7 +128,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, "statics")
+STATIC_ROOT = "static"
 STATIC_URL = "static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -136,32 +139,6 @@ HOST_URL = env.str("HOST_URL", default="http://127.0.0.1:8000")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# Handle tinymce
-
-TINYMCE_JS_URL = os.path.join(STATIC_URL, "tiny_mce/tiny_mce.js")
-TINYMCE_DEFAULT_CONFIG = {
-    "cleanup_on_startup": True,
-    "custom_undo_redo_levels": 20,
-    "selector": "textarea",
-    "theme": "silver",
-    "plugins": """
-            textcolor save link image media preview codesample contextmenu
-            table code lists fullscreen  insertdatetime  nonbreaking
-            contextmenu directionality searchreplace wordcount visualblocks
-            visualchars code fullscreen autolink lists  charmap print  hr
-            anchor pagebreak
-            """,
-    "toolbar1": """
-            fullscreen preview bold italic underline | fontselect,
-            fontsizeselect  | forecolor backcolor | alignleft alignright |
-            aligncenter alignjustify | indent outdent | bullist numlist table |
-            | link image media | codesample |
-            """,
-    "toolbar2": """
-            visualblocks visualchars |
-            charmap hr pagebreak nonbreaking anchor |  code |
-            """,
-    "contextmenu": "formats | link image",
-    "menubar": True,
-    "statusbar": True,
-}
+# Handle WYSIWYG
+# CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "uploads/"

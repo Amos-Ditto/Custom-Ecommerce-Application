@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from tinymce import models as tinymce_models
+from ckeditor_uploader import fields
 
 
 class Category(models.Model):
@@ -38,7 +38,7 @@ class Product(models.Model):
     price = models.FloatField()
     discount = models.FloatField(null=True, blank=True)
     inStock = models.BooleanField(default=True)
-    description = tinymce_models.HTMLField(blank=True, null=True)
+    description = fields.RichTextUploadingField(blank=True, null=True)
     dateCreated = models.DateTimeField(auto_now_add=True)
 
 

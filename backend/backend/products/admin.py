@@ -21,6 +21,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    # form = ProductAdminForm
     list_display = [
         "id",
         "name",

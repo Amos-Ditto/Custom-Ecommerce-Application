@@ -128,6 +128,22 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-ckeditor"
+version = "6.5.1"
+description = "Django admin CKEditor integration."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django-ckeditor-6.5.1.tar.gz", hash = "sha256:57cd8fb7cd150adca354cd4e5c35a743fadaab7073f957d2b7167f0d9fe1fcaf"},
+    {file = "django_ckeditor-6.5.1-py3-none-any.whl", hash = "sha256:1321f24df392f30698513930ce5c9f6d899f9bd0ef734c3b64fe936d809e11b3"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+django-js-asset = ">=2.0"
+
+[[package]]
 name = "django-cors-headers"
 version = "3.14.0"
 description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
@@ -161,16 +177,22 @@ graphene-django = ">=2.0.0"
 PyJWT = ">=2,<3"
 
 [[package]]
-name = "django-tinymce"
-version = "3.6.1"
-description = "A Django application that contains a widget to render a form field as a TinyMCE editor."
+name = "django-js-asset"
+version = "2.0.0"
+description = "script tag with additional attributes for django.forms.Media"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6"
 files = [
-    {file = "django-tinymce-3.6.1.tar.gz", hash = "sha256:6f4f6227c2c608052081a436a1e3054c441caae24c9e0c8c3010536e24749e29"},
-    {file = "django_tinymce-3.6.1-py3-none-any.whl", hash = "sha256:da5732413f51cf854352e3148f06f170b59d95a6c6a43fd9f7ccfdd1849f4bf9"},
+    {file = "django_js_asset-2.0.0-py3-none-any.whl", hash = "sha256:86f9f300d682537ddaf0487dc2ab356581b8f50c069bdba91d334a46e449f923"},
+    {file = "django_js_asset-2.0.0.tar.gz", hash = "sha256:adc1ee1efa853fad42054b540c02205344bb406c9bddf87c9e5377a41b7db90f"},
 ]
+
+[package.dependencies]
+Django = ">=2.2"
+
+[package.extras]
+tests = ["coverage"]
 
 [[package]]
 name = "graphene"
@@ -507,4 +529,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "c138d17c183868f1217563db6ce36d11870f36d3d20af53283086b4acf78cdc3"
+content-hash = "97f9377ab023835de802c872b13e5aa5f6ef9cacacff517275a8ff0d320857a1"
