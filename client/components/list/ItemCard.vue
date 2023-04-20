@@ -13,8 +13,12 @@ const add_favorite = ref<boolean>(false);
 		</NuxtLink>
 		<div class="flex flex-col mt-1.5 gap-y-1 w-full">
 			<div class="price flex flex-row items-center gap-x-2 w-full">
-				<span class="text-sm sm:text-lg text-neutral-500 line-through font-medium dark:text-neutral-200">$30.00</span>
-				<span class="text-sm sm:text-lg text-neutral-700 font-semibold dark:text-c-mode">$25.00</span>
+				<span class="text-sm sm:text-lg text-neutral-700 font-semibold dark:text-c-mode"
+					><span class="text-sm">KES</span> 25.00</span
+				>
+				<span class="mt-0.5 text-xs sm:text-base text-neutral-500 line-through font-medium dark:text-neutral-200"
+					><span class="text-xs sm:text-sm">KES</span> 30.00</span
+				>
 			</div>
 			<div class="name w-full">
 				<small class="line-clamp-2 text-xs sm:text-sm dark:text-c-mode text-neutral-600"

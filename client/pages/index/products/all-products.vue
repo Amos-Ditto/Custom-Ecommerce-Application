@@ -4,7 +4,7 @@
 			<NuxtImg src="/products.png" class="w-full rounded-sm" />
 		</div>
 		<div class="w-full grid grid-cols-12 gap-x-6 px-3 sm:px-0">
-			<div class="col-span-3 hidden lg:flex flex-col border-r border-neutral-200">
+			<div class="col-span-3 hidden lg:flex flex-col border-r border-neutral-200 dark:border-neutral-700">
 				<NavsAsideProducts />
 			</div>
 			<div class="col-span-12 lg:col-span-9 flex flex-col py-4">
@@ -16,15 +16,13 @@
 						</div>
 					</div>
 					<div class="flex flex-row items-center">
-						<div class="relative">
+						<div class="relative flex flex-row items-center gap-x-2">
+							<span class="text-neutral-500 dark:text-neutral-200 text-base">Sort by :</span>
 							<button
-								class="flex flex-row items-center gap-x-1 px-3 sm:px-4 py-2.5 sm:py-3.5 border border-neutral-200 dark:border-neutral-600 rounded text-xs sm:text-sm focus:border-custom transition-colors duration-200"
+								class="flex flex-row items-center gap-x-1 px-3 sm:px-4 py-2 sm:py-2.5 border border-neutral-200 dark:border-neutral-600 rounded text-sm sm:text-base focus:border-custom transition-colors duration-200 dark:focus:border-custom"
 							>
-								<span class="text-neutral-500 dark:text-neutral-200">Sort by :</span>
 								<span class="tracking-wide font-medium dark:text-c-mode">Most popular</span>
-								<div class="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 text-neutral-500 dark:text-neutral-200">
-									<IconsChevronRight class="rotate-90" />
-								</div>
+								<Icon name="mdi:chevron-down" class="text-lg dark:text-neutral-100" />
 							</button>
 						</div>
 					</div>

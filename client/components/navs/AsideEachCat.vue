@@ -1,7 +1,7 @@
 <template>
-	<aside class="w-full flex flex-col py-2 px-4">
+	<aside class="w-full flex flex-col py-2 px-0">
 		<div class="w-full flex flex-col gap-y-2">
-			<div class="py-3 px-1 flex items-center border-b border-neutral-200">
+			<div class="py-3 px-1 flex items-center border-b border-neutral-200 dark:border-neutral-700">
 				<h4 class="text-lg font-semibold">Categories</h4>
 			</div>
 			<ul class="w-full flex flex-col">
@@ -20,7 +20,7 @@
 						</div>
 						<span class="text-neutral-700 font-semibold text-base truncate">{{ $route.params.category }}</span>
 					</div>
-					<ul class="py-2 pl-6 pr-2 flex flex-col gap-y-1 border-b border-neutral-200">
+					<ul class="py-2 pl-6 pr-2 flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
 						<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 							<NuxtLink
 								:to="{ name: 'Category', params: { category: 'Automobile & Motorcycle' } }"
@@ -73,15 +73,15 @@
 			</ul>
 		</div>
 		<div class="w-full flex flex-col gap-y-1">
-			<div class="py-3 px-1 flex items-center border-neutral-200">
+			<div class="py-3 px-1 flex items-center border-neutral-200 dark:border-neutral-700">
 				<h4 class="text-lg font-semibold">Price</h4>
 			</div>
-			<div class="w-full flex flex-row justify-between gap-x-3 items-center border-b border-neutral-200 pb-4">
+			<div class="w-full flex flex-row justify-between gap-x-3 items-center border-b border-neutral-200 pb-4 dark:border-neutral-700">
 				<input
 					type="text"
 					name="min"
 					id="min"
-					class="w-full py-2 px-2 border border-neutral-200 rounded text-sm focus:outline-none focus:ring-1 ring-custom focus:border-transparent transition duration-200"
+					class="w-full py-2 px-2 border border-neutral-200 rounded text-sm focus:outline-none focus:ring-1 ring-custom focus:border-transparent transition duration-20 dark:border-neutral-7000"
 					placeholder="min price"
 				/>
 				<small class="text-sm text-neutral-600">to</small>
@@ -89,14 +89,14 @@
 					type="text"
 					name="max"
 					id="max"
-					class="w-full py-2 px-2 border border-neutral-200 rounded text-sm focus:outline-none focus:ring-1 ring-custom focus:border-transparent transition duration-200"
+					class="w-full py-2 px-2 border border-neutral-200 rounded text-sm focus:outline-none focus:ring-1 ring-custom focus:border-transparent transition duration-20 dark:border-neutral-7000"
 					placeholder="max price"
 				/>
 				<button class="bg-custom px-2.5 py-2 text-sm font-semibold tracking-wide text-white rounded">Go</button>
 			</div>
 		</div>
-		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200">
-			<div class="py-3 px-1 flex items-center border-neutral-200">
+		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
+			<div class="py-3 px-1 flex items-center border-neutral-200 dark:border-neutral-700">
 				<h4 class="text-lg font-semibold">Brands</h4>
 			</div>
 			<ul class="flex flex-col gap-y-1 w-full px-1">
@@ -132,8 +132,8 @@
 				<span class="text-sm text-custom font-bold tracking-tight">Show more</span>
 			</div>
 		</div>
-		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200">
-			<div class="py-3 px-1 flex items-center border-neutral-200">
+		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
+			<div class="py-3 px-1 flex items-center border-neutral-200 dark:border-neutral-700">
 				<h4 class="text-lg font-semibold">Size</h4>
 			</div>
 			<ul class="flex flex-col gap-y-1 w-full px-1">

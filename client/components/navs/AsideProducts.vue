@@ -1,10 +1,10 @@
 <template>
-	<aside class="w-full flex flex-col py-2 px-4">
+	<aside class="w-full flex flex-col py-2">
 		<div class="w-full flex flex-col gap-y-2">
-			<div class="py-3 px-1 flex items-center border-b border-neutral-200">
+			<div class="py-3 px-1 flex items-center border-b border-neutral-200 dark:border-neutral-700">
 				<h4 class="text-lg font-semibold">Categories</h4>
 			</div>
-			<ul class="py-2 px-1 flex flex-col gap-y-1 border-b border-neutral-200">
+			<ul class="py-2 px-1 flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
 				<li class="text-neutral-700 text-base capitalize truncate py-1.5">
 					<NuxtLink :to="{ name: 'Category', params: { category: 'Automobile & Motorcycle' } }" class="w-full h-full block">
 						Automobile & Motorcycle
@@ -43,10 +43,10 @@
 			</ul>
 		</div>
 		<div class="w-full flex flex-col gap-y-1">
-			<div class="py-3 px-1 flex items-center border-neutral-200">
+			<div class="py-3 px-1 flex items-center border-neutral-200 dark:border-neutral-700">
 				<h4 class="text-lg font-semibold">Price</h4>
 			</div>
-			<div class="w-full flex flex-row justify-between gap-x-3 items-center border-b border-neutral-200 pb-4">
+			<div class="w-full flex flex-row justify-between gap-x-3 items-center border-b border-neutral-200 pb-4 dark:border-neutral-700">
 				<input
 					type="text"
 					name="min"
@@ -65,7 +65,7 @@
 				<button class="bg-custom px-2.5 py-2 text-sm font-semibold tracking-wide text-white rounded">Go</button>
 			</div>
 		</div>
-		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200">
+		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
 			<div class="py-3 px-1 flex items-center border-neutral-200">
 				<h4 class="text-lg font-semibold">Brands</h4>
 			</div>
@@ -102,7 +102,7 @@
 				<span class="text-sm text-custom font-bold tracking-tight">Show more</span>
 			</div>
 		</div>
-		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200">
+		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
 			<div class="py-3 px-1 flex items-center border-neutral-200">
 				<h4 class="text-lg font-semibold">Size</h4>
 			</div>
@@ -139,7 +139,7 @@
 				<span class="text-sm text-custom font-bold tracking-tight">Show more</span>
 			</div>
 		</div>
-		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200">
+		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
 			<div class="py-3 px-1 flex items-center border-neutral-200">
 				<h4 class="text-lg font-semibold">Color</h4>
 			</div>
@@ -176,7 +176,7 @@
 				<span class="text-sm text-custom font-bold tracking-tight">Show more</span>
 			</div>
 		</div>
-		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200">
+		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">
 			<div class="py-3 px-1 flex items-center border-neutral-200">
 				<h4 class="text-lg font-semibold">Memory</h4>
 			</div>
