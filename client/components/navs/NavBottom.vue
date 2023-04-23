@@ -2,24 +2,18 @@
 	<nav class="w-screen fixed bottom-0 left-0 right-0 md:hidden flex flex-col z-20">
 		<div
 			id="mobi-nav"
-			class="flex flex-row justify-between items-center py-2 px-4 sm:px-6 border-t border-neutral-300 dark:border-neutral-700 bg-c-base/75 backdrop-blur-[100px] dark:bg-c-dark/90"
+			class="flex flex-row justify-between items-center py-2 px-4 sm:px-6 border-t border-neutral-300 dark:border-neutral-700 bg-white dark:bg-c-dark"
 		>
 			<button>
-				<div class="w-6 h-6">
-					<IconsHome />
-				</div>
+				<Icon name="mdi:home-outline" class="text-2xl" />
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Home</small>
 			</button>
 			<button>
-				<div class="w-6 h-6">
-					<IconsGrid />
-				</div>
+				<Icon name="mdi:view-grid-outline" class="text-2xl" />
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Products</small>
 			</button>
 			<button>
-				<div class="w-6 h-6">
-					<IconsCart />
-				</div>
+				<Icon name="mdi:cart-outline" class="text-2xl" />
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Cart</small>
 
 				<div
@@ -29,9 +23,7 @@
 				</div>
 			</button>
 			<button>
-				<div class="w-6 h-6">
-					<IconsDots />
-				</div>
+				<Icon name="mdi:menu" class="text-2xl" />
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Menu</small>
 			</button>
 		</div>
