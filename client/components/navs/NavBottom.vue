@@ -23,7 +23,7 @@
 				</div>
 			</button>
 			<button>
-				<Icon name="mdi:menu" class="text-2xl" />
+				<Icon name="mdi:dots-horizontal" class="text-2xl" />
 				<small class="text-xs sm:text-sm font-medium sm:font-semibold">Menu</small>
 			</button>
 		</div>
@@ -33,5 +33,8 @@
 <style scoped>
 #mobi-nav button {
 	@apply relative flex flex-col gap-y-1 items-center justify-center px-2 py-1 text-neutral-700 hover:text-custom dark:text-c-mode dark:hover:text-custom dark:first:text-custom;
+}
+button:focus small {
+	@apply text-custom dark:text-custom;
 }
 </style>

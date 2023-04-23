@@ -22,24 +22,7 @@
 						Cellphones & Tabs, Women Clothing & Fashion, Beauty, Health & Hair, Men Clothing & Fashion
 					</p>
 				</div>
-				<div class="flex flex-row items-center justify-center gap-x-1 text-neutral-700 dark:text-c-mode">
-					<small class="text-sm">4.0</small>
-					<div class="flex flex-row gap-x-0.5 items-center">
-						<button class="w-4 h-4 text-yellow-400">
-							<IconsStar />
-						</button>
-						<button class="w-4 h-4 text-yellow-400">
-							<IconsStar /></button
-						><button class="w-4 h-4 text-yellow-400">
-							<IconsStar /></button
-						><button class="w-4 h-4 text-yellow-400">
-							<IconsStar /></button
-						><button class="w-4 h-4 text-gray-300">
-							<IconsStar />
-						</button>
-					</div>
-					<small class="text-sm truncate">(10 Ratings)</small>
-				</div>
+				<ContentsRatings />
 				<div class="flex flex-col gap-y-0.5 items-center justify-center text-neutral-600 dark:text-neutral-100">
 					<p class="text-sm text-center">Shop since 17 Jan, 2022</p>
 				</div>

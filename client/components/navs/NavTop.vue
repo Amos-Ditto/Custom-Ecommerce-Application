@@ -15,9 +15,9 @@ const { heightPos } = storeToRefs(store);
 		>
 			<div class="w-full flex flex-row justify-between">
 				<NuxtLink to="/" class="flex flex-row items-center uppercase">
-					<NuxtImg src="/logo.png" class="mr-1 max-h-[2rem] sm:max-h-[2.4rem] rounded-lg shadow opacity-90" />
+					<NuxtImg src="/logo.png" class="mr-1 max-h-[2rem] sm:max-h-[2.2rem] rounded-lg shadow opacity-90" />
 					<small class="text-2xl sm:text-3xl tracking-wide font-bold dark:text-c-mode"
-						><span class="text-custom">S</span>hop</small
+						><span class="text-custom dark:text-custom">S</span>hop</small
 					>
 				</NuxtLink>
 				<!-- Search input -->

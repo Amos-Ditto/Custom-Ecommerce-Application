@@ -12,12 +12,12 @@ const add_favorite = ref<boolean>(false);
 			</div>
 		</NuxtLink>
 		<div class="flex flex-col mt-1.5 gap-y-1 w-full">
-			<div class="price flex flex-row items-center gap-x-2 w-full">
+			<div class="price flex flex-row items-baseline gap-x-2 w-full">
 				<span class="text-sm sm:text-lg text-neutral-700 font-semibold dark:text-c-mode"
 					><span class="text-sm">KES</span> 25.00</span
 				>
-				<span class="mt-0.5 text-xs sm:text-base text-neutral-500 line-through font-medium dark:text-neutral-200"
-					><span class="text-xs sm:text-sm">KES</span> 30.00</span
+				<span class="mt-0.5 text-xs sm:text-sm text-neutral-500 line-through font-semibold dark:text-neutral-200"
+					><span class="">KES</span> 30.00</span
 				>
 			</div>
 			<div class="name w-full">
@@ -29,15 +29,15 @@ const add_favorite = ref<boolean>(false);
 				<button
 					class="text-xs sm:text-sm font-normal sm:font-medium text-neutral-50 tracking-wide flex flex-row items-center gap-x-1 py-1 px-2 bg-custom hover:bg-opacity-90 rounded transition duration-200"
 				>
-					<div class="w-4 h-4">
-						<IconsCart />
-					</div>
+					<Icon name="mdi:cart-outline" class="text-base" />
 					Buy Now
 				</button>
-				<div role="button" @click="() => (add_favorite = !add_favorite)" class="w-5 h-5 text-custom">
+				<div role="button" @click="() => (add_favorite = !add_favorite)" class="px-2 py-1 text-custom flex items-center">
 					<Transition mode="out-in">
-						<IconsHeartSolid v-if="add_favorite" />
-						<IconsHeart v-else />
+						<!-- <IconsHeartSolid /> -->
+						<Icon v-if="add_favorite" name="mdi:heart" class="text-xl dark:text-custom" />
+						<Icon v-else name="mdi:heart-outline" class="text-xl dark:text-custom" />
+						<!-- <IconsHeart /> -->
 					</Transition>
 				</div>
 			</div>

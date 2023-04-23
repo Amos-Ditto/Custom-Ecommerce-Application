@@ -44,25 +44,38 @@
 		</div>
 		<div class="w-full flex flex-col gap-y-1">
 			<div class="py-3 px-1 flex items-center border-neutral-200 dark:border-neutral-700">
-				<h4 class="text-lg font-semibold dark:text-c-mode">Price</h4>
+				<h4 class="text-lg font-semibold">Price</h4>
 			</div>
-			<div class="w-full flex flex-row justify-between gap-x-3 items-center border-b border-neutral-200 pb-4 dark:border-neutral-700">
-				<input
-					type="text"
-					name="min"
-					id="min"
-					class="w-full py-2 px-2 border border-neutral-200 rounded text-sm focus:outline-none focus:ring-1 ring-custom focus:border-transparent transition duration-200"
-					placeholder="min price"
-				/>
-				<small class="text-sm text-neutral-600">to</small>
-				<input
-					type="text"
-					name="max"
-					id="max"
-					class="w-full py-2 px-2 border border-neutral-200 rounded text-sm focus:outline-none focus:ring-1 ring-custom focus:border-transparent transition duration-200"
-					placeholder="max price"
-				/>
-				<button class="bg-custom px-2.5 py-2 text-sm font-semibold tracking-wide text-white rounded">Go</button>
+			<div
+				class="w-full pl-1 pr-3 flex flex-row justify-between gap-x-3 items-center border-b border-neutral-200 pb-4 dark:border-neutral-700"
+			>
+				<div class="relative">
+					<input
+						type="text"
+						id="min"
+						class="block px-2.5 py-2 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-custom focus:outline-none focus:ring-0 focus:border-custom peer"
+						placeholder=" "
+					/>
+					<label
+						for="min"
+						class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-custom peer-focus:dark:text-custom peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+						>Min</label
+					>
+				</div>
+				<div class="relative">
+					<input
+						type="text"
+						id="max"
+						class="block px-2.5 py-2 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-custom focus:outline-none focus:ring-0 focus:border-custom peer"
+						placeholder=" "
+					/>
+					<label
+						for="max"
+						class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-custom peer-focus:dark:text-custom peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+						>Max</label
+					>
+				</div>
+				<button class="bg-custom px-3.5 py-2 text-sm font-semibold tracking-wide text-white rounded">Go</button>
 			</div>
 		</div>
 		<div class="w-full flex flex-col gap-y-1 border-b border-neutral-200 dark:border-neutral-700">

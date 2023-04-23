@@ -2,6 +2,10 @@
 const props = defineProps<{
 	itemName: string;
 }>();
+
+const isPassedLabel = computed(() => {
+	return props.itemName === "";
+});
 </script>
 <template>
 	<div class="inline-flex items-center">
@@ -17,7 +21,9 @@ const props = defineProps<{
 					<IconsCheck />
 				</div>
 			</div>
-			<span class="cursor-pointer select-none text-base text-neutral-700 line-clamp-1 dark:text-c-mode">{{ props.itemName }}</span>
+			<span v-if="!isPassedLabel" class="cursor-pointer select-none text-base text-neutral-700 line-clamp-1 dark:text-c-mode">{{
+				props.itemName
+			}}</span>
 		</label>
 	</div>
 </template>
