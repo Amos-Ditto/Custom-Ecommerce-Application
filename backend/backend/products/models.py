@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from ckeditor_uploader import fields
+from ..users.models import Seller
 
 
 class Category(models.Model):
@@ -20,6 +21,7 @@ class SubCategory(models.Model):
     categoryId = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="sub_category"
     )
+    image = models.ImageField(upload_to="", blank=True, null=True)
     dateCreated = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -29,10 +31,30 @@ class SubCategory(models.Model):
     def __str__(self):
         return self.name
 
+    def upload_to(self, filename):
+        extension = filename.split(".")[-1]
+
+        new_filename = f"{self.name}.{extension}"
+
+        return f"categories/sub/{new_filename}"
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            self.image.name = self.upload_to(self.image.name)
+        super().save(*args, **kwargs)
+
+    @property
+    def subCategoryUrl(self):
+        if self.image:
+            return settings.HOST_URL + self.image.url
+        else:
+            return ""
+
 
 class Brand(models.Model):
     name = models.CharField(max_length=250)
     categoryId = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="", blank=True, null=True)
 
     class Meta:
         verbose_name = "Product Brand"
@@ -41,11 +63,37 @@ class Brand(models.Model):
     def __str__(self):
         return self.name
 
+    def upload_to(self, filename):
+        extension = filename.split(".")[-1]
+
+        new_filename = f"{self.name}.{extension}"
+
+        return f"products/brands/{new_filename}"
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            self.image.name = self.upload_to(self.image.name)
+        super().save(*args, **kwargs)
+
+    @property
+    def brandImageUrl(self):
+        if self.image:
+            return settings.HOST_URL + self.image.url
+        else:
+            return ""
+
 
 class Product(models.Model):
     name = models.CharField(max_length=250)
     subCategoryId = models.ForeignKey(
         SubCategory, on_delete=models.CASCADE, related_name="product"
+    )
+    shop = models.ForeignKey(
+        Seller,
+        on_delete=models.CASCADE,
+        related_name="shop_product",
+        blank=True,
+        null=True,
     )
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, blank=True, null=True)
     price = models.FloatField()

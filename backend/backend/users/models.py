@@ -69,4 +69,35 @@ class Seller(models.Model):
             return ""
 
 
-# class SellerDetails()
+class SellerDetails(models.Model):
+    sellerId = models.ForeignKey(
+        Seller, on_delete=models.CASCADE, related_name="seller_detail"
+    )
+    description = models.TextField(blank=True, null=True)
+    bannerImage = models.ImageField(upload_to="")
+
+    class Meta:
+        verbose_name = "Seller Details"
+        verbose_name_plural = "Seller Details"
+
+    def __str__(self):
+        return "Shop -> " + self.sellerId.shopName
+
+    def upload_to(self, filename):
+        extension = filename.split(".")[-1]
+
+        new_filename = f"{self.sellerId.shopName}.{extension}"
+
+        return f"sellers/banners/{new_filename}"
+
+    def save(self, *args, **kwargs):
+        if self.bannerImage:
+            self.bannerImage.name = self.upload_to(self.bannerImage.name)
+        super().save(*args, **kwargs)
+
+    @property
+    def shopBannerUrl(self):
+        if self.bannerImage:
+            return settings.HOST_URL + self.bannerImage.url
+        else:
+            return ""
