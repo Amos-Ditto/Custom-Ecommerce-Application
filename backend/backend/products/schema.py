@@ -28,9 +28,20 @@ class TSubCategory(DjangoObjectType):
         return self.subCategoryUrl
 
 
+class TBrand(DjangoObjectType):
+    class Meta:
+        model = Brand
+
+    brandImageUrl = graphene.String()
+
+    def resolve_brandImageUrl(self, info):
+        return self.brandImageUrl
+
+
 class Query(graphene.ObjectType):
     list_category = graphene.List(TCategory)
     list_sub_category = graphene.List(TSubCategory)
+    list_brand = graphene.List(TBrand)
 
     def resolve_list_category(root, info):
         objs = Category.objects.all()
@@ -38,4 +49,8 @@ class Query(graphene.ObjectType):
 
     def resolve_list_sub_category(root, info):
         objs = SubCategory.objects.all()
+        return objs
+
+    def resolve_list_brand(root, info):
+        objs = Brand.objects.all()
         return objs

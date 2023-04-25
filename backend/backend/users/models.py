@@ -1,5 +1,10 @@
+from io import BytesIO
+import os
 from django.db import models
 from django.conf import settings
+from PIL import Image
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.contrib.auth.models import AbstractBaseUser
 from .manager import AppUserManager
 
@@ -69,6 +74,20 @@ class Seller(models.Model):
             return ""
 
 
+def convert_to_webp(image):
+    img = Image.open(image)
+    webp_io = BytesIO()
+    ext = os.path.splitext(image.name)[1].lower()
+    # Save the image in WebP format with lossless compression to the BytesIO object
+    img.save(webp_io, format="WebP", lossless=True)
+
+    new_name = os.path.splitext(image.name)[0] + ".webp"
+    new_image = default_storage.save(new_name, ContentFile(webp_io.getvalue()))
+
+    image.field.files.delete(save=False)  # delete the original image file
+    image.save(new_name, ContentFile(webp_io.getvalue()), save=True)
+
+
 class SellerDetails(models.Model):
     sellerId = models.ForeignKey(
         Seller, on_delete=models.CASCADE, related_name="seller_detail"
@@ -93,6 +112,15 @@ class SellerDetails(models.Model):
     def save(self, *args, **kwargs):
         if self.bannerImage:
             self.bannerImage.name = self.upload_to(self.bannerImage.name)
+            img = Image.open(self.bannerImage)
+            webp_io = BytesIO()
+            img.save(webp_io, format="WebP", lossless=True)
+
+            new_name = os.path.splitext(self.bannerImage.name)[0] + ".webp"
+            if self.bannerImage.name != new_name:
+                default_storage.delete(self.bannerImage.name)
+            self.bannerImage.save(new_name, ContentFile(webp_io.getvalue()), save=False)
+
         super().save(*args, **kwargs)
 
     @property
@@ -101,3 +129,22 @@ class SellerDetails(models.Model):
             return settings.HOST_URL + self.bannerImage.url
         else:
             return ""
+
+
+class SellerRating(models.Model):
+    sellerId = models.ForeignKey(
+        Seller, on_delete=models.CASCADE, related_name="seller_rates"
+    )
+    userId = models.ForeignKey(
+        AppUser, on_delete=models.CASCADE, related_name="user_rating"
+    )
+    rating = models.IntegerField()
+    review = models.TextField(blank=True, null=True)
+    dateCreated = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Seller Ratings"
+        verbose_name_plural = "Seller Ratings"
+
+    def __str__(self):
+        return f"{self.sellerId.shopName} {str(self.rating)}"

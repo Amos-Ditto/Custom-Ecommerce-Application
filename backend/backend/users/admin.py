@@ -3,7 +3,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
 from .forms import UserChangeForm, UserCreationForm
-from .models import Seller
+from .models import Seller, SellerDetails, SellerRating
 
 
 AppUser = get_user_model()
@@ -39,6 +39,17 @@ class UserAdmin(BaseUserAdmin):
 class SellerAdmin(admin.ModelAdmin):
     list_display = ["id", "userId", "shopName", "dateJoined"]
     list_filter = ["dateJoined"]
+
+
+@admin.register(SellerDetails)
+class SellerDetailAdmin(admin.ModelAdmin):
+    list_display = ["id", "sellerId"]
+
+
+@admin.register(SellerRating)
+class SellerRatingAdmin(admin.ModelAdmin):
+    list_display = ["id", "sellerId", "userId", "rating", "dateCreated"]
+    list_filter = ["dateCreated"]
 
 
 admin.site.unregister(Group)
