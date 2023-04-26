@@ -1,7 +1,10 @@
 from django.db import models
 from django.conf import settings
 from ckeditor_uploader import fields
+from django.contrib.auth import get_user_model
 from ..users.models import Seller
+
+AppUser = get_user_model()
 
 
 class Category(models.Model):
@@ -169,8 +172,25 @@ class ProductImages(models.Model):
         super().save(*args, **kwargs)
 
     @property
-    def shopAvatarUrl(self):
+    def productImageUrl(self):
         if self.image:
             return settings.HOST_URL + self.image.url
         else:
             return ""
+
+
+class UserWishListItem(models.Model):
+    userId = models.ForeignKey(
+        AppUser, on_delete=models.CASCADE, related_name="user_wish_item"
+    )
+    productId = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="wish_list_item"
+    )
+    createdAt = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "User Wish List"
+        verbose_name_plural = "User Wish List"
+
+    def __str__(self):
+        return f"{self.userId} {self.productId.name}"

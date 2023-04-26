@@ -10,6 +10,7 @@ from .models import (
     ProductImages,
     ProductVariant,
     VariantItem,
+    UserWishListItem,
 )
 
 
@@ -38,10 +39,42 @@ class TBrand(DjangoObjectType):
         return self.brandImageUrl
 
 
+class TProduct(DjangoObjectType):
+    class Meta:
+        model = Product
+
+
+class TProductVariant(DjangoObjectType):
+    class Meta:
+        model = ProductVariant
+
+
+class TVariantItem(DjangoObjectType):
+    class Meta:
+        model = VariantItem
+
+
+class TProductImages(DjangoObjectType):
+    class Meta:
+        model = ProductImages
+
+    productImageUrl = graphene.String()
+
+    def resolve_productImageUrl(self, info):
+        return self.productImageUrl
+
+
+class TUserWishList(DjangoObjectType):
+    class Meta:
+        model = UserWishListItem
+
+
 class Query(graphene.ObjectType):
     list_category = graphene.List(TCategory)
     list_sub_category = graphene.List(TSubCategory)
     list_brand = graphene.List(TBrand)
+    list_products = graphene.List(TProduct)
+    list_my_wishlist = graphene.List(TUserWishList)
 
     def resolve_list_category(root, info):
         objs = Category.objects.all()
@@ -54,3 +87,12 @@ class Query(graphene.ObjectType):
     def resolve_list_brand(root, info):
         objs = Brand.objects.all()
         return objs
+
+    def resolve_list_products(root, info):
+        products = Product.objects.filter(product_image__default=True)
+        return products
+
+    def resolve_list_my_wishlist(root, info):
+        if info.context.user.is_authenticated:
+            return UserWishListItem.objects.filter(userId=info.context.user)
+        return None

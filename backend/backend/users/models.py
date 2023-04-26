@@ -1,8 +1,8 @@
-from io import BytesIO
 import os
+from PIL import Image
+from io import BytesIO
 from django.db import models
 from django.conf import settings
-from PIL import Image
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.contrib.auth.models import AbstractBaseUser
@@ -72,20 +72,6 @@ class Seller(models.Model):
             return settings.HOST_URL + self.shopAvatar.url
         else:
             return ""
-
-
-def convert_to_webp(image):
-    img = Image.open(image)
-    webp_io = BytesIO()
-    ext = os.path.splitext(image.name)[1].lower()
-    # Save the image in WebP format with lossless compression to the BytesIO object
-    img.save(webp_io, format="WebP", lossless=True)
-
-    new_name = os.path.splitext(image.name)[0] + ".webp"
-    new_image = default_storage.save(new_name, ContentFile(webp_io.getvalue()))
-
-    image.field.files.delete(save=False)  # delete the original image file
-    image.save(new_name, ContentFile(webp_io.getvalue()), save=True)
 
 
 class SellerDetails(models.Model):
