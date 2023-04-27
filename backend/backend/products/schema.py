@@ -44,6 +44,14 @@ class TProduct(DjangoObjectType):
         model = Product
 
 
+class TProductPaginate(graphene.ObjectType):
+    rows = graphene.List(TProduct)
+    total_rows = graphene.Int()
+    current_page = graphene.Int()
+    next_page = graphene.String()
+    prev_page = graphene.String()
+
+
 class TProductVariant(DjangoObjectType):
     class Meta:
         model = ProductVariant
@@ -75,6 +83,11 @@ class Query(graphene.ObjectType):
     list_brand = graphene.List(TBrand)
     list_products = graphene.List(TProduct)
     list_my_wishlist = graphene.List(TUserWishList)
+    page_list_product = graphene.Field(
+        TProductPaginate, page=graphene.Int(), page_size=graphene.Int()
+    )
+    # filters
+    filter_products = graphene.List(TProductPaginate, cat=graphene.String())
 
     def resolve_list_category(root, info):
         objs = Category.objects.all()
@@ -95,4 +108,28 @@ class Query(graphene.ObjectType):
     def resolve_list_my_wishlist(root, info):
         if info.context.user.is_authenticated:
             return UserWishListItem.objects.filter(userId=info.context.user)
+        return None
+
+    # Paginated resolvers
+    def resolve_page_list_product(root, info, page=1, page_size=10):
+        queryset = Product.objects.all()
+        total_rows = queryset.count()
+
+        # pagination values
+        skip = (page - 1) * page_size
+        limit = page_size + skip
+        rows = queryset[skip:limit]
+
+        prev_page = page - 1 if page > 1 else None
+        next_page = page + 1 if limit < total_rows else None
+
+        return {
+            "rows": rows,
+            "total_rows": total_rows,
+            "current_page": page,
+            "next_page": next_page,
+            "prev_page": prev_page,
+        }
+
+    def resolve_filter_products(root, info, cat=None):
         return None

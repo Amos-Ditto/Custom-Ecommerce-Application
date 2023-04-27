@@ -55,6 +55,14 @@ class TSellerRating(DjangoObjectType):
         model = SellerRating
 
 
+class TSellerPaginate(graphene.ObjectType):
+    rows = graphene.List(TSeller)
+    total_rows = graphene.Int()
+    current_page = graphene.Int()
+    next_page = graphene.String()
+    prev_page = graphene.String()
+
+
 class SellerMutation(graphene.Mutation):
     seller = graphene.Field(TSeller)
 
@@ -87,6 +95,9 @@ class Mutation(graphene.ObjectType):
 class Query(graphene.ObjectType):
     get_seller_details = graphene.Field(TSeller, id=graphene.ID(required=False))
     list_shop = graphene.List(TSeller)
+    page_list_shops = graphene.Field(
+        TSellerPaginate, page=graphene.Int(), page_size=graphene.Int()
+    )
 
     def resolve_get_seller_details(root, info, id=None):
         if info.context.user.is_authenticated:
@@ -108,3 +119,24 @@ class Query(graphene.ObjectType):
     def resolve_list_shop(root, info):
         shops = Seller.objects.all()
         return shops
+
+    # Paginated resolvers
+    def resolve_page_list_shops(root, info, page=1, page_size=10):
+        queryset = Seller.objects.all()
+        total_rows = queryset.count()
+
+        # pagination values
+        skip = (page - 1) * page_size
+        limit = page_size + skip
+        rows = queryset[skip:limit]
+
+        prev_page = page - 1 if page > 1 else None
+        next_page = page + 1 if limit < total_rows else None
+
+        return {
+            "rows": rows,
+            "total_rows": total_rows,
+            "current_page": page,
+            "next_page": next_page,
+            "prev_page": prev_page,
+        }

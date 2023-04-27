@@ -34,6 +34,7 @@ class ProductAdmin(admin.ModelAdmin):
         "inStock",
         "dateCreated",
     ]
+    list_filter = ("dateCreated",)
 
 
 @admin.register(ProductVariant)
