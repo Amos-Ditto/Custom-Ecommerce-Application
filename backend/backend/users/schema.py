@@ -3,8 +3,8 @@ from django.conf import settings
 from graphene_django import DjangoObjectType
 from graphene_django.forms.mutation import DjangoModelFormMutation
 from graphene_file_upload.scalars import Upload
-from .models import AppUser, Seller
-from .forms import UserCreationForm, SellerCreationForm
+from .models import AppUser, Seller, SellerDetails, SellerRating
+from .forms import UserCreationForm
 
 
 class AppUserType(DjangoObjectType):
@@ -20,27 +20,46 @@ class AppUserMutation(DjangoModelFormMutation):
         group = "Users"
 
 
-class SellerInput(graphene.InputObjectType):
+class ISeller(graphene.InputObjectType):
     userId = graphene.ID(required=True)
     shopName = graphene.String(required=True)
     shopAvatar = Upload(required=True)
 
 
-class SellerType(DjangoObjectType):
+class TSeller(DjangoObjectType):
     class Meta:
         model = Seller
 
     shopAvatarUrl = graphene.String()
+    shopRating = graphene.List(of_type=graphene.Int)
 
     def resolve_shopAvatarUrl(self, info):
         return self.shopAvatarUrl
 
+    def resolve_shopRating(self, info):
+        return self.shopRating
+
+
+class TSellerDetail(DjangoObjectType):
+    class Meta:
+        model = SellerDetails
+
+    shopBannerUrl = graphene.String()
+
+    def resolve_shopBannerUrl(self, info):
+        return self.shopBannerUrl
+
+
+class TSellerRating(DjangoObjectType):
+    class Meta:
+        model = SellerRating
+
 
 class SellerMutation(graphene.Mutation):
-    seller = graphene.Field(SellerType)
+    seller = graphene.Field(TSeller)
 
     class Arguments:
-        seller_data = SellerInput(required=True)
+        seller_data = ISeller(required=True)
 
     @staticmethod
     def mutate(root, info, seller_data):
@@ -66,7 +85,8 @@ class Mutation(graphene.ObjectType):
 
 
 class Query(graphene.ObjectType):
-    get_seller_details = graphene.Field(SellerType, id=graphene.ID(required=False))
+    get_seller_details = graphene.Field(TSeller, id=graphene.ID(required=False))
+    list_shop = graphene.List(TSeller)
 
     def resolve_get_seller_details(root, info, id=None):
         if info.context.user.is_authenticated:
@@ -75,7 +95,7 @@ class Query(graphene.ObjectType):
                 return seller
             except Seller.DoesNotExist:
                 raise ValueError("this seller is not registered as Seller")
-        if id is not None:
+        elif id is not None:
             print("Id: ", id)
             try:
                 seller = Seller.objects.get(userId=id)
@@ -84,3 +104,7 @@ class Query(graphene.ObjectType):
                 raise ValueError("this seller is not registered as Seller")
         else:
             raise ValueError("Please give specific details: pass user ID or Authorize")
+
+    def resolve_list_shop(root, info):
+        shops = Seller.objects.all()
+        return shops

@@ -73,9 +73,19 @@ class Seller(models.Model):
         else:
             return ""
 
+    @property
+    def shopRating(self):
+        ratings = self.seller_rates.all()
+        if ratings:
+            count = len(ratings)
+            total = sum([rating.rating for rating in ratings])
+            return [count, total / count]
+        else:
+            return [0, 0]
+
 
 class SellerDetails(models.Model):
-    sellerId = models.ForeignKey(
+    sellerId = models.OneToOneField(
         Seller, on_delete=models.CASCADE, related_name="seller_detail"
     )
     description = models.TextField(blank=True, null=True)
@@ -98,6 +108,7 @@ class SellerDetails(models.Model):
     def save(self, *args, **kwargs):
         if self.bannerImage:
             self.bannerImage.name = self.upload_to(self.bannerImage.name)
+            # Convert img to WebP format
             img = Image.open(self.bannerImage)
             webp_io = BytesIO()
             img.save(webp_io, format="WebP", lossless=True)
