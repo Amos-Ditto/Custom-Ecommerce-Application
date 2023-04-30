@@ -1,7 +1,8 @@
 import graphene
+from graphene import relay
 from graphene_django import DjangoObjectType
-from graphene_django.forms.mutation import DjangoModelFormMutation
 from graphene_file_upload.scalars import Upload
+from graphene_django.filter import DjangoFilterConnectionField
 from .models import (
     Category,
     SubCategory,
@@ -44,12 +45,23 @@ class TProduct(DjangoObjectType):
         model = Product
 
 
-class TProductPaginate(graphene.ObjectType):
-    rows = graphene.List(TProduct)
-    total_rows = graphene.Int()
-    current_page = graphene.Int()
-    next_page = graphene.String()
-    prev_page = graphene.String()
+class TProductNode(DjangoObjectType):
+    class Meta:
+        model = Product
+        filter_fields = {
+            "id": ["exact"],
+            "name": ["exact", "icontains", "istartswith"],
+            "shop__id": ["exact"],
+            "shop__shopName": ["exact", "icontains"],
+            "subCategoryId__id": ["exact"],
+            "subCategoryId__categoryId__id": ["exact"],
+            "subCategoryId__name": ["exact", "icontains"],
+            "subCategoryId__categoryId__name": ["exact", "icontains"],
+            "price": ["lte", "gte"],
+            "discount": ["lte", "gte"],
+            "searchTags": ["icontains"],
+        }
+        interfaces = (relay.Node,)
 
 
 class TProductVariant(DjangoObjectType):
@@ -82,12 +94,9 @@ class Query(graphene.ObjectType):
     list_sub_category = graphene.List(TSubCategory)
     list_brand = graphene.List(TBrand)
     list_products = graphene.List(TProduct)
+    list_product_node = relay.Node.Field(TProductNode)
+    all_list_product_node = DjangoFilterConnectionField(TProductNode)
     list_my_wishlist = graphene.List(TUserWishList)
-    page_list_product = graphene.Field(
-        TProductPaginate, page=graphene.Int(), page_size=graphene.Int()
-    )
-    # filters
-    filter_products = graphene.List(TProductPaginate, cat=graphene.String())
 
     def resolve_list_category(root, info):
         objs = Category.objects.all()
@@ -108,28 +117,4 @@ class Query(graphene.ObjectType):
     def resolve_list_my_wishlist(root, info):
         if info.context.user.is_authenticated:
             return UserWishListItem.objects.filter(userId=info.context.user)
-        return None
-
-    # Paginated resolvers
-    def resolve_page_list_product(root, info, page=1, page_size=10):
-        queryset = Product.objects.all()
-        total_rows = queryset.count()
-
-        # pagination values
-        skip = (page - 1) * page_size
-        limit = page_size + skip
-        rows = queryset[skip:limit]
-
-        prev_page = page - 1 if page > 1 else None
-        next_page = page + 1 if limit < total_rows else None
-
-        return {
-            "rows": rows,
-            "total_rows": total_rows,
-            "current_page": page,
-            "next_page": next_page,
-            "prev_page": prev_page,
-        }
-
-    def resolve_filter_products(root, info, cat=None):
         return None

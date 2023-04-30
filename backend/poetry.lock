@@ -171,6 +171,21 @@ files = [
 Django = ">=3.2"
 
 [[package]]
+name = "django-filter"
+version = "23.1"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-filter-23.1.tar.gz", hash = "sha256:dee5dcf2cea4d7f767e271b6d01f767fce7500676d5e5dc58dac8154000b87df"},
+    {file = "django_filter-23.1-py3-none-any.whl", hash = "sha256:e3c52ad83c32fb5882125105efb5fea2a1d6a85e7dc64b04ef52edbf14451b6c"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-graphql-jwt"
 version = "0.3.4"
 description = "JSON Web Token for Django GraphQL."
@@ -541,4 +556,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3b59ab813e50d9e8e9bb6c613b414b39e4cb9b7e2c6b8c3dcab56fe934c13e9a"
+content-hash = "4854df219743b8241b4d86fc19827d6ac14b57cb19d2dc0194872795630a32f1"
