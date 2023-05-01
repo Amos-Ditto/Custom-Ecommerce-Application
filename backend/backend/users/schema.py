@@ -1,6 +1,7 @@
 import graphene
 from graphene import relay
 from graphene_django import DjangoObjectType
+from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.forms.mutation import DjangoModelFormMutation
 from graphene_file_upload.scalars import Upload
 from .models import AppUser, Seller, SellerDetails, SellerRating
@@ -26,7 +27,7 @@ class ISeller(graphene.InputObjectType):
     shopAvatar = Upload(required=True)
 
 
-class TSeller(DjangoObjectType):
+class TSellerNode(DjangoObjectType):
     class Meta:
         model = Seller
         filter_fields = {
@@ -56,21 +57,25 @@ class TSellerDetail(DjangoObjectType):
         return self.shopBannerUrl
 
 
-class TSellerRating(DjangoObjectType):
+class TSellerDetailNode(DjangoObjectType):
+    class Meta:
+        model = SellerDetails
+        interfaces = (relay.Node,)
+
+    shopBannerUrl = graphene.String()
+
+    def resolve_shopBannerUrl(self, info):
+        return self.shopBannerUrl
+
+
+class TSellerRatingNode(DjangoObjectType):
     class Meta:
         model = SellerRating
-
-
-class TSellerPaginate(graphene.ObjectType):
-    rows = graphene.List(TSeller)
-    total_rows = graphene.Int()
-    current_page = graphene.Int()
-    next_page = graphene.String()
-    prev_page = graphene.String()
+        interfaces = (relay.Node,)
 
 
 class SellerMutation(graphene.Mutation):
-    seller = graphene.Field(TSeller)
+    seller = graphene.Field(TSellerNode)
 
     class Arguments:
         seller_data = ISeller(required=True)
@@ -99,50 +104,5 @@ class Mutation(graphene.ObjectType):
 
 
 class Query(graphene.ObjectType):
-    get_seller_details = graphene.Field(TSeller, id=graphene.ID(required=False))
-    list_shop = graphene.List(TSeller)
-    page_list_shops = graphene.Field(
-        TSellerPaginate, page=graphene.Int(), page_size=graphene.Int()
-    )
-
-    def resolve_get_seller_details(root, info, id=None):
-        if info.context.user.is_authenticated:
-            try:
-                seller = Seller.objects.get(userId=info.context.user)
-                return seller
-            except Seller.DoesNotExist:
-                raise ValueError("this seller is not registered as Seller")
-        elif id is not None:
-            print("Id: ", id)
-            try:
-                seller = Seller.objects.get(userId=id)
-                return seller
-            except Seller.DoesNotExist:
-                raise ValueError("this seller is not registered as Seller")
-        else:
-            raise ValueError("Please give specific details: pass user ID or Authorize")
-
-    def resolve_list_shop(root, info):
-        shops = Seller.objects.all()
-        return shops
-
-    # Paginated resolvers
-    def resolve_page_list_shops(root, info, page=1, page_size=10):
-        queryset = Seller.objects.all()
-        total_rows = queryset.count()
-
-        # pagination values
-        skip = (page - 1) * page_size
-        limit = page_size + skip
-        rows = queryset[skip:limit]
-
-        prev_page = page - 1 if page > 1 else None
-        next_page = page + 1 if limit < total_rows else None
-
-        return {
-            "rows": rows,
-            "total_rows": total_rows,
-            "current_page": page,
-            "next_page": next_page,
-            "prev_page": prev_page,
-        }
+    shop_node = graphene.Field(TSellerNode)
+    list_shop_node = DjangoFilterConnectionField(TSellerNode)
