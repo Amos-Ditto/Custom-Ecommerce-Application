@@ -147,6 +147,7 @@ class VariantItem(models.Model):
 class ProductImages(models.Model):
     image = models.ImageField(upload_to="")
     default = models.BooleanField(default=False)
+    variant_name = models.CharField(max_length=100, blank=True, null=True)
     productId = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="product_image"
     )
@@ -177,20 +178,3 @@ class ProductImages(models.Model):
             return settings.HOST_URL + self.image.url
         else:
             return ""
-
-
-class UserWishListItem(models.Model):
-    userId = models.ForeignKey(
-        AppUser, on_delete=models.CASCADE, related_name="user_wish_item"
-    )
-    productId = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="wish_list_item"
-    )
-    createdAt = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = "User Wish List"
-        verbose_name_plural = "User Wish List"
-
-    def __str__(self):
-        return f"{self.userId} {self.productId.name}"

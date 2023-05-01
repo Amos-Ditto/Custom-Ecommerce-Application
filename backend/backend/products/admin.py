@@ -7,7 +7,6 @@ from .models import (
     VariantItem,
     ProductImages,
     Brand,
-    UserWishListItem,
 )
 
 
@@ -49,14 +48,9 @@ class VariantItemAdmin(admin.ModelAdmin):
 
 @admin.register(ProductImages)
 class ProductImagesAdmin(admin.ModelAdmin):
-    list_display = ["id", "default", "productId"]
+    list_display = ["id", "default", "productId", "variant_name"]
 
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ["id", "name", "categoryId"]
-
-
-@admin.register(UserWishListItem)
-class UserWishListAdmin(admin.ModelAdmin):
-    list_display = ["id", "userId", "productId"]

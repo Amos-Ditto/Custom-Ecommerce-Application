@@ -34,6 +34,7 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     "backend.users.apps.UsersConfig",
     "backend.products.apps.ProductsConfig",
+    "backend.orders.apps.OrdersConfig",
     "django_cleanup.apps.CleanupConfig",
 ]
 THIRD_PARTY_APPS = [
