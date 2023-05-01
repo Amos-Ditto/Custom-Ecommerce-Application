@@ -11,30 +11,48 @@ from .models import (
     ProductImages,
     ProductVariant,
     VariantItem,
-    UserWishListItem,
 )
 
 
-class TCategory(DjangoObjectType):
+class TCategoryNode(DjangoObjectType):
     class Meta:
         model = Category
+        interfaces = (relay.Node,)
+        filter_fields = {
+            "id": ["exact"],
+            "name": ["exact", "icontains", "istartswith"],
+        }
 
 
-class TSubCategory(DjangoObjectType):
+class TSubCategoryNode(DjangoObjectType):
+    subCategoryUrl = graphene.String()
+
     class Meta:
         model = SubCategory
-
-    subCategoryUrl = graphene.String()
+        interfaces = (relay.Node,)
+        filter_fields = {
+            "id": ["exact"],
+            "name": ["exact", "icontains", "istartswith"],
+            "categoryId__id": ["exact"],
+            "categoryId__name": ["exact", "icontains"],
+        }
 
     def resolve_subCategoryUrl(self, info):
         return self.subCategoryUrl
 
 
-class TBrand(DjangoObjectType):
+class TBrandNode(DjangoObjectType):
+    brandImageUrl = graphene.String()
+
     class Meta:
         model = Brand
-
-    brandImageUrl = graphene.String()
+        interfaces = (relay.Node,)
+        filter_fields = {
+            "id": ["exact"],
+            "name": ["exact", "icontains", "istartswith"],
+            "categoryId__id": ["exact"],
+            "categoryId__name": ["exact", "icontains"],
+        }
 
     def resolve_brandImageUrl(self, info):
         return self.brandImageUrl
@@ -57,6 +75,7 @@ class TProductNode(DjangoObjectType):
             "subCategoryId__categoryId__id": ["exact"],
             "subCategoryId__name": ["exact", "icontains"],
             "subCategoryId__categoryId__name": ["exact", "icontains"],
+            "product_image__default": ["exact"],
             "price": ["lte", "gte"],
             "discount": ["lte", "gte"],
             "searchTags": ["icontains"],
@@ -84,37 +103,12 @@ class TProductImages(DjangoObjectType):
         return self.productImageUrl
 
 
-class TUserWishList(DjangoObjectType):
-    class Meta:
-        model = UserWishListItem
-
-
 class Query(graphene.ObjectType):
-    list_category = graphene.List(TCategory)
-    list_sub_category = graphene.List(TSubCategory)
-    list_brand = graphene.List(TBrand)
-    list_products = graphene.List(TProduct)
-    list_product_node = relay.Node.Field(TProductNode)
-    all_list_product_node = DjangoFilterConnectionField(TProductNode)
-    list_my_wishlist = graphene.List(TUserWishList)
-
-    def resolve_list_category(root, info):
-        objs = Category.objects.all()
-        return objs
-
-    def resolve_list_sub_category(root, info):
-        objs = SubCategory.objects.all()
-        return objs
-
-    def resolve_list_brand(root, info):
-        objs = Brand.objects.all()
-        return objs
-
-    def resolve_list_products(root, info):
-        products = Product.objects.filter(product_image__default=True)
-        return products
-
-    def resolve_list_my_wishlist(root, info):
-        if info.context.user.is_authenticated:
-            return UserWishListItem.objects.filter(userId=info.context.user)
-        return None
+    category_node = relay.Node.Field(TCategoryNode)
+    list_category_node = DjangoFilterConnectionField(TCategoryNode)
+    sub_category_node = relay.Node.Field(TSubCategoryNode)
+    list_sub_category_node = DjangoFilterConnectionField(TSubCategoryNode)
+    brand_node = relay.Node.Field(TBrandNode)
+    list_brand_node = DjangoFilterConnectionField(TBrandNode)
+    product_node = relay.Node.Field(TProductNode)
+    list_product_node = DjangoFilterConnectionField(TProductNode)

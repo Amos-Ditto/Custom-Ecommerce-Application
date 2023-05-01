@@ -1,5 +1,5 @@
 import graphene
-from django.conf import settings
+from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.forms.mutation import DjangoModelFormMutation
 from graphene_file_upload.scalars import Upload
@@ -29,6 +29,12 @@ class ISeller(graphene.InputObjectType):
 class TSeller(DjangoObjectType):
     class Meta:
         model = Seller
+        filter_fields = {
+            "id": ["exact"],
+            "shopName": ["exact", "icontains", "istartswith"],
+            "dateJoined": ["lte", "gte"],
+        }
+        interfaces = (relay.Node,)
 
     shopAvatarUrl = graphene.String()
     shopRating = graphene.List(of_type=graphene.Int)

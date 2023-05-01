@@ -2,9 +2,10 @@ import graphene
 import graphql_jwt
 from backend.users.schema import Mutation as UserMutations, Query as UserQuery
 from backend.products.schema import Query as ProductQuery
+from backend.orders.schema import Query as OrderQuery
 
 
-class Query(UserQuery, ProductQuery, graphene.ObjectType):
+class Query(UserQuery, ProductQuery, OrderQuery, graphene.ObjectType):
     pass
 
 
