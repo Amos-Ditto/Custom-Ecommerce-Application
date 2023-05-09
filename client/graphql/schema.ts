@@ -4,6 +4,7 @@ export const GetToken = gql`
 			refreshExpiresIn
 			token
 			payload
+			refreshToken
 		}
 	}
 `;

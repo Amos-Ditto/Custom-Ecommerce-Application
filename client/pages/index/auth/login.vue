@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useAuthStore } from "./authStore";
 import { GetToken } from "~~/graphql/schema";
+import { IRefreshToken } from "~~/types";
 
 interface ILoginDetail {
 	email: string;
@@ -10,18 +11,34 @@ const form_details = ref<ILoginDetail>({
 	email: "",
 	password: "",
 });
+
 const { mutate: postAuthDetails, loading, error: submitError, onDone } = useMutation(GetToken);
 const authStore = useAuthStore();
 const router = useRouter();
+const { onLogin } = useApollo();
+
+const today = new Date();
+const user_payload = useCookie("user_payload", {
+	expires: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 - 2 * 60 * 1000),
+	sameSite: true,
+});
+const refresh_token = useCookie<IRefreshToken>("user_refresh_token", {
+	expires: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 - 2 * 60 * 1000),
+	sameSite: true,
+});
 
 const submitDetails = (): void => {
 	postAuthDetails(form_details.value);
 	onDone((data) => {
 		if (!submitError.value) {
 			authStore.updateUserPayload(data.data.tokenAuth.payload);
-
-			console.log(authStore.userPayload);
-			// router.go(-1);
+			user_payload.value = data.data.tokenAuth.payload;
+			refresh_token.value = {
+				refreshExpiresIn: data.data.tokenAuth.refreshExpiresIn,
+				refreshToken: data.data.tokenAuth.refreshToken,
+			};
+			onLogin(data.data.tokenAuth.token);
+			router.go(-1);
 		}
 	});
 };
