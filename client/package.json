@@ -10,6 +10,7 @@
 	"devDependencies": {
 		"@babel/eslint-parser": "^7.19.1",
 		"@nuxt/image-edge": "^1.0.0-27907872.f4dd19d",
+		"@nuxtjs/apollo": "^5.0.0-alpha.6",
 		"@nuxtjs/color-mode": "^3.2.0",
 		"@nuxtjs/eslint-config": "^12.0.0",
 		"@nuxtjs/eslint-module": "^3.1.0",

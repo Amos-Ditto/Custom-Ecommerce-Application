@@ -1,5 +1,50 @@
+<script setup lang="ts">
+import { useAuthStore } from "./authStore";
+import { GetToken } from "~~/graphql/schema";
+
+interface ILoginDetail {
+	email: string;
+	password: string;
+}
+const form_details = ref<ILoginDetail>({
+	email: "",
+	password: "",
+});
+const { mutate: postAuthDetails, loading, error: submitError, onDone } = useMutation(GetToken);
+const authStore = useAuthStore();
+const router = useRouter();
+
+const submitDetails = (): void => {
+	postAuthDetails(form_details.value);
+	onDone((data) => {
+		if (!submitError.value) {
+			authStore.updateUserPayload(data.data.tokenAuth.payload);
+
+			console.log(authStore.userPayload);
+			// router.go(-1);
+		}
+	});
+};
+</script>
 <template>
-	<div class="w-full flex flex-col bg-white dark:bg-alt-dark">
+	<div class="w-full flex flex-col bg-white dark:bg-alt-dark relative">
+		<Transition name="show-error">
+			<div v-if="submitError" class="absolute top-0 -translate-y-1/2 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-1/2">
+				<div
+					id="toast-danger"
+					class="flex items-center w-full max-w-xs py-3 px-4 text-white bg-[tomato] rounded-lg shadow dark:text-white dark:bg-[tomato]"
+					role="alert"
+				>
+					<div
+						class="inline-flex items-center justify-center flex-shrink-0 w-7 h-7 text-white bg-red-300 rounded-lg dark:bg-red-300 dark:text-white"
+					>
+						<Icon name="mdi:close" class="text-lg" />
+						<span class="sr-only">Error icon</span>
+					</div>
+					<div class="ml-3 text-sm font-normal">{{ submitError.message }}.</div>
+				</div>
+			</div>
+		</Transition>
 		<div
 			class="w-full flex flex-col lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-8 py-6 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
 		>
@@ -12,7 +57,7 @@
 					<div class="flex flex-col gap-y-6 w-full mt-2 sm:mt-4">
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="email" class="text-sm sm:text-base dark:text-c-base">Email</label>
-							<input type="email" name="email" id="email" placeholder="Enter your email" />
+							<input v-model="form_details.email" type="email" name="email" id="email" placeholder="Enter your email" />
 						</div>
 						<div class="flex flex-col gap-y-1 w-full">
 							<div class="flex flex-row justify-between items-center">
@@ -22,14 +67,24 @@
 									>forgot password</span
 								>
 							</div>
-							<input type="password" name="password" id="password" placeholder="Enter your password" />
+							<input
+								v-model="form_details.password"
+								type="password"
+								name="password"
+								id="password"
+								placeholder="Enter your password"
+							/>
 						</div>
 					</div>
 					<div class="flex flex-col mt-2">
 						<button
+							@click="submitDetails"
 							class="bg-custom hover:bg-orange-400 py-2.5 text-lg text-gray-50 font-[600] rounded transition-colors duration-200"
 						>
-							Login
+							<Transition mode="out-in">
+								<span v-if="!loading">Login</span>
+								<UtilsSpinner v-else :size="'w-6 h-6'" />
+							</Transition>
 						</button>
 					</div>
 					<div class="w-full flex flex-col items-start gap-y-6 mt-4">
@@ -67,5 +122,13 @@
 <style scoped>
 input {
 	@apply py-2.5 px-3 bg-white dark:bg-c-dark border border-neutral-300 rounded text-sm sm:text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200 dark:bg-inherit dark:border-neutral-600 dark:focus:border-custom dark:text-c-mode;
+}
+.show-error-enter-from,
+.show-error-leave-to {
+	@apply scale-50 opacity-0;
+}
+.show-error-enter-active,
+.show-error-leave-active {
+	transition: transform 250ms ease, opacity 250ms ease;
 }
 </style>
