@@ -8,3 +8,19 @@ export const GetToken = gql`
 		}
 	}
 `;
+
+export const RegisterUser = gql`
+	mutation RegisterUser($email: String!, $fullName: String!, $password1: String!, $password2: String!) {
+		registerUser(input: { email: $email, fullName: $fullName, password1: $password1, password2: $password2 }) {
+			appUser {
+				id
+				email
+				fullName
+			}
+			errors {
+				field
+				messages
+			}
+		}
+	}
+`;

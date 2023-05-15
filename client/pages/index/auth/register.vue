@@ -1,5 +1,61 @@
+<script setup lang="ts">
+import { RegisterUser } from "~~/graphql/schema";
+
+interface IUserDetails {
+	email: String;
+	fullName: String;
+	password1: String;
+	password2: String;
+}
+
+const user_details = ref<IUserDetails>({
+	email: "",
+	fullName: "",
+	password1: "",
+	password2: "",
+});
+
+const { mutate: postUserDetials, loading, error, onDone } = useMutation(RegisterUser);
+const router = useRouter();
+
+interface IError {
+	field: String;
+	messages: [String];
+}
+const errors = ref<IError[]>([]);
+const submitDetails = (): void => {
+	errors.value = [];
+	postUserDetials(user_details.value);
+	onDone((data) => {
+		if (data.data.registerUser?.errors.length === 0) {
+			console.log("Data response", data.data);
+		}
+		errors.value = data.data.registerUser.errors as unknown as IError[];
+		console.log("Errors: ", data.data.registerUser.errors);
+	});
+};
+</script>
 <template>
-	<div class="w-full flex flex-col bg-white dark:bg-alt-dark">
+	<div class="w-full flex flex-col bg-white dark:bg-alt-dark relative">
+		<Transition name="show-error">
+			<div v-if="errors.length != 0" class="absolute top-0 -translate-y-1/2 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-1/2">
+				<div
+					id="toast-danger"
+					class="flex flex-col gap-y-1 w-full max-w-xs py-3 px-4 text-white bg-[tomato] rounded-lg shadow dark:text-white dark:bg-[tomato]"
+					role="alert"
+				>
+					<div v-for="error in errors" class="flex flex-row w-full">
+						<div
+							class="inline-flex items-center justify-center flex-shrink-0 w-7 h-7 text-white bg-red-300 rounded-lg dark:bg-red-300 dark:text-white"
+						>
+							<Icon name="mdi:close" class="text-lg" />
+							<span class="sr-only">Error icon</span>
+						</div>
+						<div class="ml-3 text-sm font-normal">{{ error?.messages[0] }}</div>
+					</div>
+				</div>
+			</div>
+		</Transition>
 		<div
 			class="w-full flex flex-col lg:grid grid-cols-2 gap-8 px-4 md:px-8 lg:px-8 py-6 ring-1 ring-neutral-200 rounded dark:ring-neutral-700"
 		>
@@ -8,26 +64,53 @@
 					<div class="flex flex-col w-full">
 						<h1 class="mb-2 text-2xl lg:text-3xl text-neutral-600 font-[600] dark:text-c-base">Get started</h1>
 						<h2 class="text-sm sm:text-base font-medium text-neutral-600 dark:text-[#bbb]">Create a new account</h2>
+						{{ error }}
 					</div>
 					<div class="flex flex-col gap-y-6 w-full mt-2 sm:mt-4">
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="email" class="text-sm sm:text-base dark:text-c-base">Email</label>
-							<input type="email" name="email" id="email" placeholder="Enter your email" />
+							<input type="email" name="email" id="email" placeholder="Enter your email" v-model="user_details.email" />
+						</div>
+						<div class="flex flex-col gap-y-1 w-full">
+							<label for="fullname" class="text-sm sm:text-base dark:text-c-base">Name</label>
+							<input
+								type="text"
+								name="fullname"
+								id="fullname"
+								placeholder="Enter your Name"
+								v-model="user_details.fullName"
+							/>
 						</div>
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="password" class="text-sm sm:text-base dark:text-c-base">Password</label>
-							<input type="password" name="password" id="password" placeholder="Enter your password" />
+							<input
+								type="password"
+								name="password"
+								id="password"
+								placeholder="Enter your password"
+								v-model="user_details.password1"
+							/>
 						</div>
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="c_password" class="text-sm sm:text-base dark:text-c-base">Confirm Password</label>
-							<input type="password" name="c_password" id="c_password" placeholder="Enter your password" />
+							<input
+								type="password"
+								name="c_password"
+								id="c_password"
+								placeholder="Enter your password"
+								v-model="user_details.password2"
+							/>
 						</div>
 					</div>
 					<div class="flex flex-col mt-2">
 						<button
+							@click="submitDetails"
 							class="bg-custom hover:bg-orange-400 py-2.5 text-lg text-gray-50 font-[600] rounded transition-colors duration-200"
 						>
-							Sign Up
+							<Transition mode="out-in">
+								<span v-if="!loading">Sign Up</span>
+								<UtilsSpinner v-else :size="'w-6 h-6'" />
+							</Transition>
 						</button>
 					</div>
 					<div class="w-full flex flex-col items-start gap-y-6 mt-4">
