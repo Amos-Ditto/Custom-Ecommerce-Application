@@ -20,24 +20,25 @@ if (process.client) {
 const store = useAppStore();
 
 const el = ref<HTMLElement | null>(null);
-const { x, y } = useScroll(el, { behavior: "smooth" });
+const { y } = useScroll(el, { behavior: "smooth" });
 watch(y, (newY) => {
 	store.changeHeight(newY);
 });
 </script>
 <template>
 	<div ref="el" class="w-full h-screen flex flex-col overflow-y-auto">
-		<NuxtLoadingIndicator />
 		<NuxtPage />
 	</div>
 </template>
 <style>
 .page-enter-active,
-.page-leave-active {
-	transition: all 0.4s;
+.layout-enter-active .page-leave-active,
+.layout-leave-active {
+	transition: all 0.25s;
 }
 .page-enter-from,
-.page-leave-to {
+.layout-enter-from .page-leave-to,
+.layout-leave-to {
 	opacity: 0;
 	filter: blur(1rem);
 }

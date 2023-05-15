@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useAuthStore } from "./authStore";
-import { GetToken } from "~~/graphql/schema";
-import { IRefreshToken } from "~~/types";
+import { useAuthStore } from "../../../stores/authStore";
+import { GetToken } from "../../../graphql/schema";
+import { IRefreshToken } from "../../../types";
 
 interface ILoginDetail {
 	email: string;

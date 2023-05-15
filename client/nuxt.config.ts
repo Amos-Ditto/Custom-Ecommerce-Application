@@ -10,12 +10,9 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@nuxtjs/apollo",
 	],
-	app: {
-		pageTransition: { name: "page", mode: "out-in" },
-	},
 	colorMode: {
-		preference: "system", // default value of $colorMode.preference
-		fallback: "light", // fallback value if not system preference found
+		preference: "system",
+		fallback: "light",
 		hid: "nuxt-color-mode-script",
 		globalName: "__NUXT_COLOR_MODE__",
 		componentName: "ColorScheme",

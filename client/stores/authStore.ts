@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { IPayload, IUserAuth } from "~~/types";
+import { IPayload, IUserAuth } from "../types";
 
 export const useAuthStore = defineStore("user", () => {
 	const appUser = ref<IUserAuth>();
