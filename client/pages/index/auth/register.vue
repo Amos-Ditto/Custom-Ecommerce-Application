@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RegisterUser } from "~~/graphql/schema";
+import { useAuthStore } from "~~/stores/authStore";
 
 interface IUserDetails {
 	email: String;
@@ -14,24 +15,53 @@ const user_details = ref<IUserDetails>({
 	password1: "",
 	password2: "",
 });
+interface IValidation {
+	email: boolean;
+	name: boolean;
+	password: boolean;
+}
+const validation_errors = ref<IValidation>({
+	email: false,
+	name: false,
+	password: false,
+});
 
 const { mutate: postUserDetials, loading, error, onDone } = useMutation(RegisterUser);
 const router = useRouter();
+const { $validEmail } = useNuxtApp();
+const authStore = useAuthStore();
 
 interface IError {
 	field: String;
 	messages: [String];
 }
 const errors = ref<IError[]>([]);
+
+function resetValidationErrors() {
+	validation_errors.value = {
+		email: false,
+		name: false,
+		password: false,
+	};
+}
 const submitDetails = (): void => {
 	errors.value = [];
+	resetValidationErrors();
+	if (!$validEmail(user_details.value.email as string)) {
+		validation_errors.value.email = true;
+		return;
+	}
+	if (user_details.value.password1 != user_details.value.password2) {
+		validation_errors.value.password = true;
+		return;
+	}
 	postUserDetials(user_details.value);
 	onDone((data) => {
 		if (data.data.registerUser?.errors.length === 0) {
-			console.log("Data response", data.data);
+			authStore.updateFromRegistration();
+			router.push({ name: "Login" });
 		}
 		errors.value = data.data.registerUser.errors as unknown as IError[];
-		console.log("Errors: ", data.data.registerUser.errors);
 	});
 };
 </script>
@@ -70,6 +100,9 @@ const submitDetails = (): void => {
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="email" class="text-sm sm:text-base dark:text-c-base">Email</label>
 							<input type="email" name="email" id="email" placeholder="Enter your email" v-model="user_details.email" />
+							<small v-if="validation_errors.email" class="text-sm text-[tomato] dark:text-[tomato]"
+								>Please enter valid email</small
+							>
 						</div>
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="fullname" class="text-sm sm:text-base dark:text-c-base">Name</label>
@@ -80,6 +113,9 @@ const submitDetails = (): void => {
 								placeholder="Enter your Name"
 								v-model="user_details.fullName"
 							/>
+							<small v-if="validation_errors.name" class="text-sm text-[tomato] dark:text-[tomato]"
+								>Please enter valid Name</small
+							>
 						</div>
 						<div class="flex flex-col gap-y-1 w-full">
 							<label for="password" class="text-sm sm:text-base dark:text-c-base">Password</label>
@@ -100,6 +136,9 @@ const submitDetails = (): void => {
 								placeholder="Enter your password"
 								v-model="user_details.password2"
 							/>
+							<small v-if="validation_errors.password" class="text-sm text-[tomato] dark:text-[tomato]"
+								>Passwords doesn't match</small
+							>
 						</div>
 					</div>
 					<div class="flex flex-col mt-2">
@@ -158,6 +197,6 @@ const submitDetails = (): void => {
 </template>
 <style scoped>
 input {
-	@apply py-2.5 px-3 bg-white dark:bg-c-dark border border-neutral-300 rounded text-sm sm:text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 ring-custom transition duration-200 dark:bg-inherit dark:border-neutral-600 dark:focus:border-custom dark:text-c-mode;
+	@apply py-2.5 px-3 bg-white dark:bg-c-dark border border-neutral-300 rounded text-sm sm:text-base hover:border-neutral-300 focus:outline-none focus:border-transparent focus:ring-1 focus:ring-custom transition duration-200 dark:bg-inherit dark:border-neutral-600 dark:focus:border-custom dark:text-c-mode;
 }
 </style>

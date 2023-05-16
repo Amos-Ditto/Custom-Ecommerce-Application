@@ -38,7 +38,11 @@ const submitDetails = (): void => {
 				refreshToken: data.data.tokenAuth.refreshToken,
 			};
 			onLogin(data.data.tokenAuth.token);
-			router.go(-1);
+			if (!authStore.from_registration) {
+				router.go(-1);
+			} else {
+				router.push({ name: "Home" });
+			}
 		}
 	});
 };
