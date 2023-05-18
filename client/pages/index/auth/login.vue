@@ -19,11 +19,11 @@ const { onLogin } = useApollo();
 
 const today = new Date();
 const user_payload = useCookie("user_payload", {
-	expires: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 - 2 * 60 * 1000),
+	expires: new Date(today.getTime() + 5 * 24 * 60 * 60 * 1000 - 2 * 60 * 1000),
 	sameSite: true,
 });
 const refresh_token = useCookie<IRefreshToken>("user_refresh_token", {
-	expires: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 - 2 * 60 * 1000),
+	expires: new Date(today.getTime() + 10 * 24 * 60 * 60 * 1000 - 2 * 60 * 1000),
 	sameSite: true,
 });
 
