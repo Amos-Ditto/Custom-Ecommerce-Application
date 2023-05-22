@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useAppStore } from "~~/stores/appStore";
+import { useAuthStore } from "~~/stores/authStore"
 
-const store = useAppStore();
-const { heightPos } = storeToRefs(store);
+const { is_logged_in } = storeToRefs(useAuthStore())
+const { heightPos } = storeToRefs(useAppStore());
+
 </script>
 <template>
 	<nav class="w-full flex flex-col z-20 sticky top-0 dark:shadow-white/10 shadow-sm">
@@ -23,7 +25,14 @@ const { heightPos } = storeToRefs(store);
 				<!-- Search input -->
 				<div class="block w-[50%] lg:w-[40%]">
 					<label for="search" class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-					<div class="relative flex flex-row -space-x-px w-full">
+					<div class="relative flex flex-row-reverse -space-x-px w-full">
+						<button
+							class="px-6 py-2.5 bg-neutral-100 hover:bg-custom dark:hover:bg-custom hover:text-c-base rounded-r border border-l-0 border-neutral-200 hover:border-custom dark:hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
+						>
+							<div class="w-5 h-5">
+								<IconsSearch />
+							</div>
+						</button>
 						<input
 							type="search"
 							id="search"
@@ -31,32 +40,41 @@ const { heightPos } = storeToRefs(store);
 							placeholder="Search products, brands and categories"
 							required
 						/>
-						<button
-							class="px-6 py-2.5 bg-neutral-100 hover:bg-custom dark:hover:bg-custom hover:text-c-base rounded-r border border-neutral-200 hover:border-custom dark:hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
-						>
-							<div class="w-5 h-5">
-								<IconsSearch />
-							</div>
-						</button>
 					</div>
 				</div>
 
 				<!-- Toggle auth btns -->
 				<div class="flex flex-row items-center gap-x-2 text-neutral-500 dark:text-neutral-400">
-					<div class="flex flex-row items-center gap-x-1 lg:gap-x-2">
-						<NuxtLink
-							to="/auth"
-							class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
-						>
-							Login
-						</NuxtLink>
-						<NuxtLink
-							to="/auth/register"
-							class="px-3 sm:px-5 py-1 text-sm sm:text-base bg-custom border border-custom font-semibold text-white rounded"
-						>
-							Register
-						</NuxtLink>
-					</div>
+					<Transition mode="out-in">
+						<div v-if="is_logged_in" class="flex flex-row items-center gap-x-1 lg:gap-x-2">
+							<NuxtLink
+								to="/auth"
+								class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
+							>
+								Login
+							</NuxtLink>
+							<NuxtLink
+								to="/auth/register"
+								class="px-3 sm:px-5 py-1 text-sm sm:text-base bg-custom border border-custom font-semibold text-white rounded"
+							>
+								Register
+							</NuxtLink>
+						</div>
+						<div v-else class="flex flex-row items-center gap-x-1 lg:gap-x-2">
+							<button
+								type="button"
+								class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
+							>
+								Logout
+							</button>
+							<!-- <NuxtLink
+								to="/auth/register"
+								class="px-3 sm:px-5 py-1 text-sm sm:text-base bg-custom border border-custom font-semibold text-white rounded"
+							>
+								Register
+							</NuxtLink> -->
+						</div>
+					</Transition>
 				</div>
 			</div>
 			<div class="w-full block mt-3 sm:mt-4 border-t border-neutral-200/60 dark:border-neutral-600">
@@ -115,7 +133,14 @@ const { heightPos } = storeToRefs(store);
 				<!-- Search input -->
 				<div v-else class="block w-full px-4">
 					<label for="search" class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-					<div class="relative flex flex-row -space-x-px w-full">
+					<div class="relative flex flex-row-reverse -space-x-px w-full">
+						<button
+							class="px-5 py-2 bg-neutral-100 hover:bg-custom dark:hover:bg-custom hover:text-c-base rounded-r border border-l-0 border-neutral-200 hover:border-custom dark:hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
+						>
+							<div class="w-5 h-5">
+								<IconsSearch />
+							</div>
+						</button>
 						<input
 							type="search"
 							id="search"
@@ -123,13 +148,6 @@ const { heightPos } = storeToRefs(store);
 							placeholder="Search products, brands and categories"
 							required
 						/>
-						<button
-							class="px-5 py-2 bg-neutral-100 hover:bg-custom dark:hover:bg-custom hover:text-c-base rounded-r border border-neutral-200 hover:border-custom dark:hover:border-custom transition-colors duration-200 dark:bg-c-dark dark:text-c-mode dark:border-neutral-600"
-						>
-							<div class="w-5 h-5">
-								<IconsSearch />
-							</div>
-						</button>
 					</div>
 				</div>
 			</Transition>
@@ -140,7 +158,7 @@ const { heightPos } = storeToRefs(store);
 <style scoped>
 #nav-links button,
 #nav-links a {
-	@apply font-semibold text-neutral-700 px-2 py-2.5 hover:text-custom dark:text-neutral-200 transition-colors duration-300;
+	@apply font-semibold text-neutral-700 px-2 py-2.5 dark:text-neutral-200 transition-colors duration-300;
 }
 
 #nav-links a.router-link-exact-active {

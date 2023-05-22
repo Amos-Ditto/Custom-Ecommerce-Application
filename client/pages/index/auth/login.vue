@@ -38,6 +38,7 @@ const submitDetails = (): void => {
 				refreshToken: data.data.tokenAuth.refreshToken,
 			};
 			onLogin(data.data.tokenAuth.token);
+			authStore.updateIsLoggedIn()
 			if (!authStore.from_registration) {
 				router.go(-1);
 			} else {

@@ -112,7 +112,7 @@ export default <RouterConfig>{
 					children: [
 						{
 							name: "User-Dashboard",
-							path: "dashboard",
+							path: "",
 							component: () => import("~/pages/index/user/dashboard.vue"),
 						},
 						{

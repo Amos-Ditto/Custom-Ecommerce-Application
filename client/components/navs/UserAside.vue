@@ -12,7 +12,7 @@
 		<ul class="w-full flex flex-col gap-y-1 py-1">
 			<li class="w-full">
 				<NuxtLink
-					to="/user/dashboard"
+					:to="{name: 'User-Dashboard'}"
 					class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer"
 				>
 					<div class="w-5 h-5">
@@ -23,7 +23,7 @@
 			</li>
 			<li class="w-full">
 				<NuxtLink
-					to="/user/purchase"
+					:to="{name: 'Purchases'}"
 					class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer"
 				>
 					<div class="w-5 h-5">
@@ -34,7 +34,7 @@
 			</li>
 			<li class="w-full">
 				<NuxtLink
-					to="/user/wishlist"
+					:to="{name: 'User-Wishlist'}"
 					class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer"
 				>
 					<div class="w-5 h-5">
@@ -51,7 +51,7 @@
 			</li>
 			<li class="w-full">
 				<NuxtLink
-					to="/user/profile"
+					:to="{name: 'User-Profile'}"
 					class="w-full flex flex-row gap-x-3 items-center py-3 px-4 text-base font-medium hover:bg-gray-100 cursor-pointer"
 				>
 					<div class="w-5 h-5">
@@ -65,7 +65,7 @@
 </template>
 
 <style scoped>
-ul li a.router-link-active {
+ul li a.router-link-exact-active {
 	@apply bg-custom text-c-base;
 }
 </style>
