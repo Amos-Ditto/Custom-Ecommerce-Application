@@ -11,7 +11,7 @@ const emits = defineEmits<{
 			class="border-b border-neutral-200 pt-3 pb-4 px-4 flex flex-row justify-between items-center relative w-full dark:border-neutral-600"
 		>
 			<div class="flex flex-row gap-x-2 items-center">
-				<Icon name="mdi:cart-outline" class="text-custom text-3xl" />
+				<Icon name="mdi:cart-variant" class="text-custom text-3xl" />
 				<span class="text-lg font-semibold">14 item(s)</span>
 			</div>
 			<div class="absolute right-4">

@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import { Dropdown } from "floating-vue";
+import "floating-vue/dist/style.css";
 import { useAppStore } from "~~/stores/appStore";
-import { useAuthStore } from "~~/stores/authStore"
+import { useAuthStore } from "~~/stores/authStore";
 
-const { is_logged_in } = storeToRefs(useAuthStore())
+const { is_logged_in } = storeToRefs(useAuthStore());
 const { heightPos } = storeToRefs(useAppStore());
-
+const route = useRoute();
+const checkCurrentRoute = computed(() => {
+	return route.name === "User";
+});
 </script>
 <template>
 	<nav class="w-full flex flex-col z-20 sticky top-0 dark:shadow-white/10 shadow-sm">
@@ -46,7 +51,7 @@ const { heightPos } = storeToRefs(useAppStore());
 				<!-- Toggle auth btns -->
 				<div class="flex flex-row items-center gap-x-2 text-neutral-500 dark:text-neutral-400">
 					<Transition mode="out-in">
-						<div v-if="is_logged_in" class="flex flex-row items-center gap-x-1 lg:gap-x-2">
+						<div v-if="!is_logged_in" class="flex flex-row items-center gap-x-1 lg:gap-x-2">
 							<NuxtLink
 								to="/auth"
 								class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
@@ -61,18 +66,50 @@ const { heightPos } = storeToRefs(useAppStore());
 							</NuxtLink>
 						</div>
 						<div v-else class="flex flex-row items-center gap-x-1 lg:gap-x-2">
+							<Dropdown class="block relative">
+								<button
+									class="px-3 py-1 text-base flex flex-row gap-x-2 items-center border border-neutral-300 rounded-sm hover:bg-white"
+								>
+									<Icon name="mdi:account-check-outline" class="text-xl" />
+									<span>Account</span>
+									<div class="ml-1">
+										<Icon name="mdi:chevron-down" />
+									</div>
+								</button>
+								<template #popper>
+									<div class="top-full right-0 w-[240px] bg-white shadow py-2 flex flex-col rounded">
+										<div class="w-full px-3 py-2 border-b border-neutral-200">
+											<h3 class="text-base text-neutral-800 font-medium">Welcome to The Shop!</h3>
+										</div>
+										<ul class="w-full flex flex-col">
+											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer">
+												<div class="flex items-center gap-x-2">
+													<Icon name="mdi:account-outline" class="text-xl" />
+													<span class="text-base text-neutral-700">My Account</span>
+												</div>
+											</li>
+											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer">
+												<div class="flex items-center gap-x-2">
+													<Icon name="mdi:package-variant-closed" class="text-xl" />
+													<span class="text-base text-neutral-700">My Orders</span>
+												</div>
+											</li>
+											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer">
+												<div class="flex items-center gap-x-2">
+													<Icon name="mdi:heart-multiple-outline" class="text-xl" />
+													<span class="text-base text-neutral-700">Wish List</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</template>
+							</Dropdown>
 							<button
 								type="button"
 								class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
 							>
 								Logout
 							</button>
-							<!-- <NuxtLink
-								to="/auth/register"
-								class="px-3 sm:px-5 py-1 text-sm sm:text-base bg-custom border border-custom font-semibold text-white rounded"
-							>
-								Register
-							</NuxtLink> -->
 						</div>
 					</Transition>
 				</div>
@@ -114,20 +151,30 @@ const { heightPos } = storeToRefs(useAppStore());
 
 					<!-- Toggle auth btns -->
 					<div class="flex flex-row items-center gap-x-2 text-neutral-500 dark:text-neutral-400">
-						<div class="flex flex-row items-center gap-x-1 lg:gap-x-2">
-							<NuxtLink
-								to="/auth"
-								class="text-sm sm:text-base font-semibold text-neutral-700 px-3 py-0.5 hover:text-custom dark:text-c-mode dark:hover:text-custom transition-colors duration-200"
-							>
-								Login
-							</NuxtLink>
-							<NuxtLink
-								to="/auth/register"
-								class="px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-custom font-semibold text-custom rounded"
-							>
-								Register
-							</NuxtLink>
-						</div>
+						<Transition mode="out-in">
+							<div v-if="!is_logged_in" class="flex flex-row items-center gap-x-1 lg:gap-x-2">
+								<NuxtLink
+									to="/auth"
+									class="text-sm sm:text-base font-semibold text-neutral-700 px-3 py-0.5 hover:text-custom dark:text-c-mode dark:hover:text-custom transition-colors duration-200"
+								>
+									Login
+								</NuxtLink>
+								<NuxtLink
+									to="/auth/register"
+									class="px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-custom font-semibold text-custom rounded"
+								>
+									Register
+								</NuxtLink>
+							</div>
+							<div v-else class="flex flex-row items-center gap-x-1 lg:gap-x-2">
+								<button
+									to="/auth"
+									class="text-sm sm:text-base font-semibold text-neutral-700 px-3 py-0.5 hover:text-custom dark:text-c-mode dark:hover:text-custom transition-colors duration-200"
+								>
+									Logout
+								</button>
+							</div>
+						</Transition>
 					</div>
 				</div>
 				<!-- Search input -->

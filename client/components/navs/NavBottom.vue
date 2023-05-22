@@ -105,7 +105,7 @@ const closeMenu = (): void => {
 					</nav>
 					<div class="a w-full flex flex-col gap-y-1 border-t border-neutral-200 mt-2 pt-2 dark:border-neutral-600">
 						<NuxtLink
-							to="/user/dashboard"
+							:to="{name: 'User-Dashboard'}"
 							class="w-full flex flex-row py-0.5 px-3.5 hover:bg-white rounded dark:hover:bg-alt-dark transition-colors duration-200"
 						>
 							<div class="flex flex-row items-center gap-4 py-2">
