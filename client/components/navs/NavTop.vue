@@ -68,36 +68,34 @@ const checkCurrentRoute = computed(() => {
 						<div v-else class="flex flex-row items-center gap-x-1 lg:gap-x-2">
 							<Dropdown class="block relative">
 								<button
-									class="px-3 py-1 text-base flex flex-row gap-x-2 items-center border border-neutral-300 rounded-sm hover:bg-white"
+									class="px-2.5 py-1 text-base flex flex-row gap-x-2 items-center border border-neutral-300 rounded hover:bg-white dark:text-c-mode dark:hover:text-custom dark:hover:bg-alt-dark dark:border-neutral-600"
 								>
 									<Icon name="mdi:account-check-outline" class="text-xl" />
-									<span>Account</span>
-									<div class="ml-1">
-										<Icon name="mdi:chevron-down" />
-									</div>
+									Account
+									<Icon name="mdi:chevron-down" class="ml-0.5 text-lg" />
 								</button>
 								<template #popper>
-									<div class="top-full right-0 w-[240px] bg-white shadow py-2 flex flex-col rounded">
-										<div class="w-full px-3 py-2 border-b border-neutral-200">
+									<div class="top-full right-0 w-[240px] bg-white shadow py-2 flex flex-col rounded dark:bg-alt-dark">
+										<div class="w-full px-3 py-2 border-b border-neutral-200 dark:border-neutral-600">
 											<h3 class="text-base text-neutral-800 font-medium">Welcome to The Shop!</h3>
 										</div>
 										<ul class="w-full flex flex-col">
-											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer">
-												<div class="flex items-center gap-x-2">
+											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer dark:hover:bg-c-dark">
+												<div class="flex items-center gap-x-2 text-base text-neutral-700">
 													<Icon name="mdi:account-outline" class="text-xl" />
-													<span class="text-base text-neutral-700">My Account</span>
+													<span class="">My Account</span>
 												</div>
 											</li>
-											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer">
-												<div class="flex items-center gap-x-2">
+											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer dark:hover:bg-c-dark">
+												<div class="flex items-center gap-x-2 text-base text-neutral-700">
 													<Icon name="mdi:package-variant-closed" class="text-xl" />
-													<span class="text-base text-neutral-700">My Orders</span>
+													<span class="">My Orders</span>
 												</div>
 											</li>
-											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer">
-												<div class="flex items-center gap-x-2">
+											<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer dark:hover:bg-c-dark">
+												<div class="flex items-center gap-x-2 text-base text-neutral-700">
 													<Icon name="mdi:heart-multiple-outline" class="text-xl" />
-													<span class="text-base text-neutral-700">Wish List</span>
+													<span class="">Wish List</span>
 												</div>
 											</li>
 										</ul>
@@ -114,7 +112,7 @@ const checkCurrentRoute = computed(() => {
 					</Transition>
 				</div>
 			</div>
-			<div class="w-full block mt-3 sm:mt-4 border-t border-neutral-200/60 dark:border-neutral-600">
+			<div class="w-full block mt-3 sm:mt-4 border-t border-neutral-200/60 dark:border-neutral-700">
 				<div id="nav-links" class="w-full flex flex-row items-center justify-center gap-x-4 lg:gap-x-6">
 					<NuxtLink :to="{ name: 'Home' }">
 						<span> Home </span>
@@ -167,12 +165,50 @@ const checkCurrentRoute = computed(() => {
 								</NuxtLink>
 							</div>
 							<div v-else class="flex flex-row items-center gap-x-1 lg:gap-x-2">
-								<button
-									to="/auth"
-									class="text-sm sm:text-base font-semibold text-neutral-700 px-3 py-0.5 hover:text-custom dark:text-c-mode dark:hover:text-custom transition-colors duration-200"
-								>
-									Logout
-								</button>
+								<Dropdown class="block relative">
+									<button
+										class="px-2 py-1 text-base flex flex-row gap-x-2 items-center border border-neutral-300 rounded hover:bg-white dark:text-c-mode dark:hover:text-custom dark:hover:bg-alt-dark dark:border-neutral-600"
+									>
+										<Icon name="mdi:account-check-outline" class="text-xl" />
+										Account
+										<Icon name="mdi:chevron-down" class="text-xl ml-0.5" />
+									</button>
+									<template #popper>
+										<div class="top-full right-0 w-[240px] bg-white shadow py-2 flex flex-col rounded dark:bg-alt-dark">
+											<div class="w-full px-3 py-2 border-b border-neutral-200 dark:border-neutral-600">
+												<h3 class="text-base text-neutral-800 font-medium">Welcome to The Shop!</h3>
+											</div>
+											<ul class="w-full flex flex-col">
+												<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer dark:hover:bg-c-dark">
+													<div class="flex items-center gap-x-2 text-base text-neutral-700">
+														<Icon name="mdi:account-outline" class="text-xl" />
+														<span class="">My Account</span>
+													</div>
+												</li>
+												<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer dark:hover:bg-c-dark">
+													<div class="flex items-center gap-x-2 text-base text-neutral-700">
+														<Icon name="mdi:package-variant-closed" class="text-xl" />
+														<span class="">My Orders</span>
+													</div>
+												</li>
+												<li class="px-3 py-1.5 hover:bg-stone-100 cursor-pointer dark:hover:bg-c-dark">
+													<div class="flex items-center gap-x-2 text-base text-neutral-700">
+														<Icon name="mdi:heart-multiple-outline" class="text-xl" />
+														<span class="">Wish List</span>
+													</div>
+												</li>
+											</ul>
+											<div class="w-full py-1 border-t border-neutral-200 dark:border-neutral-600">
+												<button
+													class="flex flex-row gap-x-2 items-center text-neutral-700 px-3 py-1.5 text-start w-full hover:bg-stone-100 dark:hover:bg-c-dark dark:text-neutral-100"
+												>
+													<Icon name="mdi:logout-variant" class="text-lg" />
+													<span>Logout</span>
+												</button>
+											</div>
+										</div>
+									</template>
+								</Dropdown>
 							</div>
 						</Transition>
 					</div>
