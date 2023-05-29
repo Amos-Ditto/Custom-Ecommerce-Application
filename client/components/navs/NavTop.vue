@@ -5,12 +5,19 @@ import "floating-vue/dist/style.css";
 import { useAppStore } from "~~/stores/appStore";
 import { useAuthStore } from "~~/stores/authStore";
 
-const { is_logged_in } = storeToRefs(useAuthStore());
+const authStore = useAuthStore();
+const { is_logged_in } = storeToRefs(authStore);
 const { heightPos } = storeToRefs(useAppStore());
-const route = useRoute();
-const checkCurrentRoute = computed(() => {
-	return route.name === "User";
-});
+const { onLogout } = useApollo();
+const user_payload = useCookie("user_payload");
+const refresh_token = useCookie("user_refresh_token");
+
+const logoutUser = (): void => {
+	authStore.updateIsLoggedIn();
+	refresh_token.value = null;
+	user_payload.value = null;
+	onLogout();
+};
 </script>
 <template>
 	<nav class="w-full flex flex-col z-20 sticky top-0 dark:shadow-white/10 shadow-sm">
@@ -103,6 +110,7 @@ const checkCurrentRoute = computed(() => {
 								</template>
 							</Dropdown>
 							<button
+								@click="logoutUser"
 								type="button"
 								class="px-3 sm:px-5 py-1 text-sm sm:text-base border border-neutral-300 dark:border-neutral-600 font-semibold text-neutral-500 dark:text-[#bbb] rounded"
 							>
